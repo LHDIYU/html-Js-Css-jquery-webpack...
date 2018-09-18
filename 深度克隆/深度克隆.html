@@ -1,0 +1,72 @@
+<html lang = "en">
+<head>
+	<meta charset="UTF-8">
+	<title>document</title>
+</head>
+<body>
+<script type="text/javascript">
+
+function clone1(obj1)
+{
+   function F() {} ;
+   F.prototype = obj1 ;
+   var f = new F() ;
+   for(var key in obj1)
+   {
+     if(typeof obj1[key] =="object")
+     {
+         f[key] = clone1(obj1[key])
+     }
+      else
+            f[key] = obj1[key] ;
+  }
+return f ;
+}
+function clone2(obj1)
+{
+     var o;
+     if(obj1.constructor==Object)
+      { 
+        o = new obj1.constructor() ;
+      }
+    else
+     {
+      o = new obj1.constructor(obj1.valueOf())
+     }
+    for(var key in obj1)
+    {
+      // if(obj1[key]!=o[key])//这句有很大的问题
+      if(!obj1.hasOwnProperty(key))
+       {
+            if(typeof obj1[key] =="object")
+           // if(typeof obj1[key] =="object" && obj1[key] ！=null) 
+            o[key] = clone2(obj1[key]) ;
+         else
+            o[key] = obj1[key] ;
+      }
+}
+o.toString = obj1.toString;
+o.valueOf = obj1.valueOf;
+return o;
+}
+function Obj1(){
+   this.a = 1 ;
+   // this.b = 2 ;
+   this.b = null ;
+}
+var o = new Obj1() ;
+alert(o.a) ;//打印1
+alert(o.b) ;//打印2
+
+var o1 = clone2(o) ;
+alert(o1.a) ;//打印1
+alert(o1.b) ;//打印2
+o1.a = 3 ;
+alert(o1.a) ;//打印3
+alert(o.a) ;//打印1
+// Cannot read property 'constructor' of null
+// 问题在哪里呢？null这个值，既不是引用类型，也不是基本数据类型，但是 typoef null == "object"这个是成立的。
+// 然而null却不是对象，所以没有constructor这个属性，程序报错！！
+</script>
+</body>
+</html>

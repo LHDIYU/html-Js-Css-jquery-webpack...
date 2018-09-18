@@ -1,0 +1,231 @@
+
+/*#demo1{
+	width:100px;
+	height:100px;
+	background:orange;
+}*/
+
+
+/*声明变量*/
+
+/*sas less 俩种语言的对比*/
+
+/*@w:100px;
+@h:100px;
+@color:red;*/
+
+/*.border {
+	border:2px solid black;
+}*/
+
+/*.border(@borderWidth,@borderStyle,@borderColor) {
+	border:@borderWidth @borderStyle @borderColor;
+}*/
+
+
+/*混合搭配*/
+
+/*#demo1{
+	width:@w;
+	height:@h;
+	background:@color;
+	.border;
+}*/
+
+/*#demo1{
+	width:@w;
+	height:@h;
+	background:@color;
+	.border(5px,solid,black);
+}*/
+
+
+/*兼容*/
+/*.border(@borderWidth,@borderStyle,@borderColor) {
+	border:@borderWidth @borderStyle @borderColor;
+}
+
+.borderRadius(@percent) {
+	border-radius:@percent;
+	-webkit-border-radius:@percent;
+	-moz-border-radius:@percent;
+	-o-border-radius:@percent;
+	-ms-border-radius:@percent;
+}
+
+#demo1{
+	width:@w;
+	height:@h;
+	background:@color;
+	.border(5px,solid,black);
+	.borderRadius(50%);
+}*/
+
+
+
+
+
+/*匹配模式*/
+/*.border(@borderWidth,@borderStyle,@borderColor) {
+	border:@borderWidth @borderStyle @borderColor;
+}*/
+
+/*.borderRadius(@percent) {
+	border-radius:@percent;
+	-webkit-border-radius:@percent;
+	-moz-border-radius:@percent;
+	-o-border-radius:@percent;
+	-ms-border-radius:@percent;
+}*/
+
+/*下三角*/
+/*.triangle(bottom,@borderWidth,@color) {
+	border:@borderWidth;
+	border-style:solid;
+	border-color:transparent;
+	border-bottom-color:@color;
+}*/
+
+/*上三角*/
+/*.triangle(top,@borderWidth,@color) {
+	border:@borderWidth;
+	border-style:solid;
+	border-color:transparent;
+	border-top-color:@color;
+}*/
+
+/*左三角*/
+/*.triangle(left,@borderWidth,@color) {
+	border:@borderWidth;
+	border-style:solid;
+	border-color:transparent;
+	border-left-color:@color;
+}*/
+
+/*右三角*/
+/*.triangle(right,@borderWidth,@color) {
+	border:@borderWidth;
+	border-style:solid;
+	border-color:transparent;
+	border-right-color:@color;
+}*/
+
+/*#demo1{
+	width:@w;
+	height:@h;
+	background:@color;
+	.border(5px,solid,black);
+	.borderRadius(50%);
+}
+*/
+/*#demo2{
+	width:0;
+	height:0;
+	.triangle(top,20px,orange);
+}*/
+
+
+
+
+
+
+
+
+/*匹配模式2*/
+
+
+/*.border(@borderWidth,@borderStyle,@borderColor) {
+	border:@borderWidth @borderStyle @borderColor;
+}
+
+.borderRadius(@percent) {
+	border-radius:@percent;
+	-webkit-border-radius:@percent;
+	-moz-border-radius:@percent;
+	-o-border-radius:@percent;
+	-ms-border-radius:@percent;
+}
+
+.triangle(@_,@borderWidth,@color) {
+    display:block;
+	width:0;
+	height:0;
+	border:@borderWidth;
+	border-style:solid;
+	border-color:transparent;
+}
+下三角
+.triangle(bottom,@borderWidth,@color) {
+	border-bottom-color:@color;
+}
+上三角
+.triangle(top,@borderWidth,@color) {
+	border-top-color:@color;
+}
+左三角
+.triangle(left,@borderWidth,@color) {
+	border-left-color:@color;
+}
+右三角
+.triangle(right,@borderWidth,@color) {
+	border-right-color:@color;
+}
+*/
+
+
+/*模块化之后*/
+@import './common.less';
+@import './circle.less';
+
+/*外加组件式样式*/
+.wrapper{
+	.border(2px,solid,black);
+	ul {
+      list-style:none;
+      padding:0px;
+      margin:0px;
+      li{
+         background:@color;
+         opacity:0.5;
+             #demo1{
+	              width:@w*2;
+	              /*@w-40px;
+	              @w+@h
+	              @w*2 */
+	              height:@h;
+	              background:@color;
+	              .border(5px,solid,black);
+	              .borderRadius(50%);
+                          transition:all 2s ease-in-out;
+                          /*&代表当前选择的标签*/
+	              &:hover {
+	              width:@w;
+	              }
+         }
+      }
+	}
+}
+
+
+
+
+/*外加组件式样式*/
+
+
+
+/*#demo1{
+	width:@w;
+
+	@w-40px;
+	@w+@h
+	@w*2 
+
+	height:@h;
+	background:@color;
+	.border(5px,solid,black);
+	.borderRadius(50%);}
+*/
+/*#demo2{
+	
+	.triangle(top,20px,orange);
+}*/

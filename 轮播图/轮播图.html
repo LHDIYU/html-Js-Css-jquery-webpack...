@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset = "utf-8">
+	<title>document</title>
+	<link rel = "stylesheet" type = "text/css" href = "lunbotu.css">
+	<style type="text/css">
+  * {
+   margin: 0px;
+   padding: 0px;
+  }
+  li {
+   list-style: none;
+  }
+  img {
+   border: 0 none;
+   width: 100%;
+   height: 100%;
+  }
+  a {
+   text-decoration: none;
+  }
+  #slide {
+   width: 1190px;
+   height: 410px;
+   box-shadow: 0px 0px 5px #c1c1c1;
+   margin: 20px auto;
+   position: relative;
+   overflow: hidden;
+  }
+  #slide ul {
+   position: absolute;
+   left: 0px;
+   top: 0px;
+   height: 410px;
+   width: 1190px;
+  }
+  #slide ul li {
+   width: 1190px;
+   height: 410px;
+   overflow: hidden;
+   float: left;
+  }
+  #ic{
+  	position: absolute;
+  	bottom: 10px;
+  	height: 20px;
+  	width: 100%;
+  }
+  #slide .ico {
+   width: 800px;
+   height: 20px;
+   overflow: hidden;
+   text-align: center;
+ /*  position: relative;
+ left: 15%;
+   bottom: 10px;*/
+   margin: 0 auto;
+
+   z-index: 1;
+  }
+  #slide .ico a {
+   display: inline-block;
+   cursor: pointer;
+   width: 10px;
+   height:10px;
+  background: #fff none repeat scroll 0 0;
+   border: 1px solid #3c3c3c;
+   border-radius: 50%;
+
+  overflow: hidden;
+   margin: 0px 5px;
+   vertical-align: top;
+  }
+  #slide .ico .active {
+  	
+   background:#69aaec none repeat 0px 0px;
+   cursor: default;
+  }
+  #btnLeft {
+   width: 60px;
+   height: 400px;
+   left: 0px;
+   top: 0px;
+   background: url("http://res.mfs.ykimg.com/0510000051AD63E96714C04A1400547A") no-repeat scroll center;
+   position: absolute;
+   z-index: 2;
+  }
+ 
+  #btnRight {
+   width: 60px;
+   height: 400px;
+   right: 0px;
+   top: 0px;
+   background: url("http://res.mfs.ykimg.com/0510000051AD63F56714C04A1305CFEF") no-repeat scroll center;
+   position: absolute;
+   z-index: 2;
+  }
+
+
+ </style>
+</head>
+<body>
+	 <div id="slide">
+         
+  <a id="btnLeft" href="javascript:void(0);" ></a>
+  <a id="btnRight" href="javascript:void(0);" ></a>
+  <ul>
+   <li><img src="http://r2.ykimg.com/05100000579A250467BC3D087F017009" alt="" /></li>
+   <li><img src="http://r2.ykimg.com/0510000057A47BDD67BC3D061D0116DB" alt="" /></li>
+   <li><img src="http://r3.ykimg.com/0510000057A94FF667BC3D5F4200A639" alt="" /></li>
+   <li><img src="http://r3.ykimg.com/0510000057A98DCE67BC3D5F400B5433" alt="" /></li>
+   <li><img src="http://r3.ykimg.com/0510000057B2925667BC3D42E10E30FE" alt="" /></li>
+   <li><img src="http://r1.ykimg.com/0510000057B2ACE067BC3D432C0B51A1" alt="" /></li>
+   <li><img src="http://r3.ykimg.com/0510000057B54AF267BC3D425901BCD9" alt="" /></li>
+   <li><img src="http://r4.ykimg.com/0510000057B5DB9367BC3D0B470C0CF6" alt="" /></li>
+   <li><img src="http://r2.ykimg.com/0510000057B7C02167BC3D50140984D1" alt="" /></li>
+   <li><img src="http://r4.ykimg.com/0510000057B81D8767BC3D37D201A1BB" alt="" /></li>
+   <li><img src="http://r2.ykimg.com/0510000057BAD70D67BC3D65C300C0EE" alt="" /></li>
+   <li><img src="http://r2.ykimg.com/0510000057BBBCAD67BC3D4E240018E7" alt="" /></li>
+   <li><img src="http://r1.ykimg.com/0510000057BE513C67BC3D6CB004F746" alt="" /></li>
+   <li><img src="http://r3.ykimg.com/0510000057BE51F267BC3D6DAB021272" alt="" /></li>
+   <li><img src="http://r3.ykimg.com/0510000057BFF87267BC3D08350AD8D0" alt="" /></li>
+   <li><img src="http://r1.ykimg.com/0510000057C198F467BC3D4D4C0CC992" alt="" /></li>
+   <li><img src="http://r4.ykimg.com/051500005594B3FE67BC3D460E02D08E" alt="" /></li>
+   <li><img src="http://r1.ykimg.com/0515000057733D4767BC3D137404CB31" alt="" /></li>
+   <li><img src="http://r2.ykimg.com/05150000577CB25467BC3D5A1006DF98" alt="" /></li>
+   <li><img src="http://r4.ykimg.com/0515000057848E8E67BC3D34AC02306A" alt="" /></li>
+   <li><img src="http://r1.ykimg.com/0515000057AE8DB267BC3C17F10D37A5" alt="" /></li>
+   <li><img src="http://g1.ykimg.com/0515000057B5557F67BC3D16290EBB12" alt="" /></li>
+   <li><img src="http://r2.ykimg.com/0515000057B97B0167BC3D3215068ED7" alt="" /></li>
+   <li><img src="http://r4.ykimg.com/0515000057BA775267BC3D657E025872" alt="" /></li>
+  </ul>
+  <div id="ic">
+  <div id="ico" class="ico"> 
+   <a class="active" href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+   <a href="javascript:void(0);"></a>
+  </div>
+  </div>
+ </div>
+<script type="text/javascript">
+ window.onload = function() {
+   var oIco = document.getElementById("ico");
+   var aBtn = oIco.getElementsByTagName("a");
+   var oSlide = document.getElementById("slide");
+   var oUl = oSlide.getElementsByTagName("ul");
+   var aLi = oUl[0].getElementsByTagName("li");
+   var oBtnLeft = document.getElementById("btnLeft");
+   var oBtnRight = document.getElementById("btnRight");
+
+   var baseWidth = aLi[0].offsetWidth;
+   oUl[0].style.width = baseWidth * aLi.length + "px";
+   var iNow = 0;
+   for(var i=0;i<aBtn.length;i++) { 
+    aBtn[i].index = i;
+    aBtn[i].onclick = function() {
+    
+     move(this.index);
+    
+    }
+   }
+   oBtnLeft.onclick = function() {
+    iNow --;
+    move(iNow);
+   }
+   oBtnRight.onclick = function() {
+    iNow ++;
+    move(iNow);
+   }
+
+   var curIndex = 0;
+   var timeInterval = 2000;
+   setInterval(change,timeInterval);
+   function change() {
+    if(curIndex == aBtn.length) {
+     curIndex =0;   
+    } else {
+     move(curIndex);
+     curIndex += 1;
+    }
+   }
+   function move(index) {
+   
+    if(index>aLi.length-1) {
+     index = 0;
+     iNow = index;
+    }
+    if(index<0) {
+     index = aLi.length - 1;
+     iNow = index;
+    }
+    for(var n=0;n<aBtn.length;n++) {
+     aBtn[n].className = ""; 
+    }
+    aBtn[index].className = "active";
+    oUl[0].style.left = -index * baseWidth + "px";
+   
+
+   }
+  }
+  </script>
+</body>
+</html>

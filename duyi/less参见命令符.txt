@@ -1,0 +1,1643 @@
+Microsoft Windows [版本 10.0.14393]
+(c) 2016 Microsoft Corporation。保留所有权利。
+
+C:\Users\DIYU>cd DesKtop
+
+C:\Users\DIYU\Desktop>cd duyi
+
+C:\Users\DIYU\Desktop\duyi>webpack -w
+Hash: 504663d1e95bba8fd0dd
+Version: webpack 1.14.0
+Time: 40503ms
+    Asset       Size  Chunks             Chunk Names
+  ./1.jpg    18.9 kB          [emitted]
+ index.js    5.07 kB    0, 2  [emitted]  index
+index2.js   52 bytes    1, 2  [emitted]  index2
+common.js  765 bytes       2  [emitted]  common.js
+    + 15 hidden modules
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+^C终止批处理操作吗(Y/N)?
+^C
+C:\Users\DIYU\Desktop\duyi>npm run duyi
+
+> duyi@1.0.0 duyi C:\Users\DIYU\Desktop\duyi
+> webpack-dev-server --progress --colors --devtool sourcemap
+
+  0% compile http://localhost:8080/webpack-dev-server/
+webpack result is served from http://localhost:8080/out/
+content is served from C:\Users\DIYU\Desktop\duyi
+Hash: 504663d1e95bba8fd0dd
+Version: webpack 1.14.0
+Time: 5129ms
+        Asset       Size  Chunks             Chunk Names
+      ./1.jpg    18.9 kB          [emitted]
+     index.js    5.11 kB    0, 2  [emitted]  index
+    index2.js   87 bytes    1, 2  [emitted]  index2
+    common.js  800 bytes       2  [emitted]  common.js
+ index.js.map    42.8 kB    0, 2  [emitted]  index
+index2.js.map  457 bytes    1, 2  [emitted]  index2
+common.js.map    8.76 kB       2  [emitted]  common.js
+chunk    {0} index.js, index.js.map (index) 13 kB {2} [rendered]
+    [0] ./src/js/entry.js 375 bytes {0} [built]
+    [4] ./src/js/demo1.js 423 bytes {0} [built]
+    [5] ./src/less/demo1.less 1.05 kB {0} [built]
+    [6] ./~/css-loader!./~/less-loader!./src/less/demo1.less 542 bytes {0} [built]
+    [7] ./~/css-loader/lib/css-base.js 1.46 kB {0} [built]
+    [8] ./~/style-loader/addStyles.js 7.15 kB {0} [built]
+    [9] ./src/js/tool.js 116 bytes {0} [built]
+   [10] ./src/js/demo2.js 449 bytes {0} [built]
+   [11] ./src/less/demo2.less 1.05 kB {0} [built]
+   [12] ./~/css-loader!./~/less-loader!./src/less/demo2.less 304 bytes {0} [built]
+   [13] ./src/img/1.jpg 53 bytes {0} [built]
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2} [rendered]
+    [0] ./src/js-2/entry.js 15 bytes {1} [built]
+chunk    {2} common.js, common.js.map (common.js) 0 bytes [rendered]
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+
+
+^C终止批处理操作吗(Y/N)? ^C
+
+C:\Users\DIYU\Desktop\duyi>webpack-dev-server --devtool sourcemap
+ http://localhost:8080/webpack-dev-server/
+webpack result is served from http://localhost:8080/out/
+content is served from C:\Users\DIYU\Desktop\duyi
+Hash: 809fe2de6390bb159960
+Version: webpack 1.14.0
+Time: 61962ms
+        Asset       Size  Chunks             Chunk Names
+      ./1.jpg    18.9 kB          [emitted]
+     index.js    88.5 kB    0, 2  [emitted]  index
+    index2.js   87 bytes    1, 2  [emitted]  index2
+    common.js  800 bytes       2  [emitted]  common.js
+    index.css  187 bytes    0, 2  [emitted]  index
+ index.js.map     768 kB    0, 2  [emitted]  index
+index.css.map   86 bytes    0, 2  [emitted]  index
+index2.js.map  457 bytes    1, 2  [emitted]  index2
+common.js.map    8.76 kB       2  [emitted]  common.js
+chunk    {0} index.js, index.css, index.js.map, index.css.map (index) 269 kB {2} [rendered]
+    [0] ./src/js/entry.js 252 bytes {0} [built]
+    [1] ./~/jquery/dist/jquery.js 268 kB {0} [built]
+    [2] ./src/css/index.css 41 bytes {0} [built]
+    [5] ./src/img/1.jpg 53 bytes {0} [built]
+    [7] ./src/js/demo1.js 382 bytes {0} [built]
+    [8] ./src/js/tool.js 116 bytes {0} [built]
+    [9] ./src/js/demo2.js 408 bytes {0} [built]
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2} [rendered]
+    [0] ./src/js-2/entry.js 15 bytes {1} [built]
+chunk    {2} common.js, common.js.map (common.js) 0 bytes [rendered]
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+Child extract-text-webpack-plugin:
+    chunk    {0} extract-text-webpack-plugin-output-filename 1.82 kB [rendered]
+        [0] ./~/css-loader!./src/css/index.css 307 bytes {0} [built]
+        [1] ./~/css-loader/lib/css-base.js 1.46 kB {0} [built]
+        [2] ./src/img/1.jpg 53 bytes {0} [built]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+webpack: wait until bundle finished: /out/index.css.map
+webpack: wait until bundle finished: /out/index.css
+Hash: 9da39d13469c61afb964
+Version: webpack 1.14.0
+Time: 612855ms
+        Asset       Size  Chunks             Chunk Names
+     index.js    88.5 kB    0, 2  [emitted]  index
+    index.css  187 bytes    0, 2  [emitted]  index
+ index.js.map     768 kB    0, 2  [emitted]  index
+index.css.map   86 bytes    0, 2  [emitted]  index
+chunk    {0} index.js, index.css, index.js.map, index.css.map (index) 269 kB {2} [rendered]
+    [0] ./src/js/entry.js 251 bytes {0} [built]
+     + 6 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 809fe2de6390bb159960
+Version: webpack 1.14.0
+Time: 20206ms
+        Asset       Size  Chunks             Chunk Names
+     index.js    88.5 kB    0, 2  [emitted]  index
+    index.css  187 bytes    0, 2  [emitted]  index
+ index.js.map     768 kB    0, 2  [emitted]  index
+index.css.map   86 bytes    0, 2  [emitted]  index
+chunk    {0} index.js, index.css, index.js.map, index.css.map (index) 269 kB {2} [rendered]
+    [0] ./src/js/entry.js 252 bytes {0} [built]
+     + 6 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 9da39d13469c61afb964
+Version: webpack 1.14.0
+Time: 10439ms
+        Asset       Size  Chunks             Chunk Names
+     index.js    88.5 kB    0, 2  [emitted]  index
+    index.css  187 bytes    0, 2  [emitted]  index
+ index.js.map     772 kB    0, 2  [emitted]  index
+index.css.map   86 bytes    0, 2  [emitted]  index
+chunk    {0} index.js, index.css, index.js.map, index.css.map (index) 269 kB {2} [rendered]
+    [0] ./src/js/entry.js 251 bytes {0} [built]
+     + 6 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+webpack: bundle is now VALID.
+^C终止批处理操作吗(Y/N)? ^C
+
+C:\Users\DIYU\Desktop\duyi>webpack-dev-server --devtool surcemap
+ http://localhost:8080/webpack-dev-server/
+webpack result is served from http://localhost:8080/out/
+content is served from C:\Users\DIYU\Desktop\duyi
+Hash: 9da39d13469c61afb964
+Version: webpack 1.14.0
+Time: 129058ms
+    Asset       Size  Chunks             Chunk Names
+  ./1.jpg    18.9 kB          [emitted]
+ index.js    88.5 kB    0, 2  [emitted]  index
+index2.js   52 bytes    1, 2  [emitted]  index2
+common.js  765 bytes       2  [emitted]  common.js
+index.css  150 bytes    0, 2  [emitted]  index
+chunk    {0} index.js, index.css (index) 269 kB {2} [rendered]
+    [0] ./src/js/entry.js 251 bytes {0} [built]
+    [1] ./~/jquery/dist/jquery.js 268 kB {0} [built]
+    [2] ./src/css/index.css 41 bytes {0} [built]
+    [5] ./src/img/1.jpg 53 bytes {0} [built]
+    [7] ./src/js/demo1.js 382 bytes {0} [built]
+    [8] ./src/js/tool.js 116 bytes {0} [built]
+    [9] ./src/js/demo2.js 408 bytes {0} [built]
+chunk    {1} index2.js (index2) 15 bytes {2} [rendered]
+    [0] ./src/js-2/entry.js 15 bytes {1} [built]
+chunk    {2} common.js (common.js) 0 bytes [rendered]
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+Child extract-text-webpack-plugin:
+    chunk    {0} extract-text-webpack-plugin-output-filename 1.82 kB [rendered]
+        [0] ./~/css-loader!./src/css/index.css 307 bytes {0} [built]
+        [1] ./~/css-loader/lib/css-base.js 1.46 kB {0} [built]
+        [2] ./src/img/1.jpg 53 bytes {0} [built]
+webpack: bundle is now VALID.
+^C终止批处理操作吗(Y/N)?
+^C
+C:\Users\DIYU\Desktop\duyi>webpack-dev-server --progress --colors --devtool sourcemap
+  0% compile http://localhost:8080/webpack-dev-server/
+webpack result is served from http://localhost:8080/out/
+content is served from C:\Users\DIYU\Desktop\duyi
+Hash: 9da39d13469c61afb964
+Version: webpack 1.14.0
+Time: 77948ms
+        Asset       Size  Chunks             Chunk Names
+      ./1.jpg    18.9 kB          [emitted]
+     index.js    88.5 kB    0, 2  [emitted]  index
+    index2.js   87 bytes    1, 2  [emitted]  index2
+    common.js  800 bytes       2  [emitted]  common.js
+    index.css  187 bytes    0, 2  [emitted]  index
+ index.js.map     772 kB    0, 2  [emitted]  index
+index.css.map   86 bytes    0, 2  [emitted]  index
+index2.js.map  457 bytes    1, 2  [emitted]  index2
+common.js.map    8.76 kB       2  [emitted]  common.js
+chunk    {0} index.js, index.css, index.js.map, index.css.map (index) 269 kB {2} [rendered]
+    [0] ./src/js/entry.js 251 bytes {0} [built]
+    [1] ./~/jquery/dist/jquery.js 268 kB {0} [built]
+    [2] ./src/css/index.css 41 bytes {0} [built]
+    [5] ./src/img/1.jpg 53 bytes {0} [built]
+    [7] ./src/js/demo1.js 382 bytes {0} [built]
+    [8] ./src/js/tool.js 116 bytes {0} [built]
+    [9] ./src/js/demo2.js 408 bytes {0} [built]
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2} [rendered]
+    [0] ./src/js-2/entry.js 15 bytes {1} [built]
+chunk    {2} common.js, common.js.map (common.js) 0 bytes [rendered]
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+Child extract-text-webpack-plugin:
+    chunk    {0} extract-text-webpack-plugin-output-filename 1.82 kB [rendered]
+        [0] ./~/css-loader!./src/css/index.css 307 bytes {0} [built]
+        [1] ./~/css-loader/lib/css-base.js 1.46 kB {0} [built]
+        [2] ./src/img/1.jpg 53 bytes {0} [built]
+webpack: bundle is now VALID.
+^C终止批处理操作吗(Y/N)? ^C
+
+C:\Users\DIYU\Desktop\duyi>npm run duyi
+
+> duyi@1.0.0 duyi C:\Users\DIYU\Desktop\duyi
+> webpack-dev-server --progress --colors --devtool sourcemap
+
+  0% compile http://localhost:8080/webpack-dev-server/
+webpack result is served from http://localhost:8080/out/
+content is served from C:\Users\DIYU\Desktop\duyi
+Hash: 9da39d13469c61afb964
+Version: webpack 1.14.0
+Time: 92826ms
+        Asset       Size  Chunks             Chunk Names
+      ./1.jpg    18.9 kB          [emitted]
+     index.js    88.5 kB    0, 2  [emitted]  index
+    index2.js   87 bytes    1, 2  [emitted]  index2
+    common.js  800 bytes       2  [emitted]  common.js
+    index.css  187 bytes    0, 2  [emitted]  index
+ index.js.map     772 kB    0, 2  [emitted]  index
+index.css.map   86 bytes    0, 2  [emitted]  index
+index2.js.map  457 bytes    1, 2  [emitted]  index2
+common.js.map    8.76 kB       2  [emitted]  common.js
+chunk    {0} index.js, index.css, index.js.map, index.css.map (index) 269 kB {2} [rendered]
+    [0] ./src/js/entry.js 251 bytes {0} [built]
+    [1] ./~/jquery/dist/jquery.js 268 kB {0} [built]
+    [2] ./src/css/index.css 41 bytes {0} [built]
+    [5] ./src/img/1.jpg 53 bytes {0} [built]
+    [7] ./src/js/demo1.js 382 bytes {0} [built]
+    [8] ./src/js/tool.js 116 bytes {0} [built]
+    [9] ./src/js/demo2.js 408 bytes {0} [built]
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2} [rendered]
+    [0] ./src/js-2/entry.js 15 bytes {1} [built]
+chunk    {2} common.js, common.js.map (common.js) 0 bytes [rendered]
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+Child extract-text-webpack-plugin:
+    chunk    {0} extract-text-webpack-plugin-output-filename 1.82 kB [rendered]
+        [0] ./~/css-loader!./src/css/index.css 307 bytes {0} [built]
+        [1] ./~/css-loader/lib/css-base.js 1.46 kB {0} [built]
+        [2] ./src/img/1.jpg 53 bytes {0} [built]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 5da49cec944b4c448d15
+Version: webpack 1.14.0
+Time: 21251ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  88.5 kB    0, 2  [emitted]  index
+index.js.map   772 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 269 kB {2} [rendered]
+    [0] ./src/js/entry.js 294 bytes {0} [built]
+     + 5 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 5da49cec944b4c448d15
+Version: webpack 1.14.0
+Time: 107ms
+chunk    {0} index.js, index.js.map (index) 269 kB {2}
+    [0] ./src/js/entry.js 294 bytes {0} [built]
+     + 5 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 9da39d13469c61afb964
+Version: webpack 1.14.0
+Time: 9354ms
+        Asset       Size  Chunks             Chunk Names
+     index.js    88.5 kB    0, 2  [emitted]  index
+    index.css  187 bytes    0, 2  [emitted]  index
+ index.js.map     772 kB    0, 2  [emitted]  index
+index.css.map   86 bytes    0, 2  [emitted]  index
+chunk    {0} index.js, index.css, index.js.map, index.css.map (index) 269 kB {2} [rendered]
+    [0] ./src/js/entry.js 251 bytes {0} [built]
+    [2] ./src/css/index.css 41 bytes {0} [built]
+     + 5 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+Child extract-text-webpack-plugin:
+    chunk    {0} extract-text-webpack-plugin-output-filename 1.82 kB
+        [0] ./~/css-loader!./src/css/index.css 307 bytes {0} [built]
+        [1] ./~/css-loader/lib/css-base.js 1.46 kB {0} [built]
+         + 1 hidden modules
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: cb4a8a91a630441f87f1
+Version: webpack 1.14.0
+Time: 14294ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  88.5 kB    0, 2  [emitted]  index
+index.js.map   772 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 269 kB {2} [rendered]
+    [0] ./src/js/entry.js 296 bytes {0} [built]
+     + 5 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 68ec81451b258deb59f4
+Version: webpack 1.14.0
+Time: 17297ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  88.5 kB    0, 2  [emitted]  index
+index.js.map   772 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 269 kB {2} [rendered]
+    [7] ./src/js/demo1.js 423 bytes {0} [built]
+   [10] ./src/less/demo1.less 0 bytes {0} [built]
+     + 5 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: dc4c1afa649e345c95cd
+Version: webpack 1.14.0
+Time: 16798ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  88.5 kB    0, 2  [emitted]  index
+index.js.map   772 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 269 kB {2} [rendered]
+    [9] ./src/js/demo2.js 449 bytes {0} [built]
+   [11] ./src/less/demo2.less 0 bytes {0} [built]
+     + 6 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 547cd5249f8f102f14f5
+Version: webpack 1.14.0
+Time: 10366ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  88.6 kB    0, 2  [emitted]  index
+index.js.map   772 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 269 kB {2} [rendered]
+     + 7 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+
+ERROR in ./src/less/demo1.less
+Module parse failed: C:\Users\DIYU\Desktop\duyi\src\less\demo1.less Unexpected character '#' (1:0)
+You may need an appropriate loader to handle this file type.
+SyntaxError: Unexpected character '#' (1:0)
+    at Parser.pp$4.raise (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\node_modules\acorn\dist\acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\node_modules\acorn\dist\acorn.js:2756:10)
+    at Parser.pp$7.readToken (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\node_modules\acorn\dist\acorn.js:2477:17)
+    at Parser.pp$7.nextToken (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\node_modules\acorn\dist\acorn.js:2468:15)
+    at Parser.parse (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\node_modules\acorn\dist\acorn.js:515:10)
+    at Object.parse (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\node_modules\acorn\dist\acorn.js:3098:39)
+    at Parser.parse (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\lib\Parser.js:902:15)
+    at DependenciesBlock.<anonymous> (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\lib\NormalModule.js:104:16)
+    at DependenciesBlock.onModuleBuild (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\node_modules\webpack-core\lib\NormalModuleMixin.js:310:10)
+    at nextLoader (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\node_modules\webpack-core\lib\NormalModuleMixin.js:275:25)
+ @ ./src/js/demo1.js 2:0-29
+webpack: bundle is now VALID.
+^C终止批处理操作吗(Y/N)? 终止批处理操作吗(Y/N)? ^C
+
+C:\Users\DIYU\Desktop\duyi>npm install less-loader
+duyi@1.0.0 C:\Users\DIYU\Desktop\duyi
++-- UNMET PEER DEPENDENCY less@^2.3.1
+`-- less-loader@2.2.3
+
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.0.0 (node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.0.17: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN less-loader@2.2.3 requires a peer of less@^2.3.1 but none was installed.
+npm WARN duyi@1.0.0 No description
+npm WARN duyi@1.0.0 No repository field.
+
+C:\Users\DIYU\Desktop\duyi>npm run duyi
+
+> duyi@1.0.0 duyi C:\Users\DIYU\Desktop\duyi
+> webpack-dev-server --progress --colors --devtool sourcemap
+
+  0% compile http://localhost:8080/webpack-dev-server/
+webpack result is served from http://localhost:8080/out/
+content is served from C:\Users\DIYU\Desktop\duyi
+Hash: 010d7f791226e4f06e55
+Version: webpack 1.14.0
+Time: 35568ms
+        Asset       Size  Chunks             Chunk Names
+      ./1.jpg    18.9 kB          [emitted]
+     index.js    88.6 kB    0, 2  [emitted]  index
+    index2.js   87 bytes    1, 2  [emitted]  index2
+    common.js  800 bytes       2  [emitted]  common.js
+ index.js.map     772 kB    0, 2  [emitted]  index
+index2.js.map  457 bytes    1, 2  [emitted]  index2
+common.js.map    8.76 kB       2  [emitted]  common.js
+chunk    {0} index.js, index.js.map (index) 269 kB {2} [rendered]
+    [0] ./src/js/entry.js 296 bytes {0} [built]
+    [1] ./~/jquery/dist/jquery.js 268 kB {0} [built]
+    [2] ./src/js/demo1.js 423 bytes {0} [built] [1 error]
+    [4] ./src/js/tool.js 116 bytes {0} [built]
+    [5] ./src/js/demo2.js 449 bytes {0} [built]
+    [6] ./src/less/demo2.less 0 bytes {0} [built]
+    [7] ./src/img/1.jpg 53 bytes {0} [built]
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2} [rendered]
+    [0] ./src/js-2/entry.js 15 bytes {1} [built]
+chunk    {2} common.js, common.js.map (common.js) 0 bytes [rendered]
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+
+ERROR in ./src/less/demo1.less
+Module parse failed: C:\Users\DIYU\Desktop\duyi\src\less\demo1.less Unexpected character '#' (1:0)
+You may need an appropriate loader to handle this file type.
+SyntaxError: Unexpected character '#' (1:0)
+    at Parser.pp$4.raise (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\node_modules\acorn\dist\acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\node_modules\acorn\dist\acorn.js:2756:10)
+    at Parser.pp$7.readToken (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\node_modules\acorn\dist\acorn.js:2477:17)
+    at Parser.pp$7.nextToken (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\node_modules\acorn\dist\acorn.js:2468:15)
+    at Parser.parse (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\node_modules\acorn\dist\acorn.js:515:10)
+    at Object.parse (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\node_modules\acorn\dist\acorn.js:3098:39)
+    at Parser.parse (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\lib\Parser.js:902:15)
+    at DependenciesBlock.<anonymous> (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\lib\NormalModule.js:104:16)
+    at DependenciesBlock.onModuleBuild (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\node_modules\webpack-core\lib\NormalModuleMixin.js:310:10)
+    at nextLoader (C:\Users\DIYU\AppData\Roaming\npm\node_modules\webpack\node_modules\webpack-core\lib\NormalModuleMixin.js:275:25)
+ @ ./src/js/demo1.js 2:0-29
+webpack: bundle is now VALID.
+终止批处理操作吗(Y/N)? ^C
+
+C:\Users\DIYU\Desktop\duyi>npm install less
+duyi@1.0.0 C:\Users\DIYU\Desktop\duyi
+`-- less@2.7.2
+  +-- image-size@0.5.1
+  +-- promise@7.1.1
+  | `-- asap@2.0.5
+  `-- request@2.79.0
+    +-- aws-sign2@0.6.0
+    +-- aws4@1.5.0
+    +-- caseless@0.11.0
+    +-- combined-stream@1.0.5
+    | `-- delayed-stream@1.0.0
+    +-- extend@3.0.0
+    +-- forever-agent@0.6.1
+    +-- form-data@2.1.2
+    | `-- asynckit@0.4.0
+    +-- har-validator@2.0.6
+    | +-- commander@2.9.0
+    | | `-- graceful-readlink@1.0.1
+    | `-- is-my-json-valid@2.15.0
+    |   +-- generate-function@2.0.0
+    |   +-- generate-object-property@1.2.0
+    |   | `-- is-property@1.0.2
+    |   `-- jsonpointer@4.0.1
+    +-- hawk@3.1.3
+    | +-- boom@2.10.1
+    | +-- cryptiles@2.0.5
+    | +-- hoek@2.16.3
+    | `-- sntp@1.0.9
+    +-- http-signature@1.1.1
+    | +-- assert-plus@0.2.0
+    | +-- jsprim@1.3.1
+    | | +-- extsprintf@1.0.2
+    | | +-- json-schema@0.2.3
+    | | `-- verror@1.3.6
+    | `-- sshpk@1.10.1
+    |   +-- asn1@0.2.3
+    |   +-- assert-plus@1.0.0
+    |   +-- bcrypt-pbkdf@1.0.0
+    |   +-- dashdash@1.14.1
+    |   | `-- assert-plus@1.0.0
+    |   +-- ecc-jsbn@0.1.1
+    |   +-- getpass@0.1.6
+    |   | `-- assert-plus@1.0.0
+    |   +-- jodid25519@1.0.2
+    |   +-- jsbn@0.1.0
+    |   `-- tweetnacl@0.14.5
+    +-- is-typedarray@1.0.0
+    +-- isstream@0.1.2
+    +-- json-stringify-safe@5.0.1
+    +-- mime-types@2.1.13
+    | `-- mime-db@1.25.0
+    +-- oauth-sign@0.8.2
+    +-- qs@6.3.0
+    +-- stringstream@0.0.5
+    +-- tough-cookie@2.3.2
+    +-- tunnel-agent@0.4.3
+    `-- uuid@3.0.1
+
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.0.0 (node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.0.17: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN duyi@1.0.0 No description
+npm WARN duyi@1.0.0 No repository field.
+
+C:\Users\DIYU\Desktop\duyi>npm run duyi
+
+> duyi@1.0.0 duyi C:\Users\DIYU\Desktop\duyi
+> webpack-dev-server --progress --colors --devtool sourcemap
+
+  0% compile http://localhost:8080/webpack-dev-server/
+webpack result is served from http://localhost:8080/out/
+content is served from C:\Users\DIYU\Desktop\duyi
+Hash: 45ff9ac2b996b5910b50
+Version: webpack 1.14.0
+Time: 95215ms
+        Asset       Size  Chunks             Chunk Names
+      ./1.jpg    18.9 kB          [emitted]
+     index.js    92.4 kB    0, 2  [emitted]  index
+    index2.js   87 bytes    1, 2  [emitted]  index2
+    common.js  800 bytes       2  [emitted]  common.js
+ index.js.map     804 kB    0, 2  [emitted]  index
+index2.js.map  457 bytes    1, 2  [emitted]  index2
+common.js.map    8.76 kB       2  [emitted]  common.js
+chunk    {0} index.js, index.js.map (index) 280 kB {2} [rendered]
+    [0] ./src/js/entry.js 296 bytes {0} [built]
+    [1] ./~/jquery/dist/jquery.js 268 kB {0} [built]
+    [2] ./src/js/demo1.js 423 bytes {0} [built]
+    [3] ./src/less/demo1.less 1.05 kB {0} [built]
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 209 bytes {0} [built]
+    [5] ./~/css-loader/lib/css-base.js 1.46 kB {0} [built]
+    [6] ./~/style-loader/addStyles.js 7.15 kB {0} [built]
+    [7] ./src/js/tool.js 116 bytes {0} [built]
+    [8] ./src/js/demo2.js 449 bytes {0} [built]
+    [9] ./src/less/demo2.less 1.05 kB {0} [built]
+   [10] ./~/css-loader!./~/less-loader!./src/less/demo2.less 159 bytes {0} [built]
+   [11] ./src/img/1.jpg 53 bytes {0} [built]
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2} [rendered]
+    [0] ./src/js-2/entry.js 15 bytes {1} [built]
+chunk    {2} common.js, common.js.map (common.js) 0 bytes [rendered]
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: c284e234b6c522c08716
+Version: webpack 1.14.0
+Time: 14542ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  92.4 kB    0, 2  [emitted]  index
+index.js.map   804 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 280 kB {2} [rendered]
+    [0] ./src/js/entry.js 336 bytes {0} [built]
+     + 11 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: c284e234b6c522c08716
+Version: webpack 1.14.0
+Time: 151ms
+chunk    {0} index.js, index.js.map (index) 280 kB {2}
+    [8] ./src/js/demo2.js 449 bytes {0} [built]
+     + 11 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: c284e234b6c522c08716
+Version: webpack 1.14.0
+Time: 61ms
+chunk    {0} index.js, index.js.map (index) 280 kB {2}
+    [2] ./src/js/demo1.js 423 bytes {0} [built]
+     + 11 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: c284e234b6c522c08716
+Version: webpack 1.14.0
+Time: 119ms
+chunk    {0} index.js, index.js.map (index) 280 kB {2}
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 209 bytes {0} [built]
+     + 11 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 5660b153e77c604becf0
+Version: webpack 1.14.0
+Time: 11609ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  92.4 kB    0, 2  [emitted]  index
+index.js.map   804 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 280 kB {2} [rendered]
+   [10] ./~/css-loader!./~/less-loader!./src/less/demo2.less 209 bytes {0} [built]
+     + 11 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 5660b153e77c604becf0
+Version: webpack 1.14.0
+Time: 47ms
+chunk    {0} index.js, index.js.map (index) 280 kB {2}
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 209 bytes {0} [built]
+     + 11 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 5660b153e77c604becf0
+Version: webpack 1.14.0
+Time: 280ms
+chunk    {0} index.js, index.js.map (index) 280 kB {2}
+   [10] ./~/css-loader!./~/less-loader!./src/less/demo2.less 209 bytes {0} [built]
+     + 11 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 5660b153e77c604becf0
+Version: webpack 1.14.0
+Time: 52ms
+chunk    {0} index.js, index.js.map (index) 280 kB {2}
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 209 bytes {0} [built]
+     + 11 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 9a222c7c95b80e4e5a22
+Version: webpack 1.14.0
+Time: 12360ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  92.4 kB    0, 2  [emitted]  index
+index.js.map   804 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 280 kB {2} [rendered]
+   [10] ./~/css-loader!./~/less-loader!./src/less/demo2.less 209 bytes {0} [built]
+     + 11 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always true [./~/jquery/dist/jquery.js:10179,5]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: d26630b131d46d5e49eb
+Version: webpack 1.14.0
+Time: 746ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  4.67 kB    0, 2  [emitted]  index
+index.js.map  41.9 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.5 kB {2} [rendered]
+    [0] ./src/js/entry.js 375 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 7105ce4f75a82dfebf41
+Version: webpack 1.14.0
+Time: 1310ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  4.71 kB    0, 2  [emitted]  index
+index.js.map    42 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.6 kB {2} [rendered]
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 243 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 521e0df5ddc0205485d9
+Version: webpack 1.14.0
+Time: 1016ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  4.69 kB    0, 2  [emitted]  index
+index.js.map    42 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.6 kB {2} [rendered]
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 228 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 12bdc631ba71f04cf25c
+Version: webpack 1.14.0
+Time: 4780ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  4.71 kB    0, 2  [emitted]  index
+index.js.map    42 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.6 kB {2} [rendered]
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 246 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 114bb4f106cae9f29cd5
+Version: webpack 1.14.0
+Time: 1494ms
+       Asset     Size  Chunks             Chunk Names
+    index.js   4.8 kB    0, 2  [emitted]  index
+index.js.map  42.2 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.7 kB {2} [rendered]
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 338 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: e6021fa54c24ddb90fd1
+Version: webpack 1.14.0
+Time: 1301ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  4.88 kB    0, 2  [emitted]  index
+index.js.map  41.7 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.5 kB {2} [rendered]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+
+ERROR in ./~/css-loader!./~/less-loader!./src/less/demo2.less
+Module build failed: .triangle is undefined
+ @ C:\Users\DIYU\Desktop\duyi\src\less\demo2.less (line 10, column 1)
+ near lines:
+        height:0;
+        .triangle(top,20px,orange);
+   }
+ @ ./src/less/demo2.less 4:14-122
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: e6021fa54c24ddb90fd1
+Version: webpack 1.14.0
+Time: 47ms
+chunk    {0} index.js, index.js.map (index) 12.5 kB {2}
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+ERROR in ./~/css-loader!./~/less-loader!./src/less/demo2.less
+Module build failed: .triangle is undefined
+ @ C:\Users\DIYU\Desktop\duyi\src\less\demo2.less (line 10, column 1)
+ near lines:
+        height:0;
+        .triangle(top,20px,orange);
+   }
+ @ ./src/less/demo2.less 4:14-122
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 59cea31339eca8ccbb17
+Version: webpack 1.14.0
+Time: 613ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  4.75 kB    0, 2  [emitted]  index
+index.js.map  42.1 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.6 kB {2} [rendered]
+   [10] ./~/css-loader!./~/less-loader!./src/less/demo2.less 159 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: f0585520764141652c96
+Version: webpack 1.14.0
+Time: 528ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  4.86 kB    0, 2  [emitted]  index
+index.js.map  42.3 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.7 kB {2} [rendered]
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 442 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: a200352a7116082c2f3a
+Version: webpack 1.14.0
+Time: 1672ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  4.88 kB    0, 2  [emitted]  index
+index.js.map  42.4 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.8 kB {2} [rendered]
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 469 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 76ebc616195589166b91
+Version: webpack 1.14.0
+Time: 722ms
+       Asset     Size  Chunks             Chunk Names
+    index.js   4.9 kB    0, 2  [emitted]  index
+index.js.map  42.4 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.8 kB {2} [rendered]
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 483 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: ac9b8613b26d02ca24ac
+Version: webpack 1.14.0
+Time: 1069ms
+       Asset     Size  Chunks             Chunk Names
+    index.js   4.9 kB    0, 2  [emitted]  index
+index.js.map  42.4 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.8 kB {2} [rendered]
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 483 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: ac9b8613b26d02ca24ac
+Version: webpack 1.14.0
+Time: 201ms
+chunk    {0} index.js, index.js.map (index) 12.8 kB {2}
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 483 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: ac9b8613b26d02ca24ac
+Version: webpack 1.14.0
+Time: 113ms
+chunk    {0} index.js, index.js.map (index) 12.8 kB {2}
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 483 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: ac9b8613b26d02ca24ac
+Version: webpack 1.14.0
+Time: 81ms
+chunk    {0} index.js, index.js.map (index) 12.8 kB {2}
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 483 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: ac9b8613b26d02ca24ac
+Version: webpack 1.14.0
+Time: 136ms
+chunk    {0} index.js, index.js.map (index) 12.8 kB {2}
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 483 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: ac9b8613b26d02ca24ac
+Version: webpack 1.14.0
+Time: 448ms
+chunk    {0} index.js, index.js.map (index) 12.8 kB {2}
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 483 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: ac9b8613b26d02ca24ac
+Version: webpack 1.14.0
+Time: 454ms
+chunk    {0} index.js, index.js.map (index) 12.8 kB {2}
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 483 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 55d431f908bb8dcb4dc6
+Version: webpack 1.14.0
+Time: 10008ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  4.87 kB    0, 2  [emitted]  index
+index.js.map  42.3 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.7 kB {2} [rendered]
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 456 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 7bf2f20c880b28770a2d
+Version: webpack 1.14.0
+Time: 2018ms
+       Asset     Size  Chunks             Chunk Names
+    index.js   4.7 kB    0, 2  [emitted]  index
+index.js.map  41.4 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.3 kB {2} [rendered]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+
+ERROR in ./~/css-loader!./~/less-loader!./src/less/demo1.less
+Module build failed: .border is undefined
+ @ C:\Users\DIYU\Desktop\duyi\src\less\demo1.less (line 178, column 1)
+ near lines:
+        background:@color;
+        .border(5px,solid,black);
+        .borderRadius(50%);
+ @ ./src/less/demo1.less 4:14-122
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: df0782dc3396dda89287
+Version: webpack 1.14.0
+Time: 1560ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  4.75 kB    0, 2  [emitted]  index
+index.js.map  41.5 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.3 kB {2} [rendered]
+   [10] ./~/css-loader!./~/less-loader!./src/less/demo2.less 209 bytes {0} [built]
+     + 9 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+
+ERROR in ./~/css-loader!./~/less-loader!./src/less/demo1.less
+Module build failed: .border is undefined
+ @ C:\Users\DIYU\Desktop\duyi\src\less\demo1.less (line 178, column 1)
+ near lines:
+        background:@color;
+        .border(5px,solid,black);
+        .borderRadius(50%);
+ @ ./src/less/demo1.less 4:14-122
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: df0782dc3396dda89287
+Version: webpack 1.14.0
+Time: 43ms
+chunk    {0} index.js, index.js.map (index) 12.3 kB {2}
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+ERROR in ./~/css-loader!./~/less-loader!./src/less/demo1.less
+Module build failed: Cannot resolve 'file' or 'directory' ./cricle.less in C:\Users\DIYU\Desktop\duyi\src\less
+ @ C:\Users\DIYU\Desktop\duyi\src\less\demo1.less (line 178, column 0)
+ near lines:
+   @import './common.less';
+   @import './cricle.less';
+   #demo1{
+ @ ./src/less/demo1.less 4:14-122
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: df0782dc3396dda89287
+Version: webpack 1.14.0
+Time: 32ms
+chunk    {0} index.js, index.js.map (index) 12.3 kB {2}
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+ERROR in ./~/css-loader!./~/less-loader!./src/less/demo1.less
+Module build failed: Cannot resolve 'file' or 'directory' ./cricle.less in C:\Users\DIYU\Desktop\duyi\src\less
+ @ C:\Users\DIYU\Desktop\duyi\src\less\demo1.less (line 178, column 0)
+ near lines:
+   @import './common.less';
+   @import './cricle.less';
+   #demo1{
+ @ ./src/less/demo1.less 4:14-122
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: df0782dc3396dda89287
+Version: webpack 1.14.0
+Time: 170ms
+chunk    {0} index.js, index.js.map (index) 12.3 kB {2}
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+ERROR in ./~/css-loader!./~/less-loader!./src/less/demo1.less
+Module build failed: variable @w is undefined
+ @ C:\Users\DIYU\Desktop\duyi\src\less\demo1.less (line 180, column 7)
+ near lines:
+   #demo1{
+        width:@w;
+        height:@h;
+ @ ./src/less/demo1.less 4:14-122
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: df0782dc3396dda89287
+Version: webpack 1.14.0
+Time: 222ms
+chunk    {0} index.js, index.js.map (index) 12.3 kB {2}
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+ERROR in ./~/css-loader!./~/less-loader!./src/less/demo1.less
+Module build failed: variable @w is undefined
+ @ C:\Users\DIYU\Desktop\duyi\src\less\demo1.less (line 180, column 7)
+ near lines:
+   #demo1{
+        width:@w;
+        height:@h;
+ @ ./src/less/demo1.less 4:14-122
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: df0782dc3396dda89287
+Version: webpack 1.14.0
+Time: 22ms
+chunk    {0} index.js, index.js.map (index) 12.3 kB {2}
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+ERROR in ./~/css-loader!./~/less-loader!./src/less/demo1.less
+Module build failed: variable @w is undefined
+ @ C:\Users\DIYU\Desktop\duyi\src\less\demo1.less (line 180, column 7)
+ near lines:
+   #demo1{
+        width:@w;
+        height:@h;
+ @ ./src/less/demo1.less 4:14-122
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 114bb4f106cae9f29cd5
+Version: webpack 1.14.0
+Time: 1697ms
+       Asset     Size  Chunks             Chunk Names
+    index.js   4.8 kB    0, 2  [emitted]  index
+index.js.map  42.2 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.7 kB {2} [rendered]
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 338 bytes {0} [built]
+   [10] ./~/css-loader!./~/less-loader!./src/less/demo2.less 209 bytes {0} [built]
+     + 9 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 114bb4f106cae9f29cd5
+Version: webpack 1.14.0
+Time: 475ms
+chunk    {0} index.js, index.js.map (index) 12.7 kB {2}
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 338 bytes {0} [built]
+   [10] ./~/css-loader!./~/less-loader!./src/less/demo2.less 209 bytes {0} [built]
+     + 9 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 114bb4f106cae9f29cd5
+Version: webpack 1.14.0
+Time: 100ms
+chunk    {0} index.js, index.js.map (index) 12.7 kB {2}
+   [10] ./~/css-loader!./~/less-loader!./src/less/demo2.less 209 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 114bb4f106cae9f29cd5
+Version: webpack 1.14.0
+Time: 67ms
+chunk    {0} index.js, index.js.map (index) 12.7 kB {2}
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 338 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 52cda95aaa8a5a72eab3
+Version: webpack 1.14.0
+Time: 1026ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  4.91 kB    0, 2  [emitted]  index
+index.js.map  42.4 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.8 kB {2} [rendered]
+   [10] ./~/css-loader!./~/less-loader!./src/less/demo2.less 321 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: e71ceaa4bb2b0ce371e8
+Version: webpack 1.14.0
+Time: 1034ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  4.89 kB    0, 2  [emitted]  index
+index.js.map  42.4 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.8 kB {2} [rendered]
+   [10] ./~/css-loader!./~/less-loader!./src/less/demo2.less 296 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: e71ceaa4bb2b0ce371e8
+Version: webpack 1.14.0
+Time: 91ms
+chunk    {0} index.js, index.js.map (index) 12.8 kB {2}
+   [10] ./~/css-loader!./~/less-loader!./src/less/demo2.less 296 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: e8e0cd7cf1e626ebf24b
+Version: webpack 1.14.0
+Time: 1622ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  4.91 kB    0, 2  [emitted]  index
+index.js.map  42.4 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.8 kB {2} [rendered]
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 346 bytes {0} [built]
+   [10] ./~/css-loader!./~/less-loader!./src/less/demo2.less 304 bytes {0} [built]
+     + 9 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: e71ceaa4bb2b0ce371e8
+Version: webpack 1.14.0
+Time: 1011ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  4.89 kB    0, 2  [emitted]  index
+index.js.map  42.4 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.8 kB {2} [rendered]
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 338 bytes {0} [built]
+   [10] ./~/css-loader!./~/less-loader!./src/less/demo2.less 296 bytes {0} [built]
+     + 9 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 04c43a184250d4c96a8a
+Version: webpack 1.14.0
+Time: 1028ms
+       Asset     Size  Chunks             Chunk Names
+    index.js   4.9 kB    0, 2  [emitted]  index
+index.js.map  42.4 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.8 kB {2} [rendered]
+   [10] ./~/css-loader!./~/less-loader!./src/less/demo2.less 304 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 9a2afd1bc27c716baed9
+Version: webpack 1.14.0
+Time: 950ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  4.94 kB    0, 2  [emitted]  index
+index.js.map  42.5 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.8 kB {2} [rendered]
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 378 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 90924254baf0e542cf9d
+Version: webpack 1.14.0
+Time: 819ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  4.85 kB    0, 2  [emitted]  index
+index.js.map  41.6 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.4 kB {2} [rendered]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+
+ERROR in ./~/css-loader!./~/less-loader!./src/less/demo1.less
+Module build failed: Unrecognised input. Possibly missing opening '{'
+ @ C:\Users\DIYU\Desktop\duyi\src\less\demo1.less (line 220, column 0)
+ near lines:
+        .borderRadius(50%);
+   }
+   */
+ @ ./src/less/demo1.less 4:14-122
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 90924254baf0e542cf9d
+Version: webpack 1.14.0
+Time: 107ms
+chunk    {0} index.js, index.js.map (index) 12.4 kB {2}
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+ERROR in ./~/css-loader!./~/less-loader!./src/less/demo1.less
+Module build failed: Unrecognised input. Possibly missing opening '{'
+ @ C:\Users\DIYU\Desktop\duyi\src\less\demo1.less (line 220, column 0)
+ near lines:
+        .borderRadius(50%);
+   }
+   */
+ @ ./src/less/demo1.less 4:14-122
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 90924254baf0e542cf9d
+Version: webpack 1.14.0
+Time: 32ms
+chunk    {0} index.js, index.js.map (index) 12.4 kB {2}
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+ERROR in ./~/css-loader!./~/less-loader!./src/less/demo1.less
+Module build failed: Unrecognised input. Possibly missing opening '{'
+ @ C:\Users\DIYU\Desktop\duyi\src\less\demo1.less (line 219, column 20)
+ near lines:
+        .border(5px,solid,black);
+        .borderRadius(50%);}
+   */
+ @ ./src/less/demo1.less 4:14-122
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 62b59027fed01b5e0fe3
+Version: webpack 1.14.0
+Time: 683ms
+       Asset     Size  Chunks             Chunk Names
+    index.js  5.03 kB    0, 2  [emitted]  index
+index.js.map  42.7 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 12.9 kB {2} [rendered]
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 472 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 6872e95b219bb59083d0
+Version: webpack 1.14.0
+Time: 758ms
+       Asset     Size  Chunks             Chunk Names
+    index.js   5.1 kB    0, 2  [emitted]  index
+index.js.map  42.8 kB    0, 2  [emitted]  index
+chunk    {0} index.js, index.js.map (index) 13 kB {2} [rendered]
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 542 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+
+WARNING in index.js from UglifyJs
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo1.less:7,0]
+Condition always false [./~/style-loader/addStyles.js:24,0]
+Dropping unreachable code [./~/style-loader/addStyles.js:25,0]
+Condition always false [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:10,0]
+Dropping unreachable code [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:12,0]
+Side effects in initialization of unused variable update [./~/style-loader!./~/css-loader!./~/less-loader!./src/less/demo2.less:7,0]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 6872e95b219bb59083d0
+Version: webpack 1.14.0
+Time: 101ms
+chunk    {0} index.js, index.js.map (index) 13 kB {2}
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 542 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 6872e95b219bb59083d0
+Version: webpack 1.14.0
+Time: 95ms
+chunk    {0} index.js, index.js.map (index) 13 kB {2}
+    [4] ./~/css-loader!./~/less-loader!./src/less/demo1.less 542 bytes {0} [built]
+     + 10 hidden modules
+chunk    {1} index2.js, index2.js.map (index2) 15 bytes {2}
+     + 1 hidden modules
+chunk    {2} common.js, common.js.map (common.js) 0 bytes
+webpack: bundle is now VALID.

@@ -1,0 +1,264 @@
+<!-- <!DOCTYPE html>  
+<html lang="en">
+<head>
+	<meta charset = 'utf-8'>
+	<title></title>
+	<style type="text/css">
+*{
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+	text-decoration: none;
+}
+input{
+	border:0px none;
+	padding: 0px;
+
+}
+#wrapper{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+#head_wrapper{
+	position: relative;
+	top: 38.2%;
+}
+.s_form{
+	position: relative;
+	top: -191px;
+}
+#lg img{
+	width: 270px; height: 129px;
+}
+#form{
+	position: relative;
+
+	width: 641px;
+
+	margin: 22px auto 0;
+
+}
+
+.btn_text{
+	float: left;
+	display: inline-block;
+	position: relative;
+
+	border-color: #b8b8b8 transparent #ccc #b8b8b8;
+	border-style: solid;
+	border-width: 1px 0 1px 1px;
+
+	width: 539px;
+	height: 34px;
+}
+
+.btn_text > span{
+	position: absolute;right: 11px;top: 50%;
+
+
+
+  background:#fff url("https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_679c15cc.png") no-repeat scroll 0 0;
+
+  cursor: pointer;
+
+  height: 16px;width: 18px;
+
+  margin-top: -8px; 
+  z-index: 9999;
+}
+.btn_text > input {
+	position:absolute;left: 0;
+	width: 500px;
+	height: 22px;
+	margin:6px 0 0 7px;
+
+}
+.btn_text > input:focus{
+	width: 539px;
+	height: 34px;
+	margin:0;
+}
+.btn_submit{
+	position: relative;
+	float: left;
+	display: inline-block;
+	border-bottom: 1px solid transparent;
+	/*height: 34px;width: 97px;*/
+	height: auto;width: auto;
+	vertical-align: top;
+
+}
+.btn_submit > input{
+	background:#3385ff none repeat scroll 0 0;
+	border-bottom: 1px solid #2d78f4;
+	color: white;
+	font-size: 15px;letter-spacing: 1px;
+
+	height: 36px;width: 100px;
+	cursor: pointer;
+}
+
+		
+		.btn_text > ul{
+			display: none;
+			position: absolute;
+			top: 34px;
+			left: 0;
+			border: 1px solid black;
+		}
+	
+		.btn_text > ul > li{
+
+	width: 400px;
+    color: #000;
+    font: 14px arial;
+    line-height: 22px;
+    padding: 0 8px;
+
+    position: relative;
+    cursor: default;
+		}
+	</style>
+</head>
+<body>
+<div id="wrapper">
+    <div id="head_wrapper">
+        <div class="s_form">
+
+          <div id="lg">
+            <img src="https://www.baidu.com/img/bd_logo1.png">
+          </div>
+
+            <form id="form" class="fm"name="f"> 
+            action="/s"  -->
+<!--                <span class="btn_text">
+                	<span></span>
+                	<input  id="kw">
+                	<ul id='display'></ul>
+                </span>
+
+                <span class="btn_submit">
+                	<input id="su" type="submit" name="" value="百度一下" >
+
+                </span>          	
+
+            </form>
+
+        </div>
+    </div>
+</div>
+	<script type="text/javascript">
+	var display = document.getElementById('display');
+	var lastScript = null;
+	var kw = document.getElementById('kw');
+	function message(data){
+		var nowData = data.s;
+		var html = '';
+		if(nowData.length != 0){
+			nowData.forEach(function(item){
+				html += '<li><a href = https://www.baidu.com/s?wd='+ item + '>' + item + '</a></li>';
+			})
+			display.innerHTML = html;
+			display.style.display  = 'block';
+		}else{
+			display.style.display = 'none';
+		}
+	}
+	kw.onkeyup = function(){
+		if(this.value){
+			lastScript != null ? document.body.removeChild(lastScript):'';
+			var oScript = document.createElement('script');
+			oScript.src = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=json&cb=message';
+			document.body.appendChild(oScript);
+			lastScript = oScript;
+		}else{
+			display.style.display = 'none';
+		}
+	}
+
+	</script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>document</title>
+    <style type="text/css">
+        .wrapper {
+            width: 400px;
+            margin: 150px auto 0 auto;
+        }
+        
+        .wrapper input {
+            width: 400px;
+            padding: 5px 5px 5px 15px;
+        }
+        
+        .wrapper ul {
+            width: 400px;
+            border: 1px solid black;
+            display: none;
+        }
+        /*https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=jso&*/
+        /*json=1&p=3&sid=1449_21320_17942_21105_21378_21191_21373&req=2&bs=json&csor=3&pwd=json& */
+        /*cb=jQuery110201876632168895822_1477027447684&_=1477027447687*/
+        /*https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=lol&cb=duyi*/
+    </style>
+</head>
+
+<body>
+    <a href="https://www.baidu.com/s?wd=nba">click me </a>
+    <div class="wrapper">
+        <input type="text" id="ip" name="">
+        <ul></ul>
+
+    </div>
+    <!-- https://www.baidu.com/s?wd=jsonp -->
+    <!-- <script src="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=lol&cb=duyi"></script> -->
+    <script src="ajax.js"></script>
+
+    <script type="text/javascript">
+        // Ajax('GET', '', true, 'wd = lol', function(date) {
+        //     console.log(date);
+        // })
+        var oIp = document.getElementById('ip');
+        var lastScript = null;
+        var oUl = document.getElementsByTagName('ul')[0];
+
+        function duyi(date) {
+            console.log(date);
+            var dateArray = date.s;
+            var html = '';
+            if (dateArray.length != 0) {
+                dateArray.forEach(function(item) {
+                    html += '<li> <a href = "https://www.baidu.com/s?wd=' + item + '">' + item + '</a></li>';
+                });
+                oUl.innerHTML = html;
+                oUl.style.display = "block";
+            } else {
+                oUl.style.display = "none";
+            }
+        }
+
+        oIp.onkeyup = function() {
+            if (this.value) {
+                console.log('-');
+                lastScript != null ? document.body.removeChild(lastScript) : '';
+
+                var oScript = document.createElement('script');
+                oScript.src = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=' + this.value + '&cb=duyi';
+                document.body.appendChild(oScript);
+            } else {
+                oUl.style.display = 'none';
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

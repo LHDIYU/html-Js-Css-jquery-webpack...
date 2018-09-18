@@ -1,0 +1,558 @@
+                                          <!-- 第一部分　类型和语法 -->
+第一章类型 
+JavaScript 有七种内置类型：
+• 空值（null） • 未定义（undefined） • 布尔值（ boolean） • 数字（number） • 字符串（string） • 对象（object） • 符号（symbol，ES6 中新增）
+
+typeof undefined     === "undefined"; // true typeof true          === "boolean";   // true typeof 42            === "number";    // true typeof "42"          === "string";    // true typeof { life: 42 }  === "object";    // true 
+ 
+// ES6中新加入的类型 typeof Symbol()      === "symbol";    // true
+
+ JavaScript 有 七 种 内 置 类 型：null、undefined、boolean、number、string、object 和 symbol，可以使用 typeof 运算符来查看
+
+ 变量没有类型，但它们持有的值有类型
+
+
+typeof null === "object"; // true
+正确的返回结果应该是 "null"，但这个bug 由来已久，在JavaScript 中已经存在了将近 二十年，也许永远也不会修复，因为这牵涉到太多的 Web 系统，“修复”它会产生更多的 bug，令许多系统无法正常工作。
+
+
+var a = null; 
+ 
+(!a && typeof a === "object"); // true
+
+typeof function a(){ /* .. */ } === "function"; // true
+它实际上是 object 的一个“子类型”。具体来说，函数是“可调用对象”，它有一个内部属 性 [[Call]]，该属性使其可以被调用
+
+函数不仅是对象，还可以拥有属性。例如：
+function a(b,c) {     /* .. */ }
+函数对象的 length 属性是其声明的参数的个数：
+a.length; // 2
+
+typeof [1,2,3] === "object"; // true
+不，数组也是对象。确切地说，它也是 object 的一个“子类型”（参见第 3 章），数组的 元素按数字顺序来进行索引（而非普通像对象那样通过字符串键值），其 length 属性是元 素的个数。
+
+
+1.3　值和类型
+
+JavaScript 中的变量是没有类型的，只有值才有。变量可以随时持有任何类型的值。
+
+一个变量可以现在被赋值为字符串类型值，随后又被赋值为 数字类型值。
+42 的类型为 number，并且无法更改。而 "42" 的类型为 string。数字 42 可以通过强制类型 转换（coercion）为字符串 "42
+
+对变量执行 typeof 操作时，得到的结果并不是该变量的类型，而是该变量持有的值的类 型，因为 JavaScript 中的变量没有类型。
+var a = 42; typeof a; // "number" 
+ 
+a = true; typeof a; // "boolean"
+
+typeof 运算符总是会返回一个字符串：
+typeof typeof 42; // "string"
+
+对变量执行 typeof 操作时，得到的结果并不是该变量的类型，而是该变量持有的值的类 型，因为 JavaScript 中的变量没有类型
+
+var a = 42; typeof a; // "number" 
+ 
+a = true; typeof a; // "boolean"
+
+
+typeof 运算符总是会返回一个字符串：
+typeof typeof 42; // "string"
+
+
+
+1.3.1　undefined 和 undeclared
+
+变量在未持有值的时候为 undefined。此时 typeof 返回 "undefined"：
+var a; 
+ 
+typeof a; // "undefined" 
+
+大多数开发者倾向于将 undeﬁned 等同于 undeclared（未声明），但在 JavaScript 中它们完全 是两回事。
+已在作用域中声明但还没有赋值的变量，是 undeﬁned 的。相反，还没有在作用域中声明 过的变量，是 undeclared 的。
+例如：
+var a; 
+ 
+a; // undefined b; // ReferenceError: b is not defined
+
+，“b is not deﬁned”容易让人误以为是“b is undeﬁned”。这里再强调一遍，“undeﬁned”和“is not deﬁned”是两码事。此时如果浏览器 报错成“b is not found”或者“b is not declared”会更准确
+
+是 typeof 处理 undeclared 变量的方
+
+var a; 
+ 
+typeof a; // "undefined" 
+ 
+typeof b; // "undefined"
+对于 undeclared（或者 not deﬁned）变量，typeof 照样返回 "undefined"。请注意虽然 b 是 一个 undeclared 变量，但 typeof b 并没有报错。这是因为 typeof 有一个特殊的安全防范 机制。
+
+此时 typeof 如果能返回 undeclared（而非 undeﬁned）的话，情况会好很多。
+
+1.3.2　typeof Undeclared 
+该安全防范机制对在浏览器中运行的 JavaScript 代码来说还是很有帮助的，因为多个脚本 文件会在共享的全局命名空间中加载变量。
+
+全局命名空间中不应该有变量存在，所有东西都应该被封 装到模块和私有 / 独立的命名空间中。 在 ES6 中加入了对模块的支 持
+
+。在输出调试信 息到控制台之前，我们会检查 DEBUG 变量是否已被声明。顶层的全局变量声明 var DEBUG = true 只在 debug.js 文件中才有，而该文件只在开发和测试时才被加载到浏览器，在生产环 境中不予加载。
+问题是如何在程序中检查全局变量 DEBUG 才不会出现 ReferenceError 错误。这时 typeof 的 安全防范机制就成了我们的好帮手：
+
+// 这样会抛出错误 if (DEBUG) {     console.log( "Debugging is starting" ); } 
+ 
+// 这样是安全的 if (typeof DEBUG !== "undefined") {     console.log( "Debugging is starting" ); }
+这不仅对用户定义的变量（比如 DEBUG）有用，对内建的 API 也有帮助：
+if (typeof atob === "undefined") {     atob = function() { /*..*/ }; }
+
+个缺失的功能写 polyﬁll（即衬垫代码或者补充代码，用来补充 当前运行环境中缺失的功能），一般不会用 var atob 来声明变量 atob。如 果在 if 语句中使用 var atob，声明会被提升（hoisted，参见《你不知道的 JavaScript（上卷）》1 中的“作用域和闭包”部分）到作用域（即当前脚本或 函数的作用域）的最顶层，即使 if 条件不成立也是如此（因为 atob 全局变 量已经存在）。
+
+在有些浏览器中，对于一些特殊的内建全局变量（通常称为 “宿主对象”，host object），这样的重复声明会报错
+
+。去掉 var 则可以防止声 明被提升。
+
+
+有一种不用通过 typeof 的安全防范机制的方法，就是检查所有全局变量是否是全局对象 的属性，浏览器中的全局对象是 window
+
+if (window.DEBUG) {     // .. } 
+ 
+if (!window.atob) {     // .. 
+
+与 undeclared 变量不同，访问不存在的对象属性（甚至是在全局对象 window 上）不会产生 ReferenceError 错误
+
+一些开发人员不喜欢通过 window 来访问全局对象，尤其当代码需要运行在多种 JavaScript 环境中时（不仅仅是浏览器，还有服务器端，如 node.js 等），因为此时全局对象并非总是 window
+
+想让别人在他们的程序或模块中复制粘贴你 的代码，就需要检查你用到的变量是否已经在宿主程序中定义过：
+function doSomethingCool() {     var helper =         (typeof FeatureXYZ !== "undefined") ?         FeatureXYZ :         function() { /*.. default feature ..*/ }; 
+ 
+    var val = helper();     // ..  }
+其他模块和程序引入 doSomethingCool() 时，doSomethingCool() 会检查 FeatureXYZ 变量是 否已经在宿主程序中定义过；如果是，就用现成的，否则就自己定义
+
+(function(){     function FeatureXYZ() { /*.. my XYZ feature ..*/ } 
+ 
+    // 包含doSomethingCool(..)     function doSomethingCool() {         var helper =             (typeof FeatureXYZ !== "undefined") ?             FeatureXYZ :             function() { /*.. default feature ..*/ }; 
+ 
+        var val = helper();         // ..      } 
+ 
+    doSomethingCool(); })();
+这里，FeatureXYZ 并不是一个全局变量，但我们还是可以使用 typeof 的安全防范机制来做 检查，因为这里没有全局对象可用（像前面提到的 window.___）。
+
+人喜欢使用“依赖注入”（dependency injection）设计模式，就是将依赖通过参数 显式地传递到函数中，如：
+function doSomethingCool(FeatureXYZ) {     var helper = FeatureXYZ ||         function() { /*.. default feature ..*/ };     var val = helper();     // .. }
+上述种种选择和方法各有利弊。好在 typeof 的安全防范机制为我们提供了更多选
+<!--  -->
+<!--  -->
+
+ 将undeﬁned 和 undeclared 混为一谈，但在JavaScript 中它们是两码事。 undefined 是值的一种。undeclared 则表示变量还没有被声明过
+
+ ，JavaScript 却将它们混为一谈，在我们试图访问"undeclared" 变量时这样报 错：ReferenceError: a is not deﬁned，并且typeof 对 undeﬁned 和 undeclared 变量都返回 "undefined"。
+
+，通过 typeof 的安全防范机制（阻止报错）来检查 undeclared 变量，有时是个不错的 办法。
+
+
+
+
+第 2 章 值
+
+JavaScript 中的数组是通过数字索引的一组任意类型的值。字符串和数组类似，但是它们的 行为特征不同，在将字符作为数组来处理时需要特别小心。JavaScript 中的数字包括“整 数”和“浮点型”。
+
+null 类型只有一个值 null，undefined 类型也只有一个值 undefined。所有变量在赋值之 前默认值都是 undefined。void 运算符返回 undefined。
+
+简单标量基本类型值（字符串和数字等）通过值复制来赋值 / 传递，而复合值（对象等） 通过引用复制来赋值 / 传递
+
+JavaScript 中的引用和其他语言中的引用 / 指针不同，它们不 能指向别的变量 / 引用，只能指向值。
+
+
+2.1　数组
+和其他强类型语言不同，在 JavaScript 中，数组可以容纳任何类型的值，可以是字符串、 数字、对象（object），甚至是其他数组（多维数组就是通过这种方式来实现的）：
+
+
+
+数组（array）、字符串（string）和数字（number）是一个程序最基本的组成部分
+
+类数组
+
+有时需要将类数组（一组通过数字索引的值）转换为真正的数组，这一般通过数组工具函
+数（如 indexOf(..)、concat(..)、forEach(..) 等）来实现。
+
+
+字符串
+字符串经常被当成字符数组。字符串的内部实现究竟有没有使用数组并不好说，但 JavaScript 中的字符串和字符数组并不是一回事，最多只是看上去相似而已。
+例如下面两个值：
+var a = "foo"; var b = ["f","o","o"];
+字符串和数组的确很相似，它们都是类数组，都有 length 属性以及 indexOf(..)（从 ES5 开始数组支持此方法）和 concat(..) 方法：
+[source,js] 
+ 
+a.length;                           // 3 b.length;                           // 3 
+
+a.indexOf( "o" );                   // 1 b.indexOf( "o" );                   // 1 
+ 
+var c = a.concat( "bar" );          // "foobar" var d = b.concat( ["b","a","r"] );  // ["f","o","o","b","a","r"] 
+ 
+a === c;                            // false b === d;                            // false 
+ 
+a;                                  // "foo"  b;                                  // ["f","o","o"]
+但这并不意味着它们都是“字符数组”，比如：
+a[1] = "O"; b[1] = "O"; 
+ 
+a; // "foo" b; // ["f","O","o"]
+JavaScript 中字符串是不可变的，而数组是可变的。并且 a[1] 在 JavaScript 中并非总是合 法语法，在老版本的 IE 中就不被允许（现在可以了）。正确的方法应该是 a.charAt(1)。
+
+字符串不可变是指字符串的成员函数不会改变其原始值，而是创建并返回一个新的字符 串。而数组的成员函数都是在其原始值上进行操作。
+c = a.toUpperCase(); a === c;    // false a;          // "foo" c;          // "FOO" 
+ 
+b.push( "!" ); b;          // ["f","O","o","!"]
+许多数组函数用来处理字符串很方便。虽然字符串没有这些函数，但可以通过“借用”数 组的非变更方法来处理字符串：
+a.join;         // undefined a.map;          // undefined 
+ 
+var c = Array.prototype.join.call( a, "-" ); var d = Array.prototype.map.call( a, function(v){     return v.toUpperCase() + "."; } ).join( "" ); 
+ 
+c;              // "f-o-o" d;              // "F.O.O."
+另一个不同点在于字符串反转（JavaScript 面试常见问题）。数组有一个字符串没有的可变
+
+
+。数组有一个字符串没有的可变
+
+更成员函数 reverse()：
+a.reverse;      // undefined 
+ 
+b.reverse();    // ["!","o","O","f"] b;              // ["f","O","o","!"]
+可惜我们无法“借用”数组的可变更成员函数，因为字符串是不可变的：
+Array.prototype.reverse.call( a ); // 返回值仍然是字符串"foo"的一个封装对象（参见第3章）:(
+一个变通（破解）的办法是先将字符串转换为数组，待处理完后再将结果转换回字符串：
+var c = a     // 将a的值转换为字符数组     .split( "" )     // 将数组中的字符进行倒转     .reverse()     // 将数组中的字符拼接回字符串     .join( "" ); 
+ 
+c; // "oof"
+这种方法的确简单粗暴，但对简单的字符串却完全适用。
+
+2.3　数字
+JavaScript 只有一种数值类型：number（数字），包括“整数”和带小数的十进制数。此处 “整数”之所以加引号是因为和其他语言不同，JavaScript 没有真正意义上的整数
+但目前只有数字类型。
+JavaScript 中的“整数”就是没有小数的十进制数。所以 42.0 即等同于“整数”42。
+
+2.3.2　较小的数值 二进制浮点数最大的问题（不仅 JavaScript，所有遵循 IEEE 754 规范的语言都是如此），是 会出现如下情况：
+0.1 + 0.2 === 0.3; // false
+从数学角度来说，上面的条件判断应该为 true，可结果为什么是 false 呢？
+简单来说，二进制浮点数中的 0.1 和 0.2 并不是十分精确，它们相加的结果并非刚好等于 0.3，而是一个比较接近的数字 0.30000000000000004，所以条件判断结果为 false。
+
+2.3.3　整数的安全范围 数字的呈现方式决定了“整数”的安全值范围远远小于 Number.MAX_VALUE。
+能够被“安全”呈现的最大整数是 2^53 - 1，即 9007199254740991，在 ES6 中被定义为 Number.MAX_SAFE_INTEGER。最小整数是-9007199254740991
+
+
+
+第 3 章 原生函数
+
+常用的原生函数有：
+• String() • Number() • Boolean() • Array() • Object() • Function() • RegExp() • Date() • Error() • Symbol()——ES6 中新加入的！
+实际上，它们就是内建函数。
+
+JavaScript 中的String() 和 Java 中的字符串构造函数 String(..) 非常相似，可以这样来用：
+var s = new String( "Hello World!" ); 
+ 
+console.log( s.toString() ); // "Hello World!"
+
+原生函数可以被当作构造函数来使用，但其构造出来的对象可能会和我们设想的有所 出入：
+
+var a = new String( "abc" ); 
+ 
+typeof a;                            // 是"object"，不是 "String" 
+ 
+a instanceof String;                 // true 
+ 
+Object.prototype.toString.call( a ); // "[object String]"
+通过构造函数（如 new String("abc")）创建出来的是封装了基本类型值（如 "abc"）的封 装对象。
+请注意：typeof 在这里返回的是对象类型的子类型
+
+3.1　内部属性 [[Class]]
+所有 typeof 返回值为 "object" 的对象（如数组）都包含一个内部属性 [[Class]]（我们可 以把它看作一个内部的分类，而非传统的面向对象意义上的类）。这个属性无法直接访问， 一般通过 Object.prototype.toString(..) 来查看。
+
+　封装对象包装
+封装对象（object wrapper）扮演着十分重要的角色。由于基本类型值没有.length 和 .toString() 这样的属性和方法，需要通过封装对象才能访问，此时 JavaScript 会自动为 基本类型值包装（box 或者 wrap）一个封装对象：
+var a = "abc"; 
+ 
+a.length; // 3 a.toUpperCase(); // "ABC"
+
+封装对象释疑
+使用封装对象时有些地方需要特别注意。
+比如 Boolean：
+var a = new Boolean( false ); 
+ 
+if (!a) {     console.log( "Oops" ); // 执行不到这里 }
+我们为 false 创建了一个封装对象，然而该对象是真值（“truthy”，即总是返回 true，参见 第 4 章），所以这里使用封装对象得到的结果和使用 false 截然相反。
+如果想要自行封装基本类型值，可以使用 Object(..) 函数（不带 new 关键字）：
+var a = "abc"; var b = new String( a ); var c = Object( a ); 
+ 
+typeof a; // "string" typeof b; // "object" typeof c; // "object" 
+ 
+b instanceof String; // true c instanceof String; // true 
+ 
+Object.prototype.toString.call( b ); // "[object String]" Object.prototype.toString.call( c ); // "[object String]"
+再次强调，一般不推荐直接使用封装对象（如上例中的 b 和 c），
+
+　拆封
+如果想要得到封装对象中的基本类型值，可以使用 valueOf() 函数：
+
+　原生函数作为构造函数
+关于数组（array）、对象（object）、函数（function）和正则表达式，我们通常喜欢以常 量的形式来创建它们。实际上，使用常量和使用构造函数的效果是一样的（创建的值都是 通过封装对象来包装）。
+如前所述，应该尽量避免使用构造函数，除非十分必要
+
+3.4.1　Array(..)
+var a = new Array( 1, 2, 3 ); a; // [1, 2, 3] 
+ 
+var b = [1, 2, 3]; b; // [1, 2, 3]
+构造函数 Array(..) 不要求必须带 new 关键字。不带时，它会被自动补上。 因此 Array(1,2,3) 和 new Array(1,2,3) 的效果是一样的。
+
+3.4.2　Object(..)、Function(..) 和 RegExp(..) 同样，除非万不得已，否则尽量不要使用 Object(..)/Function(..)/RegExp(..)：
+var c = new Object(); c.foo = "bar"; c; // { foo: "bar" } 
+ 
+var d = { foo: "bar" }; d; // { foo: "bar" } 
+ 
+var e = new Function( "a", "return a * 2;" ); var f = function(a) { return a * 2; } function g(a) { return a * 2; } 
+ 
+var h = new RegExp( "^a*b+", "g" ); var i = /^a*b+/g;
+在实际情况中没有必要使用 new Object() 来创建对象，因为这样就无法像常量形式那样一 次设定多个属性，而必须逐一设定。
+构造函数 Function 只在极少数情况下很有用，比如动态定义函数参数和函数体的时候。不
+要把 Function(..) 当作 eval(..) 的替代品，你基本上不会通过这种方式来定义函数。
+强烈建议使用常量形式（如 /^a*b+/g）来定义正则表达式
+
+　Date(..) 和 Error(..) 相较于其他原生构造函数，Date(..) 和 Error(..) 的用处要大很多，因为没有对应的常量 形式来作为它们的替代。
+创建日期对象必须使用 new Date()。Date(..) 可以带参数，用来指定日期和时间，而不带 参数的话则使用当前的日期和时间。
+Date(..) 主要用来获得当前的 Unix 时间戳（从 1970 年 1 月 1 日开始计算，以秒为单位）。 该值可以通过日期对象中的 getTime() 来获得。
+从 ES5 开始引入了一个更简单的方法，即静态函数 Date.now()。对 ES5 之前的版本我们可 以使用下面的 polyﬁll：
+if (!Date.now) {     Date.now = function(){         return (new Date()).getTime();     }; }
+
+创建错误对象（error object）主要是为了获得当前运行栈的上下文（大部分 JavaScript 引擎 通过只读属性 .stack 来访问）。栈上下文信息包括函数调用栈信息和产生错误的代码行号， 以便于调试（debug）。
+
+错误对象通常与 throw 一起使用：
+function foo(x) {     if (!x) {         throw new Error( "x wasn’t provided" );     }     // ..  }
+通常错误对象至少包含一个 message 属性，有时也不乏其他属性（必须作为只读属性访 问），如 type。除了访问 stack 属性以外，最好的办法是调用（显式调用或者通过强制类 型转换隐式调用，参见第 4 章）toString() 来获得经过格式化的便于阅读的错误信息。
+
+除 Error(..) 之外，还有一些针对特定错误类型的原生构造函数，如
+ EvalError(..)、  RangeError(..)、 ReferenceError(..)、 SyntaxError(..)、
+ TypeError(..) 和 URIError(..)。这些构造函数很少被直接使用，它们在程序 发生异常（比如试图使用未声明的变量产生 ReferenceError 错误）时会被自 动调用。
+
+
+ 　Symbol(..) ES6 中新加入了一个基本数据类型 ——符号（Symbol）。符号是具有唯一性的特殊值（并 非绝对），用它来命名对象属性不容易导致重名。该类型的引入主要源于 ES6 的一些特殊 构造，此外符号也可以自行定义。
+符号可以用作属性名，但无论是在代码还是开发控制台中都无法查看和访问它的值，只会 显示为诸如 Symbol(Symbol.create) 这样的值。
+ES6 中有一些预定义符号，以Symbol 的静态属性形式出现，如Symbol.create、Symbol. iterator 等，可以这样来使用：
+obj[Symbol.iterator] = function(){ /*..*/ };
+我们可以使用 Symbol(..) 原生构造函数来自定义符号。但它比较特殊，不能带 new 关键 字，否则会出错：
+
+3.4.5　原生原型 原生构造函数有自己的 .prototype 对象，如 Array.prototype、String.prototype 等。
+
+• String#indexOf(..) 在字符串中找到指定子字符串的位置。
+• String#charAt(..) 获得字符串指定位置上的字符。
+• String#substr(..)、String#substring(..) 和 String#slice(..) 获得字符串的指定部分。  
+• String#toUpperCase() 和 String#toLowerCase() 将字符串转换为大写或小写。
+• String#trim() 去掉字符串前后的空格，返回新的字符串。
+
+
+JavaScript 为基本数据类型值提供了封装对象，称为原生函数（如 String、Number、Boolean 等）。它们为基本数据类型值提供了该子类型所特有的方法和属性（如：String#trim() 和 Array#concat(..)）。
+对于简单标量基本类型值，比如 "abc"，如果要访问它的 length 属性或 String.prototype 方法，JavaScript 引擎会自动对该值进行封装（即用相应类型的封装对象来包装它）来实 现对这些属性和方法的访问。
+
+
+第 4 章 强制类型转换
+
+4.1　值类型转换
+将值从一种类型转换为另一种类型通常称为类型转换（type casting），这是显式的情况；隐 式的情况称为强制类型转换（coercion）。
+
+4.2　抽象值操作
+介绍显式和隐式强制类型转换之前，我们需要掌握字符串、数字和布尔值之间类型转换
+
+4.2.1　ToString 规范的 9.8 节中定义了抽象操作 ToString，它负责处理非字符串到字符串的强制类型转换。
+基本类型值的字符串化规则为：null 转换为 "null"，undefined 转换为 "undefined"，true 转换为 "true"。数字的字符串化则遵循通用规则
+
+JSON 字符串化
+
+工具函数 JSON.stringify(..) 在将 JSON 对象序列化为字符串时也用到了 ToString。
+对大多数简单值来说，JSON 字符串化和 toString() 的效果基本相同，只不过序列化的结 果总是字符串：
+JSON.stringify( 42 );   // "42" JSON.stringify( "42" ); // ""42"" （含有双引号的字符串）
+ JSON.stringify( null ); // "null" JSON.stringify( true ); // "true"
+所有安全的JSON 值（JSON-safe）都可以使用JSON.stringify(..) 字符串化。安全的 JSON 值是指能够呈现为有效 JSON 格式的值。
+为了简单起见，我们来看看什么是不安全的JSON 值。undefined、function、symbol （ES6+）和包含循环引用（对象之间相互引用，形成一个无限循环）的对象都不符合 JSON 结构标准，支持 JSON 的语言无法处理它们。
+JSON.stringify(..) 在对象中遇到 undefined、function 和 symbol 时会自动将其忽略，在 数组中则会返回 null（以保证单元位置不变）。
+
+4.2.2　ToNumber 有时我们需要将非数字值当作数字来使用，比如数学运算。为此 ES5 规范在 9.3 节定义了 抽象操作 ToNumber。
+其中 true 转换为 1，false 转换为 0。undefined 转换为 NaN，null 转换为 0。
+
+　ToBoolean 下面介绍布尔值，关于这个主题存在许多误解和困惑，需要我们特别注意。
+首先也是最重要的一点是，JavaScript 中有两个关键词 true 和 false，分别代表布尔类型 中的真和假。我们常误以为数值 1 和 0 分别等同于 true 和 false。在有些语言中可能是这 样，但在 JavaScript 中布尔值和数字是不一样的。虽然我们可以将 1 强制类型转换为 true， 将 0 强制类型转换为 false，反之亦然，但它们并不是一回事。
+
+以下这些是假值：
+• undefined • null • false • +0、-0 和 NaN • ""
+假值的布尔强制类型转换结果为 false。
+从逻辑上说，假值列表以外的都应该是真值（truthy）。
+
+对象和非对象之间的相等比较 关于对象（对象 / 函数 / 数组）和标量基本类型（字符串 / 数字 / 布尔值）之间的相等比 较，ES5 规范 11.9.3.8-9 做如下规定：
+(1) 如果 Type(x) 是字符串或数字，Type(y) 是对象，则返回 x == ToPrimitive(y) 的结果； (2) 如果 Type(x) 是对象，Type(y) 是字符串或数字，则返回 ToPromitive(x) == y 的结果。
+这里只提到了字符串和数字，没有布尔值。原因是我们之前介绍过 11.9.3.6-7 中规定了布尔值会先被强制类型转换为数字。
+
+1. 返回其他数字 Number.prototype.valueOf = function() {     return 3; }; 
+ 
+new Number( 2 ) == 3;   // true
+2 == 3 不会有这种问题，因为2 和 3 都是数字基本类型值，不会调用 Number.prototype.valueOf() 方法。而 Number(2) 涉及 ToPrimitive 强制类型 转换，因此会调用 valueOf()。
+真是让人头大。这也是强制类型转换和 == 被诟病的原因之一。但问题并非出自 JavaScript， 而是我们自己。不要有这样的想法，觉得“编程语言应该阻止我们犯错误”。
+还有更奇怪的情况：
+if (a == 2 && a == 3) {     // .. }
+你也许觉得这不可能，因为 a 不会同时等于 2 和 3。但“同时”一词并不准确，因为 a == 2 在 a == 3 之前执行。
+如果让 a.valueOf() 每次调用都产生副作用，比如第一次返回 2，第二次返回 3，就会出现 这样的情况。这实现起来很简单：
+var i = 2; 
+ 
+Number.prototype.valueOf = function() {     return i++; }; 
+ 
+var a = new Number( 42 ); 
+ 
+if (a == 2 && a == 3) {     console.log( "Yep, this happened." ); }
+再次强调，千万不要这样，也不要因此而抱怨强制类型转换。对一种机制的滥用并不能成 为诟病它的借口。我们应该正确合理地运用强制类型转换，避免这些极端的情况。
+2. 假值的相等比较 == 中的隐式强制类型转换最为人诟病的地方是假值的相等比较。
+
+"0" == null;           // false "0" == undefined;      // false "0" == false;          // true -- 晕！ "0" == NaN;            // false "0" == 0;              // true "0" == "";             // false 
+ 
+false == null;         // false false == undefined;    // false false == NaN;          // false false == 0;            // true -- 晕！ false == "";           // true -- 晕！ false == [];           // true -- 晕！ false == {};           // false 
+ 
+"" == null;            // false "" == undefined;       // false "" == NaN;             // false "" == 0;               // true -- 晕！ "" == [];              // true -- 晕！ "" == {};              // false 
+ 
+0 == null;             // false 0 == undefined;        // false 0 == NaN;              // false 0 == [];               // true -- 晕！ 0 == {};               // false
+以上 24 种情况中有 17 种比较好理解。比如我们都知道 "" 和 NaN 不相等，"0" 和 0 相等
+
+3. 极端情况 这还不算完，还有更极端的例子：
+[] == ![]   // true
+事情变得越来越疯狂了。看起来这似乎是真值和假值的相等比较，结果不应该是 true，因 为一个值不可能同时既是真值也是假值！
+事实并非如此。让我们看看 ! 运算符都做了些什么？根据 ToBoolean 规则，它会进行布尔 值的显式强制类型转换（同时反转奇偶校验位）。所以 [] == ![] 变成了 [] == false。前 面我们讲过 false == []，最后的结果就顺理成章了。
+再来看看其他情况：
+ 2== [2];       // true "" == [null];   // true
+介绍 ToNumber 时我们讲过，== 右边的值 [2] 和 [null] 会进行 ToPrimitive 强制类型转换， 以便能够和左边的基本类型值（2 和 ""）进行比较。因为数组的 valueOf() 返回数组本身， 所以强制类型转换过程中数组会进行字符串化。
+
+4.6　抽象关系比较
+
+该算法仅针对 a < b，a=""> b 会被处理为 b <>
+比较双方首先调用 ToPrimitive，如果结果出现非字符串，就根据 ToNumber 规则将双方强 制类型转换为数字来进行比较。
+例如：
+var a = [ 42 ]; var b = [ "43" ];
+
+如果比较双方都是字符串，则按字母顺序来进行比较：
+var a = [ "42" ]; var b = [ "043" ]; 
+ 
+a < b;  // false
+a 和 b 并没有被转换为数字，因为 ToPrimitive 返回的是字符串，所以这里比较的是 "42" 和 "043" 两个字符串，它们分别以 "4" 和 "0" 开头。因为 "0" 在字母顺序上小于 "4"，所以 最后结果为 false。
+同理：
+var a = [ 4, 2 ]; var b = [ 0, 4, 3 ]; 
+ 
+a < b;  // false
+a 转换为 "4, 2"，b 转换为 "0, 4, 3"，同样是按字母顺序进行比较。
+再比如：
+var a = { b: 42 }; var b = { b: 43 }; 
+ 
+a < b;  // ??
+结果还是 false，因为 a 是 [object Object]，b 也是 [object Object]，所以按照字母顺序 a < b 并不成立。
+下面的例子就有些奇怪了：
+var a = { b: 42 }; var b = { b: 43 }; 
+ 
+a < b;  // false a == b; // false a > b;  // false 
+ 
+a <= b; // true a >= b; // true
+
+，即 <= 应该是“小于或者等于”。实际上 JavaScript 中 <= 是 “不大于”的意思（即 !(a > b)，处理为 !(b < a)）。同理 a >= b 处理为 b <= a。
+相等比较有严格相等，关系比较却没有“严格关系比较”（strict relational comparison）。 也 就是说如果要避免 a < b 中发生隐式强制类型转换，我们只能确保 a 和 b 为相同的类型， 除此之外别无他法。
+与 == 和 === 的完整性检查一样，我们应该在必要和安全的情况下使用强制类型转换，如： 42 < "43"。换句话说就是为了保证安全，应该对关系比较中的值进行显式强制类型转换：
+var a = [ 42 ]; var b = "043"; 
+ 
+a < b;                      // false -- 字符串比较！ Number( a ) < Number( b );  // true -- 数字比较！
+
+
+
+
+
+第 5 章 语法
+
+5.1.3　上下文规则 
+1. 大括号 
+
+5.2　运算符优先级
+ && 运算符先于 || 执行，而且执行顺序并非我们所设想的从左到右
+
+5.2.1短路 
+
+第 4 章中的附注栏提到过 && 和 || 运算符的“短路”（short circuiting）特性
+
+5.2.2更强的绑定 
+
+回顾一下前面多个运算符串联在一起的例子：
+a && b || c ? c || b ? a : c && b : a
+前端交流QQ群: 78968633
+108   ｜   第 5 章
+其中 ? : 运算符的优先级比 && 和 || 高还是低呢？执行顺序是这样？
+a && b || (c ? c || (b ? a : c) && b : a)
+还是这样？
+(a && b || c) ? (c || b) ? a : (c && b) : a
+答案是后者。因为 && 运算符的优先级高于 ||，而 || 的优先级又高于 ? :。
+因此表达式 (a && b || c) 先于包含它的 ? : 运算符执行。另一种说法是 && 和 || 比 ? : 的 绑定更强。反过来，如果 c ? c... 的绑定更强，执行顺序就会变成 a && b || (c ? c..)。
+
+
+5.2.3　关联 && 和 || 运算符先于 ? : 执行，那么如果多个相同优先级的运算符同时出现，又该如何处 理呢？它们的执行顺序是从左到右还是从右到左？
+一般说来，运算符的关联（associativity）不是从左到右就是从右到左，这取决于组合 （grouping）是从左开始还是从右开始。
+
+
+纠错机制
+
+5.4　错误
+JavaScript 不仅有各种类型的运行时错误（TypeError、ReferenceError、SyntaxError 等），
+前端交流QQ群: 78968633
+
+它的语法中也定义了一些编译时错误。
+
+提前使用变量
+ES6 规范定义了一个新概念，叫作 TDZ（Temporal Dead Zone，暂时性死区）。
+TDZ 指的是由于代码中的变量还没有初始化而不能被引用的情况。
+对此，最直观的例子是 ES6 规范中的 let 块作用域：
+{     a = 2;      // ReferenceError!     let a;  }
+a = 2 试图在 let a 初始化 a 之前使用该变量（其作用域在 { .. } 内），这里就是 a 的 TDZ，会产生错误。
+有意思的是，对未声明变量使用 typeof 不会产生错误（参见第 1章），但在 TDZ 中却会报错：
+{     typeof a;   // undefined     typeof b;   // ReferenceError! (TDZ)     let b; }
+
+
+5.5　函数参数
+另一个TDZ 违规的例子是ES6 中的参数默认值（参见本系列的《你不知道的JavaScript （下卷）》的“ES6 & Beyond”部分）：
+var b = 3; 
+ 
+function foo( a = 42, b = a + b + 5 ) {     // .. }
+b = a + b + 5 在参数 b（= 右边的 b，而不是函数外的那个）的 TDZ 中访问 b，所以会出 错。而访问 a 却没有问题，因为此时刚好跨出了参数 a 的 TDZ。
+在 ES6 中，如果参数被省略或者值为 undefined，则取该参数的默认值
+
+5.6　try..finally
+try..catch 对我们来说可能已经非常熟悉了。但你是否知道 try 可以和 catch 或者 finally 配对使用
+
+5.7　switch
+现在来简单介绍一下 switch，可以把它看作 if..else if..else.. 的简化版本：
+
+
+JavaScript 语法规则之上是语义规则（也称作上下文）。例如，{ } 在不同情况下的意思不 尽相同，可以是语句块、对象常量、解构赋值（ES6）或者命名函数参数（ES6）。
+JavaScript 详细定义了运算符的优先级（运算符执行的先后顺序）和关联（多个运算符的 组合方式）。只要熟练掌握了这些规则，就能对如何合理地运用它们作出自己的判断。
+ASI（自动分号插入）是 JavaScript 引擎的代码解析纠错机制，它会在需要的地方自动插 入分号来纠正解析错误。问题在于这是否意味着大多数的分号都不是必要的（可以省略）
+， 或者由于分号缺失导致的错误是否都可以交给 JavaScript 引擎来处理。
+JavaScript 中有很多错误类型，分为两大类：早期错误（编译时错误，无法被捕获）和运 行时错误（可以通过 try..catch 来捕获）。所有语法错误都是早期错误，程序有语法错误 则无法运行。
+函数参数和命名参数之间的关系非常微妙。尤其是 arguments 数组，它的抽象泄漏给我们 挖了不少坑。因此，尽量不要使用 arguments，如果非用不可，也切勿同时使用 arguments 和其对应的命名参数。
+finally 中代码的处理顺序需要特别注意。它们有时能派上很大用场，但也容易引起困惑， 特别是在和带标签的代码块混用时。总之，使用 finally 旨在让代码更加简洁易读，切忌 弄巧成拙。
+switch 相对于 if..else if.. 来说更为简单
+
+
+
+
+
+混合环境JavaScript
+
+A.1
+JavaScript 语言的官方名称是 ECMAScript（指的是管理它的 ECMA 标准），这一点不太为 人所知。
+
+那么 JavaScript 又是指什么呢？ JavaScript 是该语言的通用称谓，更确切地说，它 是该规范在浏览器上的实现。
+
+官方 ECMAScript 规范包括 Annex B，其中介绍了由于浏览器兼容性问题导致的与官方规 范的差异。
+可以这样来理解：这些差异只存在于浏览器中。如果代码只在浏览器中运行，就不会发现 任何差异。否则（如果代码也在 Node.js、Rhino 等环境中运行），或者你也不确定的时候， 就需要小心对
+
+• 在非严格模式中允许八进制数值常量存在，如 0123（即十进制的 83）。 • window.escape(..) 和 window.unescape(..) 让你能够转义（escape）和回转（unescape） 带有 % 分隔符的十六进制字符串。例如，window.escape( "? foo=97%&bar=3%" ) 的结果 为 "%3Ffoo%3D97%25%26bar%3D3%25"。 • String.prototype.substr 和 String.prototype.substring 十分相似，除了前者的第二个 参数是结束位置索引（非自包含），后者的第二个参数是长度（需要包含的字符数）。
+
+
+Web ECMAScript 
+
+• <!-- 和 -->
+ 是合法的单行注释分隔符。 • String.prototype 中返回HTML 格 式 字 符 串 的 附 加 方 法：anchor(..)、big(..)、 blink(..)、bold(..)、fixed(..)、fontcolor(..)、fontsize(..)、italics(..)、 link(..)、small(..)、strike(..) 和 sub(..)。
+以上内容在实际开发中很少使用，也不推荐，我们更倾向于使用其他的内建 DOM API 和自定义工具集。
+• RegExp 扩展：RegExp.$1 .. RegExp.$9（匹配组） 和 RegExp.lastMatch/RegExp["$&"]（最 近匹配）。 • Function.prototype 附加方法：Function.prototype.arguments（别名为 arguments 对象） 和 Function.caller（别名为 arguments.caller）。
+arguments 和 arguments.caller 均已被废止，所以尽量不使用它们，也不要 使用它们的别名。
+
+

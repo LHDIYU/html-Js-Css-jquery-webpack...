@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+	<title>document</title>
+	<style type="text/css">
+		div{
+			position: absolute;
+			top: 100px;
+			width: 200px;
+			height: 200px;
+		}
+		.div1{
+			left: 50px;
+			background-color: orange;
+		}
+		.div2{
+			left: 200px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+<div class="div1"></div>
+<div class="div2"></div>
+
+
+
+
+  <script type="text/javascript">
+      var dom1 = document.getElementsByTagName('div')[0];
+      var dom2 = document.getElementsByTagName('div')[1];
+  	    var cookieManage = {
+        setCookie:function(key,value,day) {
+            var oDate = new Date();
+            oDate.setDate(oDate.getDate()+day);
+            document.cookie = key+'='+value+';expires='+oDate;
+            return this;
+            
+        },
+        removeCookie:function(key) {
+            this.setCookie(key,'',-1);
+            return this;
+        },
+        getCookie:function(key,callBack) {
+
+            var cookieStr = document.cookie;
+            var cookieArr = cookieStr.split('; ');
+//                       console.log(cookieArr);
+            cookieArr.forEach(function(item){
+               var arr = item.split('=');
+                if(arr[0]===key){
+//                    alert(arr[1]);
+//                    return arr[1];
+//                    callback(arr[1]);
+                    callBack?callBack(arr[1]):'';
+                    return this;
+                }
+            });
+            return this;
+        }
+    }
+
+var gId = cookieManage.getCookie('id');
+if(!gId){
+	gId = 0;
+	 //
+	dragFunc.init(dom1);
+    dragFunc.init(dom2);
+ } else {
+ 	dragFunc.setPosition();
+ }
+// else {
+// 	 //cookieManage.setCookie('id',++gId);
+// 	 gId = cookieManage.getCookie('id',function(id){
+// 	 	gId = id;
+// 	});
+// }
+    var dragFunc = {
+    	init:function(dom) {
+           // this.positionArr = {};
+console.log(this);
+
+            this.Div = dom;
+            this.Div.id = gId++;
+
+
+
+          //  this.Div.id = (Math.random()+'').replace('.','_');
+            //this.positionArr[this.Div.id]= thid.Div;
+            // this.positionArr.push({lastLeft:dom.offsetLeft,lastTop:dom.offsetTop});
+            this.blindEvent();
+
+
+//    		this.lastX = dom.offsetLeft;
+//            this.lastY = dom.offsetTop;
+    	},
+    	setPosition:function(){
+var domCollection = document.getElementsByTagName('div');
+  for(var i = 0;i < gId;i++){
+  	var newLeft,newTop;
+    cookieManage.getCookie(i,function(pos) {
+        var  arr = pos.split('$');
+        newLeft = arr[0];
+        newTop = arr[1];
+    });
+  	domCollection[i].style.left = newLeft + 'px';
+  	domCollection[i].style.top = newTop +'px';
+    
+  }
+ this.blindEvent();
+    	},
+        blindEvent:function() {
+        this.Div.onmousedown = this.onDivdown.blind(this);
+    },
+        onDivdown:function(e) {
+            var event = e || window.event;
+            this.DisX = event.clientX -this.Div.offsetLeft;
+            this.DisY = event.clientY - this.Div.offsetTop;
+            document.onmousemove = this.onDivMove;
+            document.onmouseup = this.onDivUp;
+            
+        },
+        onDivMove:function() {
+            var newLeft = event.clientX-this.DisX;
+            var newTop = event.clientY - this.DisY;
+            this.Div.style.left = newLeft+'px';
+            this.Div.style.top = newTop +'px';
+//通过dom本身记录位置
+            this.Div.lastLeft = newLeft;
+            this.Div.lastTop = newTop;
+
+        },
+        onDivUp:function() {
+            document.onmousemove =null;
+            document.onmouseup = null;
+            var cookieStr = this.Div.lastLeft + '$' + this.Div.lastTop;
+            cookieManage.setCookie(this.Div.id,'cookieStr',1);
+            // id = cookieStr;
+        }
+    }
+    dragFunc.init(dom1);
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </script>
+    
+    
+    
+</body>
+</html>

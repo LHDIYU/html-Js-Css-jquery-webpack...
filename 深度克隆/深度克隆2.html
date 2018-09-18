@@ -1,0 +1,200 @@
+<html lang = "en">
+<head>
+  <meta charset="UTF-8">
+  <title>document</title>
+</head>
+<body>
+<script type="text/javascript">
+// 对象的克隆
+
+
+var cloneObj = function(obj){
+    var str, newobj = obj.constructor === Array ? [] : {};
+    if(typeof obj !== 'object'){
+        return;
+    } else if(window.JSON){
+        str = JSON.stringify(obj), //系列化对象
+        newobj = JSON.parse(str); //还原
+//         oldObject = {a: 1, b: function() {}}
+//         他的意思是这样的对象用此方法复制不了。
+//         var newObject = Object.create(oldObject);
+//         一般情况下通过 JSON 来复制挺好的，代码写起来也方便——不过并不是所有环境都实现了 JSON，这个需要考虑下。
+
+// 通过 deep clone 一般都是有限定复制层次的，一般情况下不会无限层的复制下去。如果使用 JSON 方式来复制，通常不能控制层次。
+
+// exports.cloneObject = function(obj) {
+//     if(typeof obj === "object") {
+//         if(util.isArray(obj)) {
+//             var newArr = [];
+//             for(var i = 0; i < obj.length; i++) newArr.push(obj[i]);
+//             return newArr;
+//         } else {
+//             var newObj = {};
+//             for(var key in obj) {
+//                 newObj[key] = this.cloneObject(obj[key]);
+//             }
+//             return newObj;
+//         }
+//     } else {
+//         return obj;
+//     }
+// };
+} else {
+        for(var i in obj){
+            newobj[i] = typeof obj[i] === 'object' ? 
+            cloneObj(obj[i]) : obj[i]; 
+        }
+    }
+    return newobj;
+};
+
+
+//测试
+var obj = {a: 0, b: 1, c: 2};
+var arr = [0, 1, 2];
+//执行深度克隆
+var newobj = cloneObj(obj);
+var newarr = cloneObj(arr);
+//对克隆后的新对象进行成员删除
+delete newobj.a;
+newarr.splice(0,1);
+console.log(obj, arr, newobj, newarr);
+//结果： {a: 0, b: 1, c: 2}, [0, 1, 2], {b: 1, c: 2}, [1, 2];
+
+
+// function clone2(obj1)
+// {
+//      var o;
+//      if(obj1.constructor==Object)
+//       { 
+//         o = new obj1.constructor() ;
+//       }
+//     else
+//      {
+//       o = new obj1.constructor(obj1.valueOf())
+//      }
+//     for(var key in obj1)
+//     {
+//       // if(obj1[key]!=o[key])
+//       if(!obj1.hasOwnProperty(key))
+//        {
+//           if(typeof obj1[key] =="object"&&obj1[key]!=null)
+//             o[key] = clone2(obj1[key]) ;
+//          else
+//             o[key] = obj1[key] ;
+//       }
+//    }
+// return o ; 
+// }
+// function Obj1(){
+// this.a = 1 ;
+// this.b = 2 ;
+// }
+// Obj1.prototype.arr = [1,2,3,4] ;
+// var o = new Obj1() ;
+// alert(o.arr[3]) ;//打印4
+
+// var o1 = clone2(o) ;
+// alert(o1.arr[3]) ;//打印4
+// o1.arr[3] = 8 ;
+// alert(o1.arr[3]) ;//打印8
+// alert(o.arr[3]) ;//打印8
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+// 数组的克隆
+
+var x=[1,2];
+var y=[];
+
+
+for(var i = 0;i<x.length;i++)
+{
+  y[i]=x[i];
+}
+y.push(3);
+
+ 
+// 1,2
+alert(x);
+ 
+// 1,2,3
+alert(y);
+
+
+var arr = ["One","Two","Three"];
+
+var arrtoo = arr.slice(0);
+arrtoo[1] = "set Map";
+document.writeln("数组的原始值：" + arr + "<br />");//Export:数组的原始值：One,Two,Three
+document.writeln("数组的新值：" + arrtoo + "<br />");//Export:数组的新值：One,set Map,Three
+
+var arr = ["One","Two","Three"];
+
+var arrtooo = arr.concat();
+arrtooo[1] = "set Map To";
+document.writeln("数组的原始值：" + arr + "<br />");//Export:数组的原始值：One,Two,Three
+document.writeln("数组的新值：" + arrtooo + "<br />");//Export:数组的新值：One,set Map To,Three
+
+
+// 对象的克隆    
+var x={1:2,3:4};
+var y={};
+var i;
+for(i in x)
+{
+  y[i]=x[i];
+}
+y[5]=6;
+ 
+// Object {1: 2, 3: 4} 
+console.log(x);
+ 
+// Object {1: 2, 3: 4, 5: 6} 
+console.log(y);
+
+
+function clone(obj)
+{
+  var o,i,j,k;
+  if(typeof(obj)!="object" || obj===null)return obj;
+  if(obj instanceof(Array))
+  {
+    o=[];
+    i=0;j=obj.length;
+    for(;i<j;i++)
+    {
+      if(typeof(obj[i])=="object" && obj[i]!=null)
+      {
+        o[i]=arguments.callee(obj[i]);
+      }
+      else
+      {
+        o[i]=obj[i];
+      }
+    }
+  }
+  else
+  {
+    o={};
+    for(i in obj)
+    {
+      if(typeof(obj[i])=="object" && obj[i]!=null)
+      {
+        o[i]=arguments.callee(obj[i]);
+      }
+      else
+      {
+        o[i]=obj[i];
+      }
+    }
+  }
+
+
+
+
+
+</script>
+</body>
+</html>

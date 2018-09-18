@@ -1,0 +1,1068 @@
+<!DOCTYPE html >
+<html lang='en'>
+<head>
+	<title></title>
+	<meta charset="utf-8">	
+	<script src='ajax.js'></script>
+	<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+        list-style: none;
+        text-decoration: none;
+        font-family: 'Microsoft YaHei',sans-serif;
+        
+	}
+  
+	.dengbang-head{
+		position: relative;
+		height: 94px;
+		background-color: #373c64;
+		
+	}
+	.dengbang-head img{
+		background: 15px 0 no-repeat ;
+		position: absolute;
+		padding: 0 90px;
+	}
+	.dengbang-twohead{
+		position: relative;
+padding-left: 90px;
+padding-top: 20px;
+height: 50px;
+	}
+	.dengbang-twohead .fangkuai{
+		background-color: #373c64;
+		position: absolute;
+		width: 5px;
+		height: 20px;
+		/*padding-top:10px;*/
+		top:35px;
+	}
+	.dengbang-twohead .zhaopin{
+		/*position: absolute;*/
+		padding-left: 20px;
+                position: absolute;
+           bottom: 14px;
+		/*color:blue;*/
+		font-size: 18px;
+		font-weight: bolder;
+		font-family: 'Microsoft YaHei',sans-serif;
+}
+	
+.dengbang-twohead .city{
+/*	background-color: red;*/
+border: 1px solid #c8c8c8;
+	width: 270px;
+	height: 39px;
+	position: absolute;
+	left:200px; 
+	cursor: pointer;
+}
+.dengbang-twohead .city span{
+	line-height: 34px;
+	color:#9a9a9a;
+}
+.dengbang-twohead .keyword{
+	width: 272px;
+	height: 36px;
+	position: absolute;
+	left:490px;
+		line-height: 34px;
+	color:#9a9a9a;
+	font-size: 16px;
+	}
+
+.citycontent{
+	position: absolute;
+	width: 700px;
+	 border: 1px solid #e9e9e9;
+            display: none;
+            z-index: 2000;
+            background-color: white;
+            left: 200px;
+
+}
+.cityzimu ul{
+	height: 32px;
+	line-height: 32px;
+	overflow: hidden;
+}
+.cityzimu ul li{
+	float: left;
+	width: 52px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	background-color: white;
+	font-size: 16px;
+	margin-left: 16px;
+	margin-right: 30px;
+    cursor: pointer;
+}
+.cityzimu ul .active{
+	background-color: #494e7b;
+color:#fff;
+}
+.cityname ul li{
+	float:left;
+	font-size: 14px;
+	width: 75px;
+	color: #999;
+	margin-left: 18px;
+	margin-right: 45px;
+	line-height: 30px;
+    cursor: pointer;
+}
+.sousuo{
+	position: absolute;
+	width: 136px;
+	height: 34px;
+	background-color: #373c64;
+	left: 790px;
+	line-height: 34px;
+	text-align: center;
+	color: white;
+		font-family: 'Microsoft YaHei',sans-serif;
+		font-weight: bolder;
+		font-size: 14px;
+		cursor: pointer;
+	}
+	.debang-head{
+		position: relative;
+
+	}
+.debang-head3 ul{
+/*padding-top:20px;*/
+	position: absolute;
+
+	left: 97px;
+	
+}
+.debang-head3 ul li{
+/*	position: absolute;*/
+	float:left;	
+	width: 100px;
+	height:40px;
+	/*padding-left: 10px;*/
+/*background-color: #373c64;*/
+}
+.debang-head3 ul li a{
+/*padding-left: 10px;*/
+color: black;
+
+text-align: center;
+line-height: 40px;
+width: 100%;
+height:40px;
+display: block;
+border-right: 1px solid #e9e9e9;
+}
+.debang-head3 ul li a:hover{
+	background-color: #494e7b;
+	color:white;
+}	
+
+ #zhiweineirong{
+        position: relative;
+        background-color: blue;
+        margin-top:100px;
+        margin-left: 100px;
+    }
+    #fan{
+        position: absolute;
+        width: 980;
+        height: 45px;
+        top: 450px;
+        text-align: center;
+        left: 300px;
+    }
+    #fan a{
+text-align: center;
+display: inline-block;
+width: 35px;
+height: 25px;
+line-height: 25px;
+
+        }
+        #fan .shang{
+            
+         
+            width: 70px;
+             
+        }
+        #fan .xia{
+            width: 70px;
+           
+            
+        }
+        #fan .active{
+
+            background-color: #494e7b;
+            color:white;
+            line-height: 25px;
+            text-align: center;
+
+        }
+        span{
+            line-height: 25px;
+            color:black;
+        }
+        .neirongul{
+            width: 980px;
+            height: 450px;
+            position: absolute;
+           
+            left: 10px;
+        }
+        .neirongul li{
+            /*position: absolute;*/
+            /*margin-right: 20px;*/
+            color:#8b8b8b;
+            height: 42px;
+            float: left;
+            line-height: 42px;
+            font-size: 14px;
+        }
+        .neirongul .di1hang{
+            cursor: pointer;
+  width: 230px;
+        }
+        .neirongul .di1hang a{
+            cursor: pointer;
+        }
+        .neirongul .di2hang{
+            width: 145px;
+        }
+        .neirongul .di3hang{
+            width: 110px;
+        }
+        .neirongul .di4hang{
+            width: 165px;
+        }
+        .neirongul .di5hang{
+            width: 170px;
+        }
+        .neirongul .di6hang{
+            width: 120px;
+        } 
+      .neirongdiv .zhiweititle{
+        background: #f7f7f7;
+        bottom: 15px;
+        position: absolute;
+width: 980px;
+height: 36px;
+left:10px;
+        }
+       .neirongdiv .zhiweititle li{
+             color:#999;
+            height: 42px;
+            float: left;
+            line-height: 42px;
+            font-size: 16px;
+            /*text-align: center;*/
+        }
+       .neirongdiv .zhiweititle .zhiweiname{
+  width: 230px;
+        }
+            .neirongdiv  .zhiweititle .zhiweididian{
+  width: 145px;
+        }
+            .neirongdiv .zhiweititle .xinzi{
+  width: 110px;
+        }
+             .neirongdiv .zhiweititle .jingyan{
+  width: 165px;
+        }
+        .neirongdiv .zhiweititle .xueli{
+  width: 170px;
+        }
+              .neirongdiv .zhiweititle .time{
+  width: 120px;
+        }
+        #active{
+
+            background-color: #494e7b;
+            color:white;
+        }
+        #zhiweineirong .same{
+            height: 29px;
+            width: 980px;
+            position: absolute;
+            top:420px;
+            font-size: 12px;
+            left: 10px;
+        }
+#gongsijianjie{
+    width: 980px;
+    height: 450px;
+    position: absolute;
+    top:780px;
+ }   
+ #gongsijianjie .fangkuai{
+    background-color: #373c64;
+        position: absolute;
+        width: 5px;
+        height: 20px;
+        /*padding-top:10px;*/
+        left: 95px;
+        top:4px;
+ }
+#gongsijianjie .gongsi{
+  left: 120px;
+        position: absolute;
+        /*color:blue;*/
+        font-size: 18px;
+        font-weight: bolder;
+        font-family: 'Microsoft YaHei',sans-serif;
+}
+#gongsijianjie img{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top:55px;
+left: 95px;
+ } 
+ #gongsijianjie .jianjie{
+width: 500px;
+    height: 400px;
+    position: absolute;
+    left: 550px;
+    top:95px;
+    font-size: 13px;
+ }  
+ #liucheng{
+    width: 980px;
+    height: 145px;
+    position: absolute;
+    top:1300px;
+
+ }
+
+
+ #liucheng .fangkuai{
+    background-color: #373c64;
+        position: absolute;
+        width: 5px;
+        height: 20px;
+        /*padding-top:10px;*/
+        left: 95px;
+        top:4px;
+ }
+ #liucheng .gongsititle{
+    height: 25px;
+ }
+#liucheng .gongsi{
+  left: 120px;
+        position: absolute;
+        /*color:blue;*/
+        font-size: 18px;
+        font-weight: bolder;
+        font-family: 'Microsoft YaHei',sans-serif;
+}
+#liucheng img{
+position: absolute;
+left: 25px;
+top:30px;
+}	
+
+#lunbo{
+width: 980px;
+height: 700px;
+position: absolute;
+top:1500px;
+}
+#lunbo .fangkuai{
+    background-color: #373c64;
+        position: absolute;
+        width: 5px;
+        height: 20px;
+        /*padding-top:10px;*/
+        left: 95px;
+        top:4px;
+ }
+ #lunbo .gongsititle{
+    height: 25px;
+ }
+#lunbo .gongsi{
+  left: 120px;
+        position: absolute;
+        /*color:blue;*/
+        font-size: 18px;
+        font-weight: bolder;
+        font-family: 'Microsoft YaHei',sans-serif;
+}
+
+
+
+
+#lunbo .lunbotu {
+        width: 980px;
+        margin: 0 auto;
+        position: absolute;
+        left: 100px;
+    }
+    #lunbo .lunbotu img {
+        border: 0
+    }
+    .poster-main {
+        position: relative;
+        margin: 0 auto;
+        top: 50px
+    }
+    .poster-main img {
+        display: block
+    }
+    .poster-main .poster-list {
+        width: 900px;
+        height: 270px
+    }
+    .poster-main .poster-list .poster-item {
+        position: absolute;
+    }
+    .poster-main .poster-btn {
+        position: absolute;
+        width: 100px;
+        height: 270px;
+        z-index: 10;
+        cursor: pointer;
+        opacity: 0.8;
+    }
+    .poster-prev-btn {
+        left: -36px;
+        top: 136px;
+        background: url(http://pic2.58.com/ui7/job/qy/mingqi/debang/lunbo_arr.png) no-repeat 0 0
+    }
+    .poster-next-btn {
+        width: 17px; 
+        height: 97px; 
+        z-index: 4;
+        right: -36px;
+        top: 136px;
+        background: url(http://pic2.58.com/ui7/job/qy/mingqi/debang/lunbo_arr.png) no-repeat -36px 0
+    }
+    .li0 {
+        width: 640px; 
+        height: 370px; 
+        left: 130px;
+        top: 0px;
+        z-index: 3;
+        opacity: 1;  
+    }
+    .li1 {
+        width: 512px; 
+        height: 296px; 
+        left: 86.6667px; 
+        top: 36.5625px; 
+        z-index: 2; 
+        opacity: 1;
+    }
+    .li2 {
+        width: 512px; 
+        height: 296px;
+        left: 301.333px; 
+        top: 37px;
+        z-index: 2;
+        opacity: 1;
+    }
+    .li3 {
+        width: 410px; 
+        height: 238px; 
+        left: 43.3333px; 
+        top: 66.25px;
+        z-index: 1; 
+        opacity: 0.5;
+    }
+    .li4 {
+        width: 410px; 
+        height: 236px;
+        left: 447.067px; 
+        top: 66.6px;
+        z-index: 1; 
+        opacity: 0.5;
+    }
+    .li5 {
+        width: 328px; 
+        height: 190px;  
+        left: 0px; 
+        top: 90px;
+        z-index: 0;
+        opacity: 0.333333;
+    }
+    .li6 {
+        width: 328px; 
+        height: 190px;  
+        left: 572.32px; 
+        top: 90.28px;
+        z-index: 0;
+        opacity: 0.333333;
+    }
+#last{
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top:2080px;
+    background-color: #373c64;
+    text-align: center;
+    line-height: 80px;
+    color: #aaaec9;
+    font-size: 16px;
+}
+
+
+
+</style>
+
+
+
+
+</head>
+<body>
+<!-- <div class='head'> -->
+	<div class='dengbang-head'><img src="http://pic2.58.com/ui7/job/qy/mingqi/debang/deb.png"></div>
+	<div class='guding'>
+	<div class='dengbang-twohead'>
+	<span class='fangkuai'></span>
+	<span class='zhaopin'>招聘职位</span>
+	<span class='city'><span>哈尔滨</span></span>
+	<input id='key' class='keyword' type="text" name="zhiwei" value='请输入职位关键字' onblur="if(this.value==''){this.value='请输入职位关键字';this.className='keyword';}" onfocus="if(this.value=='请输入职位关键字')this.value='';">
+	<span class='sousuo'>搜索</span>
+	</div>
+		<div class='citycontent'>
+	<div class='cityzimu'><ul class='citytitle'><li id='hot' class='active'>热门</li>
+	<li id='a-c'>A-C</li>
+	<li id='d-g'>D-G</li>
+	<li id='h-j'>H-J</li>
+	<li id='k-n'>K-N</li>
+	<li id='p-t'>P-T</li>
+	<li id='w-z'>W-Z</li>
+	</ul></div>
+	<div class='cityname'><ul></ul></div>
+	</div>
+	<div class='debang-head3'>
+		 <ul> <li><a href="javascript:void(0)" class="pugong">普工/技工</a></li>
+			<li><a id='active'class="kuaidiyuan" href="javascript:void(0)">快递员</a></li>
+			<li><a href="javascript:void(0)" class="siji">司机</a></li>
+<li><a href="javascript:void(0)" class='wenzhi'>文职/实习生</a></li>
+<li><a href="javascript:void(0)" class="qita">其他职位</a></li></ul> 
+	</div>
+	<div id='zhiweineirong'>
+<div class='neirongdiv'>
+<ul class=zhiweititle>
+<li class="zhiweiname">职位名称</li>
+<li class="zhiweididian">工作地点</li>
+<li class="xinzi">薪资</li>
+<li class="jingyan">工作经验</li>
+<li class="xueli">最低学历</li>
+<li class="time">发布时间</li>
+</ul>
+<ul class='neirongul'>
+</ul>
+</div>
+<div class='same'>
+  <span>附近城市相似工作:</span> 
+  <a href="">大庆</a>
+<a href="">牡丹江</a>
+<a href="">齐齐哈尔</a>
+<a href="">佳木斯</a>
+</div>
+<div id='fan'>  
+</div>
+</div>
+</div>
+<div id="gongsijianjie">
+    <div class='gongsititle'><span class="fangkuai"></span><span class="gongsi">公司简介</span></div>
+    <div class='gongsineirong'>
+       <img src="1111.png">
+       <span class='jianjie'><p>         德邦是国家“AAAAA”级物流企业，主营国内公路运输业务。截止2015年7月，公司已开设直营网点 5,500多家，服务网络遍及全国，自有营运车辆9,300余台，全国转运中心总面积超过111万平方米。
+       </p><p>       公司始终以客户为中心随时候命、持续创新，始终坚持自建营业网点、自购进口车辆、搭建最优线路，优化运力成本，为客户提供快速高效、便捷及时、安全可靠的服务体验，助力客户创造最大的价值。
+
+       </p><p>          公司秉承“承载信任、助力成功”的服务理念，保持锐意进取、注重品质,态度，强化人才战略，通过不断的技术创新和信息化系统的搭建，提升运输网络和标准化体系，创造最优化的运载模式，为广大客户提供安全、快速、专业、满意的物流服务。一直以来，公司都致力于与员工共同发展和成长，打造人企双赢。在推动经济发展，提升行业水平的同时，努力创造更多的社会效益，为国民经济的持续发展，和谐社会的创建做出积极贡献，努力将德邦打造成为中国人首选的国内物流运营商。</p></span> 
+    </div>
+</div><!-- </div> -->
+<div id="liucheng">
+    <div class='gongsititle'><span class="fangkuai"></span><span class="gongsi">招聘流程</span></div>
+    <div><img src="http://pic2.58.com/ui7/job/qy/mingqi/debang/path.png"></div>
+</div>
+<div id="lunbo">
+    <div class='gongsititle'><span class="fangkuai"></span><span class="gongsi">感受德邦</span></div>
+    <div class='lunbotu'>
+        
+        <div class="poster-main" style="width: 900px; height: 370px;">
+            <div class="poster-btn poster-prev-btn" id="xiangqian" style="width: 17px; height: 97px; z-index: 4;"></div>
+            <ul class="poster-list" style="width: 900px; height: 370px;">
+                <li class="poster-item li0">
+                    <img src="http://pic2.58.com/ui7/job/qy/mingqi/debang/3_b.jpg" width="100%" height="100%">
+                </li>
+                <li class="poster-item li1">
+                    <img src="http://pic2.58.com/ui7/job/qy/mingqi/debang/center_b.jpg" width="100%" height="100%">
+                </li>
+                <li class="poster-item li2">
+                    <img src="http://pic2.58.com/ui7/job/qy/mingqi/debang/4_b.jpg" width="100%" height="100%">
+                </li>
+                <li class="poster-item li3">
+                    <img src="http://pic2.58.com/ui7/job/qy/mingqi/debang/1_b.jpg" width="100%" height="100%">
+                </li>
+                <li class="poster-item li4">
+                    <img src="http://pic2.58.com/ui7/job/qy/mingqi/debang/6_b.jpg" width="100%" height="100%">
+                </li>
+                <li class="poster-item li5">
+                    <img src="http://pic2.58.com/ui7/job/qy/mingqi/debang/5_b.jpg" width="100%" height="100%">
+                </li>
+                <li class="poster-item li6">
+                    <img src="http://pic2.58.com/ui7/job/qy/mingqi/debang/7_b.jpg" width="100%" height="100%">
+                </li>
+            </ul>
+            <div class="poster-btn poster-next-btn" style="width: 17px; height: 97px; z-index: 4;"></div>
+        </div>  
+    </div>
+</div>
+<div id="last">
+   加入德邦&nbsp;&nbsp;感受快速成长&nbsp;&nbsp;全国服务热线:400-830-5555
+</div>
+<script>
+	
+         var hot={
+        '1':'石家庄',
+        '2':'北京',
+        '3':'上海',
+        '4':'天津',
+        '5':'重庆',
+             '6':'广州',
+             '7':'深圳',
+             '8':'东莞','9':'杭州',
+             '10':'成都',
+             '11':'沈阳',
+             '12':'大连',
+             '13':'南京',
+             '14':'苏州','15':'哈尔滨',
+             '16':'郑州','17':'济南','18':'青岛','19':'合肥','20':'西安',
+             '21':'武汉',
+             '22':'长沙','23':'不限'
+         };
+
+         var ac={ '1':'鞍山',
+        '2':'安阳',
+        '3':'巴彦淖尔市',
+        '4':'巴音郭楞',
+        '5':'包头',
+             '6':'保定',
+             '7':'宝鸡',
+             '8':'北京','9':'本溪',
+             '10':'毕节',
+             '11':'滨州',
+             '12':'沧州',
+             '13':'常州',
+             '14':'长春','15':'长沙',
+             '16':'长兴','17':'长治','18':'朝阳','19':'成都','20':'赤峰',
+             '21':'慈溪',
+
+         }; 
+         var dg={ '1':'大连',
+        '2':'大同',
+        '3':'丹阳',
+        '4':'德州',
+        '5':'东营',
+             '6':'恩施',
+             '7':'佛山',
+             '8':'福州','9':'抚顺',
+             '10':'抚州',
+             '11':'阜新',
+             '12':'阜阳',
+             '13':'赣州',
+             '14':'广元','15':'广州',
+             '16':'贵港','17':'贵阳'
+
+         }; 
+         var hj={
+         	'1':'哈尔滨',
+        '2':'海安',
+        '3':'海宁',
+        '4':'汉中',
+        '5':'杭州',
+             '6':'菏泽',
+             '7':'合肥',
+             '8':'衡水','9':'呼和浩特',
+             '10':'葫芦岛',
+             '11':'怀化',
+             '12':'淮北',
+             '13':'鸡西',
+             '14':'吉安','15':'吉林',
+             '16':'济南','17':'济宁','18':'嘉善','19':'嘉兴','20':'江门',
+             '21':'揭阳',
+             '22':'锦州','23':'晋江','23':'晋中','24':'荆门',
+             '25':'荆州',
+             '26':'景德镇','27':'酒泉'
+         };
+         var kn={ '1':'廊坊',
+        '2':'丽水',
+        '3':'连云港',
+        '4':'聊城',
+        '5':'辽阳',
+             '6':'临汾',
+             '7':'柳州',
+             '8':'洛阳','9':'牡丹江',
+             '10':'南昌',
+             '11':'南宁',
+             '12':'南阳',
+             '13':'宁波',
+             '14':'宁德','15':'泸州'
+
+         };
+         var pt={
+
+         	'1':'盘锦',
+        '2':'平顶山',
+        '3':'莆田',
+        '4':'启东',
+        '5':'钦州',
+             '6':'秦皇岛',
+             '7':'青岛',
+             '8':'清徐','9':'清远',
+             '10':'泉州',
+             '11':'日照',
+             '12':'三明',
+             '13':'汕头',
+             '14':'上海','15':'上饶',
+             '16':'绍兴','17':'沈阳','18':'十堰','19':'苏州','20':'宿州',
+             '21':'台州',
+             '22':'泰安','23':'泰州','23':'唐山','24':'天津','25':'天水',
+             '26':'铁岭','27':'通辽',
+             '28':'桐乡','29':'铜陵'
+         };
+         var wz={
+
+         	'1':'威海',
+        '2':'渭南',
+        '3':'温州',
+        '4':'乌鲁木齐',
+        '5':'无锡',
+             '6':'芜湖',
+             '7':'武汉',
+             '8':'西安','9':'厦门',
+             '10':'仙桃',
+             '11':'咸宁',
+             '12':'咸阳',
+             '13':'襄阳',
+             '14':'湘潭','15':'新乡',
+             '16':'许昌','17':'宣城','18':'盐城','19':'扬州','20':'阳江',
+             '21':'宜昌',
+             '22':'宜春','23':'宜都','23':'益阳','24':'银川','25':'鹰潭',
+             '26':'永州','27':'榆林',
+             '28':'余姚','29':'岳阳',
+             '30':'运城','31':'枣庄',
+             '32':'镇江','33':'郑州',
+             '34':'中山','35':'周口',
+             '36':'珠海','37':'诸暨',
+             '38':'淄博','39':'自贡',
+             '40':'遵义'
+         };
+         
+          var city=document.getElementsByClassName('city')[0],
+          cityname=document.getElementsByClassName('cityname')[0],
+          cityzimu=document.getElementsByClassName('cityzimu')[0],
+         	citycontent=document.getElementsByClassName('citycontent')[0],
+            zhiwei='kuaidiyuan.txt',
+         remen =document.getElementById('hot'), 
+         AC=document.getElementById('a-c'),
+           DG=document.getElementById('d-g'),
+           HJ=document.getElementById('h-j'),
+           KN=document.getElementById('k-n'),
+           PT=document.getElementById('p-t'),
+           WZ=document.getElementById('w-z');
+         city.onmouseenter=function(){
+        var html='';
+       for(var i in hot){
+      	html += '<li><a href="">' + hot[i]+ '</a></li>';
+      }
+       cityname.getElementsByTagName('ul')[0]
+        .innerHTML=html;
+        	citycontent.style.display='block';
+         }
+        
+         city.onmouseover=function(){
+         		
+         	citycontent.style.display='none'; }
+
+remen.onmouseenter=function(){
+         	var html='';
+        for(var i in hot){
+        	html += '<li><a href="">' + hot[i]+ '</a></li>';
+        }
+        cityname.getElementsByTagName('ul')[0]
+        .innerHTML=html;
+       AC.setAttribute('class','1');
+        this.setAttribute('class','active');
+        DG.setAttribute('class','1');
+        HJ.setAttribute('class','1');
+        KN.setAttribute('class','1');
+        PT.setAttribute('class','1');
+        WZ.setAttribute('class','1');
+	// remen.style.backgroundColor='#494e7b';
+ //    remen.style.color='#fff';
+ //      AC.style.backgroundColor='#444';
+ //      AC.color='black';
+ //          DG.style.backgroundColor='white';
+ //         DG.color='black';
+ //         HJ.style.backgroundColor='white';
+ //         HJ.color='black';
+ //         KN.style.backgroundColor='white';
+ //        KN.color='black';
+ //          PT.style.backgroundColor='white';
+ //         PT.color='black';
+ //         WZ.style.backgroundColor='white';
+ //         WZ.color='black';
+
+         }
+         AC.onmouseenter=function(){
+         	var html='';
+        for(var i in ac){
+        	html += '<li><a href="">' + ac[i]+ '</a></li>';
+        }
+        cityname.getElementsByTagName('ul')[0]
+        .innerHTML=html;
+        remen.setAttribute('class','1');
+        this.setAttribute('class','active');
+        DG.setAttribute('class','1');
+        HJ.setAttribute('class','1');
+        KN.setAttribute('class','1');
+        PT.setAttribute('class','1');
+        WZ.setAttribute('class','1');
+
+
+         }
+         DG.onmouseenter=function(){
+         	var html='';
+        for(var i in dg){
+        	html += '<li><a href="">' + dg[i]+ '</a></li>';
+        }
+        cityname.getElementsByTagName('ul')[0]
+        .innerHTML=html;
+        remen.setAttribute('class','1');
+        this.setAttribute('class','active');
+        AC.setAttribute('class','1');
+        HJ.setAttribute('class','1');
+        KN.setAttribute('class','1');
+        PT.setAttribute('class','1');
+        WZ.setAttribute('class','1');
+
+
+         }
+          HJ.onmouseenter=function(){
+         	var html='';
+        for(var i in hj){
+        	html += '<li><a href="">' + hj[i]+ '</a></li>';
+        }
+        cityname.getElementsByTagName('ul')[0]
+        .innerHTML=html;
+        remen.setAttribute('class','1');
+        this.setAttribute('class','active');
+        AC.setAttribute('class','1');
+        DG.setAttribute('class','1');
+        KN.setAttribute('class','1');
+        PT.setAttribute('class','1');
+        WZ.setAttribute('class','1');
+         }
+          KN.onmouseenter=function(){
+         	var html='';
+        for(var i in kn){
+        	html += '<li><a href="">' + kn[i]+ '</a></li>';
+        }
+        cityname.getElementsByTagName('ul')[0]
+        .innerHTML=html;
+        remen.setAttribute('class','1');
+        this.setAttribute('class','active');
+        AC.setAttribute('class','1');
+        HJ.setAttribute('class','1');
+        DG.setAttribute('class','1');
+        PT.setAttribute('class','1');
+        WZ.setAttribute('class','1');
+         }
+          PT.onmouseenter=function(){
+         	var html='';
+        for(var i in pt){
+        	html += '<li><a href="">' + pt[i]+ '</a></li>';
+        }
+        cityname.getElementsByTagName('ul')[0]
+        .innerHTML=html;
+        remen.setAttribute('class','1');
+        this.setAttribute('class','active');
+        AC.setAttribute('class','1');
+        HJ.setAttribute('class','1');
+        KN.setAttribute('class','1');
+        DG.setAttribute('class','1');
+        WZ.setAttribute('class','1')
+
+         }
+          WZ.onmouseenter=function(){
+         	var html='';
+        for(var i in wz){
+        	html += '<li><a href="">' + wz[i]+ '</a></li>';
+        }
+        cityname.getElementsByTagName('ul')[0]
+        .innerHTML=html;
+        remen.setAttribute('class','1');
+        this.setAttribute('class','active');
+        AC.setAttribute('class','1');
+        HJ.setAttribute('class','1');
+        KN.setAttribute('class','1');
+        PT.setAttribute('class','1');
+        DG.setAttribute('class','1');
+         }
+
+
+    function fanye(zhongyeshu,dangqianyeshu){
+        var fan=document.getElementById('fan');
+        var html='';
+        console.log(typeof(zhiwei));
+if(zhongyeshu<=10&&dangqianyeshu===1){
+
+    for(var i=1;i<=zhongyeshu;i++){
+        html+='<a href="javascript:void(0)" onclick=fanye('+zhongyeshu+','+i+')><span>'+i+'</span></a>';
+    }
+    html+='<a href="javascript:void(0)" onclick=fanye('+zhongyeshu+','+(dangqianyeshu+1)+') class="xia"><span>下一页</span></a>';
+
+    }
+    else if(zhongyeshu<=10&&dangqianyeshu != 1&&dangqianyeshu!=zhongyeshu)
+    {
+            html+='<a href="javascript:void(0)" onclick=fanye('+zhongyeshu+','+(dangqianyeshu-1)+') class="shang"><span>上一页</span></a>';
+        for(i=1;i<=zhongyeshu;i++){
+            html+='<a href="javascript:void(0)" onclick=fanye('+zhongyeshu+','+i+')><span>'+i+'</span></a>';
+        }
+        html+='<a href="javascript:void(0)" onclick=fanye('+zhongyeshu+','+(dangqianyeshu+1)+') class="xia"><span>下一页</span></a>';
+
+    }
+    else if(dangqianyeshu===zhongyeshu){
+        html+='<a href="javascript:void(0)" onclick=fanye('+zhongyeshu+','+(dangqianyeshu-1)+') class="shang" ><span>上一页</span></a>';
+        for(i=1;i<=zhongyeshu;i++){
+            html+='<a href="javascript:void(0)" onclick=fanye('+zhongyeshu+','+i+')><span>'+i+'</span></a>';
+        }
+
+
+    }
+    fan.innerHTML=html;
+console.log(dangqianyeshu);
+var alldangqian = fan.getElementsByTagName('a');
+if(dangqianyeshu==1){
+    alldangqian[0].setAttribute('class','active');
+}
+else{
+    alldangqian[dangqianyeshu].setAttribute('class','active');
+}
+
+Ajax('post',zhiwei,true,huidiao);
+function huidiao(data){
+var a=JSON.parse(data);
+    console.log(a);
+    var b=a[dangqianyeshu];
+    var coo='';
+    for(var i in b){
+if(i%10==1){
+        coo += '<li class="di1hang"> <a href="">'+ b[i]+'</a></li>';}
+        else if(i%10==2){ coo += '<li class="di2hang"> '+ b[i]+'</li>';}
+        else if(i%10==3){ coo += '<li class="di3hang"> '+ b[i]+'</li>';}
+        else if(i%10==4){ coo += '<li class="di4hang"> '+ b[i]+'</li>';}
+        else if(i%10==5){ coo += '<li class="di5hang"> '+ b[i]+'</li>';}
+        else if(i%10==6){ coo += '<li class="di6hang"> '+ b[i]+'</li>';}
+    }
+    var ul=document.getElementsByClassName('neirongul')[0];
+    ul.innerHTML=coo;
+}
+}
+var kuaidiyuan=document.getElementsByClassName('kuaidiyuan')[0],
+    siji=document.getElementsByClassName('siji')[0],
+    pugong=document.getElementsByClassName('pugong')[0],
+    wenzhi=document.getElementsByClassName('wenzhi')[0],
+    qita=document.getElementsByClassName('qita')[0];
+kuaidiyuan.onclick=function(){
+    zhiwei='kuaidiyuan.txt';
+    fanye(6,1);
+    console.log(111);
+    qita.setAttribute("id","1");
+    wenzhi.setAttribute("id","1");
+    pugong.setAttribute("id","1");
+    siji.setAttribute("id","1");
+    this.setAttribute("id","active");
+}
+siji.onclick=function(){
+   zhiwei='siji.txt';
+    fanye(1,1);
+    console.log(222);
+    qita.setAttribute("id","1");
+    wenzhi.setAttribute("id","1");
+    pugong.setAttribute("id","1");
+    kuaidiyuan.setAttribute("id","1");
+    this.setAttribute("id","active");
+}
+wenzhi.onclick=function(){
+   zhiwei='wenzhi.txt';
+    fanye(1,1);
+    console.log(222);
+    qita.setAttribute("id","1");
+    siji.setAttribute("id","1");
+    pugong.setAttribute("id","1");
+    kuaidiyuan.setAttribute("id","1");
+    this.setAttribute("id","active");
+}
+pugong.onclick=function(){
+   zhiwei='pugong.txt';
+    fanye(5,1);
+    console.log(222);
+    qita.setAttribute("id","1");
+    wenzhi.setAttribute("id","1");
+    siji.setAttribute("id","1");
+    kuaidiyuan.setAttribute("id","1");
+    this.setAttribute("id","active");
+}
+qita.onclick=function(){
+   zhiwei='qita.txt';
+    fanye(7,1);
+    console.log(222);
+    wenzhi.setAttribute("id","1");
+    pugong.setAttribute("id","1");
+    siji.setAttribute("id","1");
+    kuaidiyuan.setAttribute("id","1");
+    this.setAttribute("id","active");
+}
+window.onload = function () {
+        var oPrevDiv1 = document.getElementsByClassName('poster-prev-btn')[0];
+        var oPrevDiv2 = document.getElementsByClassName('poster-next-btn')[0];
+        var oul=document.getElementsByClassName('poster-list')[0];
+        var oLi = oul.getElementsByTagName('li');
+        var arr = [];
+        function getStyle(obj,attr){
+            if (obj.currentStyle) {
+                return obj.currentStyle[attr];
+
+            }else{
+                return getComputedStyle(obj,false)[attr];
+            }
+        }
+        for (var i = 0; i < oLi.length; i++) {
+            arr.push([getStyle(oLi[i],"left"),getStyle(oLi[i],"top"),getStyle(oLi[i],"opacity")*100,getStyle(oLi[i],"z-index"),getStyle(oLi[i],"width"),getStyle(oLi[i],"height")]);
+        }
+        function move(){
+            for (var i = 0; i < oLi.length; i++) {
+                oLi[i].style.zIndex = arr[i][3];
+                oLi[i].style.left = arr[i][0];
+                oLi[i].style.top = arr[i][1];
+                oLi[i].style.opacity = arr[i][2];
+                oLi[i].style.width = arr[i][4];
+                oLi[i].style.height = arr[i][5];
+            }
+        }
+        oPrevDiv1.onclick = function(){
+            arr.push(arr[0]);
+            arr.shift();
+            move();
+        }
+        oPrevDiv2.onclick = function(){
+            arr.unshift(arr[arr.length-1]);
+            arr.pop();
+            move();
+        }
+    }
+fanye(6,1);
+</script>
+</body>
+</html>

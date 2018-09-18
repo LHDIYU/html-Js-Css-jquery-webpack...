@@ -1,0 +1,22 @@
+.navWrapper{
+	position:absoulute;
+	perspective:600px;
+	li{
+		float: left;
+		position: relative;
+		transform-style:preserve-3d;
+		transition:transform 0.3s ease-in;
+		div{
+			height:100%;
+			width:100%;
+			text-align: center;
+			font-weight: bold;
+			font-style: italic;
+			color: white;
+			position: absolute;
+		}
+	}
+}
+.navWrapper li:hover{
+	transform:rotatex(90deg);
+}

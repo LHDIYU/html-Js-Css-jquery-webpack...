@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,initial-scale=1.0,user-scalable=no" name="viewport">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-position: 50%;
+            background-size: 200px 200px;
+            background-repeat: no-repeat
+        }
+
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width=300 height=300></canvas>
+    <script>
+
+        var canvas = document.getElementById('canvas'),
+            w = canvas.clientWidth,
+            h = canvas.clientHeight,
+            ctx = canvas.getContext('2d'),
+            pObj = canvas.getBoundingClientRect(),
+            offsetX = pObj.left,
+            offsetY = pObj.top;
+
+        function init() {
+            // 设置灰色图层
+            ctx.fillStyle='transparent';
+            ctx.fillRect(0, 0, w, h);
+            ctx.fillStyle = '#ccc';
+            ctx.fillRect(0, 0, w, h);
+            // 加载结果图案
+            var r = random(),
+                img = new Image();
+
+            if(r < 0.5) {
+                img.src = './baozou1.png';
+            } else {
+                img.src = './baozou2.jpg';
+            }
+
+            img.addEventListener('load', function(){
+                // 设置背景图案
+                canvas.style.backgroundImage = "url('"+ img.src +"')";
+                ctx.globalCompositeOperation = 'destination-out';
+                bindEvent();
+            });
+
+        }
+
+        // 随机数函数
+        function random() {
+            return Math.random();
+        }
+
+        // 绑定事件
+        function bindEvent() {
+            canvas.addEventListener('touchmove', moveHandler, false);
+            canvas.addEventListener('touchend', endHandler, false);
+        }
+
+        function moveHandler(e) {
+            var cx = e.touches[0].clientX - offsetX,
+                cy = e.touches[0].clientY - offsetY;
+
+            ctx.fillStyle = '#ccc';
+            ctx.beginPath();
+            ctx.arc(cx, cy, 20, 0, 2*Math.PI, 0);
+            ctx.closePath();
+            ctx.fill();
+        }
+
+        function endHandler(e) {
+            var d = ctx.getImageData(0, 0, w, h),
+                c = 0;
+            // 判断是否超过70%
+            for (var i = 0, len = d.data.length; i < len; i += 4) {
+                if(d.data[i+3] === 0) {
+                    c++;
+                }
+            }
+
+            if (c > w*h*0.7) {
+                // 清除画板
+                ctx.clearRect(0, 0, w, h);
+                // 解绑事件
+                canvas.removeEventListener('toucheend');
+                canvas.removeEventListener('touchemove');
+            }
+        }
+
+        init();
+
+        // 改进
+        // 改成抽样取点
+
+    </script>
+</body>
+</html>
+<!--
+1.移动端页面
+2.使用touch事件
+3.有两种结果
+4.当刮开的区域大于70%时认为已经知道答案，自动刮开全部-->

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+        .wrapper {
+            position: relative;
+            width: 500px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 150px auto 0 auto;
+            overflow: hidden;
+        }
+        ul {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2500px;
+            height: 200px;
+        }
+        ul li {
+            float: left; 
+            width: 500px;
+            height: 200px;
+        }
+        ul li img {
+            width: 500px;
+            height: 200px;
+        }
+        .wrapper .slider-index {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            width: 250px;
+            margin-left: -125px;
+            text-align: center;
+        }
+        .wrapper .slider-index i {
+            display: inline-block;
+            background: grey;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+        .wrapper .slider-index .active {
+            background: red;
+        }
+        .wrapper div.btn {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            opacity: 0.5;
+            background: black;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+        }
+
+        .wrapper div.btn:hover {
+            opacity: 1;
+        }
+
+
+
+        .wrapper div.btnLeft {
+            left: 0;
+            top: 50%;
+            margin-top: -20px;
+        }
+
+        .wrapper div.btnRight {
+            right: 0;
+            top: 50%;
+            margin-top: -20px;
+        }
+    </style>
+</head>
+<body>
+    <div class='wrapper'>
+        <ul id='slider'>
+            <li><img src="cat1.jpg"/></li>
+            <li><img src="cat2.jpg"/></li>
+            <li><img src="cat3.jpg"/></li>
+            <li><img src="cat4.jpg"/></li>
+            <li><img src="cat1.jpg"/></li>
+        </ul>
+        <div id='slider-index' class='slider-index'>
+            <i class='active'></i>
+            <i></i>
+            <i></i>
+            <i></i>
+        </div>
+        <div class='btnLeft btn' id='left'> left </div>
+        <div class='btnRight btn' id='right'> right </div>
+
+        <script>
+
+            var $Slider = document.getElementById('slider');
+            var moveWidth = $Slider.children[0].offsetWidth;
+            var $LeftBtn = document.getElementById('left');
+            var $RightBtn = document.getElementById('right');
+            var $I = document.getElementsByTagName('i');
+            var sliderTimer = null;
+            var num = $Slider.children.length - 1;
+            var flag = true;
+            var index = 0;
+
+            $LeftBtn.onclick = function () {
+                autoMove(-1);
+            };
+
+            $RightBtn.onclick = function () {
+                autoMove(1);
+            };
+
+
+            for (var i = 0; i < $I.length; i++) {
+                $I[i].onclick = (function (iIndex) {
+                    return function () {
+                        clearInterval(sliderTimer);
+                        index = iIndex;
+                        startMove($Slider, {left: -iIndex * moveWidth}, endJudge);
+                    }
+                })(i)
+            }
+
+            //  direction -1 ---向左轮播
+            // direction 1 / undefined -----向右轮播
+            function autoMove(direction) {
+                if (flag) {
+                    flag = false;
+                    clearInterval(sliderTimer);
+                    if(direction === 1 || !direction) {
+                        index++;
+                        startMove($Slider, {left: $Slider.offsetLeft - moveWidth}, endJudge);
+                    }else if (direction === -1) {
+                        index--;
+                        if ($Slider.offsetLeft === 0) {
+                            $Slider.style.left = -moveWidth * num + 'px';
+                            index = num - 1;
+                        }
+                        startMove($Slider, {left: $Slider.offsetLeft + moveWidth}, endJudge);
+                    }
+                }
+            }
+
+           function endJudge () {
+                if ($Slider.offsetLeft === - moveWidth * num) {
+                    $Slider.style.left = '0px';
+                    index = 0;
+                }       
+                sliderTimer = setInterval(autoMove, 1500); 
+                flag = true;  
+                changeIndex(index);
+           }
+
+           function changeIndex (index) {
+               for (var i = 0; i < $I.length; i++) {
+                    $I[i].setAttribute('class', '');
+               }
+               $I[index].setAttribute('class', 'active');
+           }
+
+           sliderTimer = setInterval(autoMove, 1500);   
+
+
+
+//------------------------------------------------------------------------------------------------
+        function getStyle (obj, attr) {
+            if (obj.currentStyle) {
+                return obj.currentStyle[attr];
+            }else {
+                return window.getComputedStyle(obj,false)[attr];
+            }
+        }
+                
+        function startMove (obj, json, func) {
+            clearInterval(obj.timer);
+            var iSpeed;
+            var iCur;
+            var name;
+            obj.timer = setInterval(function () {
+                var bStop = true;
+                for (var attr in json) {                            
+                    if (attr === 'opacity') {                                
+                        name = attr;
+                        iCur = parseFloat(getStyle(obj, attr)) * 100;
+                    }else {
+                        iCur = parseInt(getStyle(obj, attr));
+                    }                            
+                    iSpeed = (json[attr] - iCur) / 7;
+                    if (iSpeed > 0) {
+                        iSpeed = Math.ceil(iSpeed);
+                    }else {
+                        iSpeed = Math.floor(iSpeed);
+                    }
+                    if (attr === 'opacity') {
+                        obj.style.opacity = (iCur + iSpeed) / 100;
+                    }else {
+                        obj.style[attr] = iCur + iSpeed + 'px';
+                    }
+                    if (Math.floor(Math.abs(json[attr] - iCur)) !== 0) {
+                        bStop = false;
+                        console.log(false)
+                    }
+                }
+                if (bStop) {
+                    if (name === 'opacity') {
+                        obj.style.opactiy = json[name] / 100;
+                    }
+                    clearInterval(obj.timer);
+                    console.log('---')
+                    func();
+                }
+            }, 30);
+        } 
+        </script>
+    </div>
+</body>
+</html>

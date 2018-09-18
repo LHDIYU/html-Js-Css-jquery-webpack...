@@ -1,0 +1,1141 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font: 12px/20px arial, helvetica, verdana, tahoma, sans-serif;
+}
+
+body {
+    background-color: #fff;
+}
+
+img {
+    display: inline-block;
+    border: 0 none;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: outside none none;
+}
+
+li {
+    list-style: outside none none;
+}
+
+
+/*>>>>>>>>>>>>>>>>>>窗口部分///////////////>>>>>>>>>>>>>>>>*/
+
+#header {
+    background: #fff none repeat scroll 0 0;
+    height: 135px;
+    min-width: 990px;
+    width: 100%;
+    font: 12px/20px "Microsoft YaHei", helvetica, arial, sans-serif;
+}
+
+.header-1 {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    padding-top: 21px;
+    background-color: #fff;
+    border-color: #fff;
+    z-index: 11010;
+}
+
+.topheader {
+    position: relative;
+    max-width: 1440px;
+    min-width: 1200px;
+    height: 60px;
+    padding: 0 10px;
+    margin: 0 auto;
+    z-index: 1290;
+}
+
+.topheaderbox1 {
+    position: relative;
+    float: left;
+    height: 50px;
+    min-width: 145px;
+    margin-right: 80px;
+    padding-left: 20px;
+    background: #fff none repeat scroll 0 0;
+}
+
+.topheaderbox1-a {
+    color: #2fb3ff;
+}
+
+.topheaderbox2 {
+    position: absolute;
+    top: 16px;
+    left: 185px;
+    padding: 0 10px 30px;
+    z-index: 1290;
+}
+
+.topheaderbox2-a {
+    display: block;
+    color: #999;
+    font-size: 13px;
+    line-height: 14px;
+}
+
+.topheaderbox2-a:hover {
+    color: red;
+}
+
+.topheaderbox2-i {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0) url("http://css.ykimg.com/youku/dist/img/find/header_513e750.png") no-repeat scroll -120px -258px;
+    height: 12px;
+    width: 12px;
+    margin-right: 4px;
+    vertical-align: top;
+}
+
+.topheaderbox3-ul {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 40px;
+}
+
+.topheaderbox3-li {
+    float: left;
+    height: 38px;
+    line-height: 38px;
+    margin-right: -1px;
+}
+
+.topheaderbox3-a,
+.topheaderbox3-a-1,
+.topheaderbox3-a-2 {
+    position: relative;
+    display: block;
+    font-size: 13px;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 18px;
+    border: 1px solid #2fb3ff;
+    color: #2fb3ff;
+}
+
+.topheaderbox3-a:hover,
+.topheaderbox3-a-1:hover,
+.topheaderbox3-a-2:hover {
+    color: red;
+}
+
+.topheaderbox3-a-1,
+.topheaderbox3-a-2 {
+    border-radius: 2px 0 0 2px;
+}
+
+.topheaderbox4 {
+    float: left;
+}
+
+.topheaderbox4-1 {
+    float: left;
+    height: 40px;
+    width: 66px;
+    margin-right: 10px;
+}
+
+.topheaderbox4-2,
+.topheaderbox4-3 {
+    position: relative;
+    float: left;
+    width: 52px;
+    padding-bottom: 30px !important;
+}
+
+.topheaderbox4-4 {
+    position: relative;
+    float: left;
+    width: 46px;
+    padding-bottom: 30px !important;
+}
+
+.topheaderbox4-1-1,
+.topheaderbox4-2-1,
+.topheaderbox4-3-1,
+.topheaderbox4-4-1 {
+    position: relative;
+    height: 20px;
+    line-height: 20px;
+    padding: 10px 0;
+}
+
+.topheaderbox4-1a,
+.topheaderbox4-2a,
+.topheaderbox4-3a,
+.topheaderbox4-4a {
+    color: #3f3f40;
+    font-size: 13px;
+}
+
+.topheaderbox4-1i,
+.topheaderbox4-2i,
+.topheaderbox4-3i,
+.topheaderbox4-4i {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0) url("http://css.ykimg.com/youku/dist/img/find/header_513e750.png") no-repeat scroll 0 0;
+    height: 20px;
+    width: 20px;
+    margin-top: -2px;
+    vertical-align: middle;
+}
+
+.topheaderbox4-1i {
+    background-position: 0 0;
+    margin-right: 3px;
+}
+
+.topheaderbox4-1a:hover {
+    color: red;
+}
+
+.topheaderbox4-2i {
+    background-position: -98px -237px;
+    margin-right: 4px;
+}
+
+.topheaderbox4-3i {
+    background-position: -20px 0;
+}
+
+.topheaderbox4-4i {
+    background-position: -40px 1px;
+    margin-right: 4px;
+}
+
+.topheaderbox4-2b,
+.topheaderbox4-3b,
+.topheaderbox4-4b {
+    position: absolute;
+    left: 24px;
+    top: 17px;
+    height: 5px;
+    width: 9px;
+    line-height: 0;
+    font-size: 0;
+    background: rgba(0, 0, 0, 0) url("http://css.ykimg.com/youku/dist/img/find/header_513e750.png") no-repeat scroll -60px 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in 0s;
+    vertical-align: middle;
+}
+
+.topheaderbox5 {
+    float: right;
+    right: 10px;
+    position: absolute;
+    margin-left: 20px;
+    height: 38px;
+    width: 448px;
+    /*border:1px solid #2fb3ff;*/
+    border-radius: 2px;
+    z-index: 1080;
+}
+
+.topheaderbox5-1 {
+    width: 460px;
+}
+
+.topheaderbox5i {
+    float: right;
+    position: absolute;
+    left: 11px;
+    top: 11px;
+    height: 16px;
+    width: 16px;
+    background: rgba(0, 0, 0, 0) url("http://css.ykimg.com/youku/dist/img/find/header_513e750.png") no-repeat scroll -133px -189px;
+}
+
+.winput {
+    float: left;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    width: 320px;
+    padding: 9px 12px 9px 38px;
+    margin: 0;
+    outline: 0 none;
+    vertical-align: middle;
+    border: 1px solid #2fb3ff;
+    color: #555;
+    background: #fff none repeat scroll 0 0;
+}
+
+.winput:focus {
+    border: 1px solid #555;
+}
+
+.topheaderbox5a {
+    float: right;
+    position: absolute;
+    right: 88px;
+    top: 0;
+    height: 38px;
+    width: 20px;
+    color: #2fb3ff;
+    background: rgba(0, 0, 0, 0) url("http://r4.ykimg.com/0510000056C3F4D767BC3D1F8D09775A") no-repeat scroll left center;
+    z-index: 2;
+}
+
+.topheaderbox5button {
+    float: right;
+    font-family: "微软雅黑";
+    font-size: 13px;
+    cursor: pointer;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    height: 40px;
+    line-height: 40px;
+    width: 80px;
+    border: 0 none;
+    outline: 0 none;
+    text-align: center;
+    color: #fff;
+    background: #2fb3ff url("http://css.ykimg.com/youku/dist/img/find/header_513e750.png") no-repeat scroll 0 -315px;
+}
+
+.topheaderbox5 .button {
+    float: right;
+    position: absolute;
+    right: 200px;
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+    padding: 0 20px;
+    text-align: center;
+    text-decoration: none;
+    font: bold 12px/25px Arial, sans-serif;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, .22);
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, .29), inset 1px 1px 1px rgba(255, 255, 255, .44);
+    -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, .29), inset 1px 1px 1px rgba(255, 255, 255, .44);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .29), inset 1px 1px 1px rgba(255, 255, 255, .44);
+    -webkit-transition: all 0.15s ease;
+    -moz-transition: all 0.15s ease;
+    -o-transition: all 0.15s ease;
+    -ms-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+}
+
+
+/* Green Color */
+
+.topheaderbox5 .green {
+    color: #3e5706;
+    background: #a5cd4e;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a5cd4e), color-stop(100%, #6b8f1a));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+    /* IE10+ */
+    background: linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+    /* W3C */
+}
+
+
+/* Blue Color */
+
+.topheaderbox5 .blue {
+    color: #19667d;
+    background: #70c9e3;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #70c9e3 0%, #39a0be 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #70c9e3), color-stop(100%, #39a0be));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #70c9e3 0%, #39a0be 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #70c9e3 0%, #39a0be 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #70c9e3 0%, #39a0be 100%);
+    /* IE10+ */
+    background: linear-gradient(top, #70c9e3 0%, #39a0be 100%);
+    /* W3C */
+}
+
+
+/* Big Button Style */
+
+.topheaderbox5 .big {
+    padding: 0 20px;
+    height: 30px;
+    text-transform: uppercase;
+}
+
+
+/*。>>>>>>>>>>>>>>>>>>>>>>>>>底导航栏？？？*/
+
+.bottomheader {
+    position: absolute;
+    height: 51px;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #e3e7e8;
+    border-top: 1px solid #e3e7e8;
+    color: #555;
+}
+
+.bottomheader1 {
+    position: relative;
+    max-width: 1340px;
+    width: 1340px;
+    height: 51px;
+    margin: 0 auto !important;
+}
+
+.bottomheader1::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.bottomheaderul {
+    position: relative;
+    top: 0;
+    left: 0;
+    float: left;
+    padding-left: 15px;
+    width: 1158px;
+}
+
+.bottomheaderli-1,
+.bottomheaderli-2,
+.bottomheaderli-3,
+.bottomheaderli-4,
+.bottomheaderli-5,
+.bottomheaderli-6,
+.bottomheaderli-7,
+.bottomheaderli-8,
+.bottomheaderli-9,
+.bottomheaderli-10,
+.bottomheaderli-11,
+.bottomheaderli-12,
+.bottomheaderli-13,
+.bottomheaderli-14,
+.bottomheaderli-15,
+.bottomheaderli-16,
+.bottomheaderli-17,
+.bottomheaderli-18,
+.bottomheaderli-19,
+.bottomheaderli-20,
+.bottomheaderli-21,
+.bottomheaderli-22,
+.bottomheaderli-23,
+.bottomheaderli-24,
+.bottomheaderli-25,
+.bottomheaderli-26 {
+    float: left;
+    height: 51px;
+    margin-right: 6px;
+    position: relative;
+}
+
+.bottomheadera-1,
+.bottomheadera-2,
+.bottomheadera-3,
+.bottomheadera-4,
+.bottomheadera-5,
+.bottomheadera-6,
+.bottomheadera-7,
+.bottomheadera-8,
+.bottomheadera-9,
+.bottomheadera-10,
+.bottomheadera-11,
+.bottomheadera-12,
+.bottomheadera-13,
+.bottomheadera-14,
+.bottomheadera-15,
+.bottomheadera-16,
+.bottomheadera-17,
+.bottomheadera-18,
+.bottomheadera-19,
+.bottomheadera-20,
+.bottomheadera-21,
+.bottomheadera-22,
+.bottomheadera-23,
+.bottomheadera-24,
+.bottomheadera-25,
+.bottomheadera-26 {
+    display: block;
+    font-size: 14px;
+    line-height: 50px;
+    padding: 0 5px;
+    color: #555;
+}
+
+.bottomheadera-1:hover,
+.bottomheadera-2:hover,
+.bottomheadera-4:hover,
+.bottomheadera-5:hover,
+.bottomheadera-6:hover,
+.bottomheadera-7:hover,
+.bottomheadera-8:hover,
+.bottomheadera-9:hover,
+.bottomheadera-10:hover,
+.bottomheadera-11:hover,
+.bottomheadera-12:hover,
+.bottomheadera-13:hover,
+.bottomheadera-14:hover,
+.bottomheadera-15:hover,
+.bottomheadera-16:hover,
+.bottomheadera-17:hover,
+.bottomheadera-18:hover,
+.bottomheadera-19:hover,
+.bottomheadera-20:hover,
+.bottomheadera-21:hover,
+.bottomheadera-22:hover,
+.bottomheadera-23:hover,
+.bottomheadera-24:hover,
+.bottomheadera-25:hover,
+.bottomheadera-26:hover {
+    color: red;
+}
+
+.bottomheadera-3 {
+    color: #2fb3ff;
+    border-bottom: 2px solid #2fb3ff;
+}
+
+.bottomheaderlii {
+    position: absolute;
+    right: 2px;
+    top: 4px;
+    height: 11px;
+    width: 22px;
+    background: rgba(0, 0, 0, 0) url("http://css.ykimg.com/youku/dist/img/find/g_0c02dfd.png") no-repeat scroll -70px -35px;
+}
+
+.bottomheaderbox1 {
+    position: relative;
+    float: left;
+    font-size: 14px;
+    text-align: center;
+    height: 51px;
+    line-height: 51px;
+    width: 52px;
+}
+
+.bottomheaderbox1 span:hover {
+    color: red;
+}
+
+.bottomheaderbox2 {
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 14px;
+    height: 51px;
+    line-height: 50px;
+    width: 80px;
+    text-align: center;
+}
+
+.bottomheaderbox2a:hover {
+    color: red;
+}
+
+.bottomheaderbox1b {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0) url("http://css.ykimg.com/youku/dist/img/find/header_513e750.png") no-repeat scroll -60px 0;
+    font-size: 0;
+    overflow: hidden;
+    text-align: left;
+    vertical-align: middle;
+    height: 5px;
+    line-height: 0;
+    width: 9px;
+}
+
+.bottomheaderbox2a {
+    color: #555;
+}
+
+.nav {
+    font-size: 13px;
+    line-height: 13px;
+    padding: 0 10px;
+}
+
+.navcontent {
+    width: 1300px;
+    margin: 0 auto !important;
+}
+
+.navcontent::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.navli1,
+.navli2,
+.navli3,
+.navli4,
+.navli5,
+.navli6,
+.navli7,
+.navli8,
+.navli9,
+.navli10,
+.navli11,
+.navli12,
+.navli13,
+.navli14 {
+    position: relative;
+    float: left;
+    margin: 20px 12px 0 0;
+}
+
+.nava2:hover,
+.nava3:hover,
+.nava4:hover,
+.nava5:hover,
+.nava6:hover,
+.nava7:hover,
+.nava8:hover,
+.nava9:hover,
+.nava10:hover,
+.nava11:hover,
+.nava12:hover,
+.nava13:hover,
+.nava14:hover {
+    color: red;
+}
+
+.nava1,
+.nava2,
+.nava3,
+.nava4,
+.nava5,
+.nava6,
+.nava7,
+.nava8,
+.nava9,
+.nava10,
+.nava11,
+.nava12,
+.nava13,
+.nava14 {
+    color: #555;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.nava1 {
+    color: #2fb3ff;
+}
+
+
+/*<!-- g-sub-nav -->
+<!-- ???????????screen>>>>>>>>>>> -->
+*/
+
+.screen {}
+
+.bannerScroll {}
+
+.scroll {
+    position: relative;
+    height: 410px;
+    width: 1190px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    z-index: 0;
+    margin: 20px auto !important;
+}
+
+.pages {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #888 none repeat scroll 0 0;
+}
+
+#pagesimg {
+    display: block;
+    width: 1190px;
+    height: 410px;
+    margin: 0 auto !important;
+}
+
+.pager {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 10;
+}
+
+.btnprev,
+.btnnext {
+    visibility: visible;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    height: 45px;
+    width: 45px;
+    margin-top: -23px;
+    z-index: 10;
+}
+
+.btnprev {
+    left: 7px;
+    background: rgba(0, 0, 0, 0) url("http://res.mfs.ykimg.com/0510000051AD63E96714C04A1400547A") no-repeat scroll 0 0;
+}
+
+.btnnext {
+    right: 7px;
+    background: rgba(0, 0, 0, 0) url("http://res.mfs.ykimg.com/0510000051AD63F56714C04A1305CFEF") no-repeat scroll 0 0;
+}
+
+.current1,
+.current2,
+.current3,
+.current4,
+.current5,
+.current6,
+.current7,
+.current8,
+.current9,
+.current10,
+.current11,
+.current12,
+.current13,
+.current14,
+.current15,
+.current16 {
+    display: inline-block;
+    cursor: pointer;
+    background: #ffffff none repeat scroll 0 0;
+    border-radius: 10px;
+    box-shadow: 0 0 4px #333333;
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.current1 {
+    background: #69aaec none repeat scroll 0 0;
+    cursor: default;
+}
+
+.screenbox1 {
+    width: 1190px;
+    height: 93px;
+    margin: 0 auto 40px;
+}
+
+.screenbox1-1::before,
+.screenbox1-1::after {
+    display: block;
+    content: "";
+    line-height: 0;
+}
+
+.screenbox1-1::after {
+    clear: both;
+}
+
+.screenbox1-1 {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #e6e6e6;
+    border-top: 22px solid #f5f5f5;
+}
+
+.item1 {
+    padding-right: 0;
+    width: 225px;
+}
+
+.item2 {
+    padding-right: 0;
+    width: 240px;
+}
+
+.item3 {
+    padding-right: 0;
+    width: 240px;
+}
+
+.item4 {
+    padding-right: 70px;
+    width: 195px;
+}
+
+.item {
+    float: left;
+    position: relative;
+}
+
+.screenbox1label {
+    position: absolute;
+    left: 0;
+    top: -22px;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 10px;
+    font-weight: bolder;
+    color: #fff;
+    background: #909090 none repeat scroll 0 0;
+    white-space: nowrap;
+}
+
+.screenbox1ul {
+    overflow: hidden;
+}
+
+.screenbox1li {
+    float: left;
+    margin-right: 20px;
+    padding: 2px 0;
+}
+
+.screenbox1a {
+    color: #555;
+    white-space: nowrap;
+}
+
+.screenbox1a:hover {
+    color: red;
+}
+
+.screenbox2 {
+    position: absolute;
+    width: 100%;
+    height: 110px;
+    margin-bottom: 40px;
+}
+
+.screenbox2-1 {
+    position: relative;
+}
+
+.screenbox2-2 {
+    position: relative;
+    overflow: hidden;
+    width: 1190px;
+    margin: 0 auto!important;
+}
+
+.screenbox2-3 {
+    left: 0;
+    overflow: hidden;
+    width: 1320px;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.screenbox2-3::before,
+.screenbox2-3::after {
+    content: "";
+    display: block;
+    line-height: 0;
+}
+
+.screenbox2-3::after {
+    clear: both;
+}
+
+.col4 {
+    display: inline;
+    float: left;
+    width: 200px;
+    margin-left: 10px;
+    margin-right: 10px;
+    min-height: 1px;
+}
+
+.v {
+    position: relative;
+    width: 20px;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.v-thumb {
+    position: relative;
+    background-image: url("http://static.youku.com/index/img/2013/video/video_default_200x110.png");
+    background-color: #999;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 110px;
+    width: 200px;
+    overflow: hidden;
+}
+
+.v-link {
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    height: 110px;
+    width: 200px;
+    background: rgba(0, 0, 0, 0) url("http://static.youku.com/index/img/2013/video/blanksprite.png") repeat scroll 0 0;
+}
+
+.v-a {
+    display: block;
+    height: 100%;
+    color: #555555;
+}
+
+.screenbox2-4 {
+    cursor: pointer;
+    position: absolute;
+    height: 110px;
+    width: 90px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0) url("http://static.youku.com/index/img/2013/slide_prev_bg.png") no-repeat scroll 0 0;
+    /*visibility: hidden----将元素隐藏，但是在网页中该占的位置还是占着。
+display: none----将元素的显示设为无，即在网页中不占任何的位置。*/
+}
+
+.sc-1 {
+    visibility: hidden;
+    left: 0;
+    top: 0;
+}
+
+.sc-2 {
+    visibility: visible;
+    right: 0;
+    top: 0;
+    /*	CSS visibility 属性规定元素是否可见。
+visible　元素可见。 
+hidden　元素不可见。 
+collapse　在表格元素中使用时，此值可删除一行或一列，但它不影响表格的布局。被行或列占据的空间会留给其他内容使用。如果此值被用在其他的元素上，会呈现为 "hidden"。 
+inherit　从父元素继承 visibility 属性的值。
+
+你在 html 里面写的东西默认情况下就是属于 visibility:visible; 即元素可见。当某些情况下，你让元素不可见了：visibility:hidden; 再通过一些事件触发后让元素变成可见，就要用到这个visibility:visible; 。
+
+和display:none的区别，你理解是对的，display:none; 以后，元素是不占位的。*/
+}
+
+.sc-i {
+    position: absolute;
+    top: 50%;
+    height: 45px;
+    width: 45px;
+    margin-top: -23px;
+}
+
+.sci1 {
+    background: rgba(0, 0, 0, 0) url("http://static.youku.com/index/img/2013/slide_next_btn.png") no-repeat scroll 0 0;
+    left: 0;
+}
+
+.sci2 {
+    right: 0;
+    background: rgba(0, 0, 0, 0) url("http://static.youku.com/index/img/2013/slide_next_btn.png") no-repeat scroll 0 0;
+}
+
+.posterMovieGrid {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    overflow: hidden;
+    z-index: 0;
+    position: relative;
+    width: 970px;
+    height: 410px;
+    margin-bottom: 20px;
+}
+
+.posterMovieGrid .pages,
+.posterMovieGrid .page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #888;
+}
+
+.posterMovieGrid .page .item {
+    overflow: hidden;
+    zoom: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.posterMovieGrid .page .item_img {
+    overflow: hidden;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(http://res.mfs.ykimg.com/051000004E65BA8397927313BF036E73.gif) no-repeat center center;
+}
+
+.posterMovieGrid .page .item_img img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1190px;
+    max-width: none;
+    height: 100%;
+    margin-left: -595px;
+}
+
+.posterMovieGrid .page .item_url {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.posterMovieGrid .page .item_url a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(http://static.youku.com/index/img/spacer.gif);
+}
+
+.posterMovieGrid .pager {
+    overflow: hidden;
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.posterMovieGrid .pager div {
+    cursor: pointer;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    vertical-align: top;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 4px #333333;
+    -moz-box-shadow: 0 0 4px #333333;
+    box-shadow: 0 0 4px #333333;
+    background: #ffffff;
+}
+
+.posterMovieGrid .pager div:hover {
+    background: #bdbdbd;
+}
+
+.posterMovieGrid .pager div.current {
+    cursor: default;
+    background: #69aaec;
+}
+
+.posterMovieGrid .btnprev,
+.posterMovieGrid .btnnext {
+    cursor: pointer;
+    visibility: hidden;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    width: 45px;
+    height: 45px;
+    margin-top: -23px;
+}
+
+.posterMovieGrid .btnprev {
+    left: 7px;
+    background: url("http://res.mfs.ykimg.com/0510000051AD63E96714C04A1400547A") no-repeat;
+    _background: none;
+    _filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src="http://res.mfs.ykimg.com/0510000051AD63E96714C04A1400547A");
+}
+
+.posterMovieGrid .btnnext {
+    right: 7px;
+    background: url("http://res.mfs.ykimg.com/0510000051AD63F56714C04A1305CFEF") no-repeat;
+    _background: none;
+    _filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src="http://res.mfs.ykimg.com/0510000051AD63F56714C04A1305CFEF");
+}
+
+body.yk-w1190 .posterMovieGrid {
+    width: 1190px;
+}
+
+
+/*<!-- ???????????screen>>>>>>>>>>> -->*/
+
+
+/*《《《《《《《《《《《《《边角图《《《*/
+
+#sidebar {
+    position: fixed;
+    bottom: 12px;
+    right: 10px;
+    min-width: 50px;
+    padding-bottom: 65px;
+    color: #fff;
+    z-index: 999;
+}
+
+.bartop {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.barbottom {
+    position: absolute;
+    cursor: pointer;
+    height: 65px;
+    width: 100%;
+    min-width: 29px;
+    text-align: center;
+}
+
+.bartopa {
+    display: block;
+    color: #555555;
+    height: 57px;
+    width: 53px;
+    background: rgba(0, 0, 0, 0) url("http://css.ykimg.com/youku/dist/img/find/feedback_826bbb1.png") no-repeat scroll 0 0;
+}

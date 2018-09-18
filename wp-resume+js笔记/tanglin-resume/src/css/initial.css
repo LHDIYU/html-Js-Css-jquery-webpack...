@@ -1,0 +1,44 @@
+*{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+#backFirstPage{
+	animation:bounce 2s ease-in infinite ;
+	-webkit-animation:bounce 2s ease-in infinite ;
+}
+@keyframes bounce {
+	0%{
+		bottom:0px;
+	}
+	10%{
+		bottom:40px;
+	}
+	20%{
+		bottom:80px;
+	}
+	30%{
+		bottom:120px;
+	}
+	40%{
+		background-color: grey;
+	}
+	50%{
+		background-color:none;
+	}
+	60%{
+		bottom:100px;
+	}
+	70%{
+		bottom:80px;
+	}
+	80%{
+		bottom:40px;
+	}
+	90%{
+		bottom:0px;
+	}
+	100%{
+		bottom:120px;
+	}
+}

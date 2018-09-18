@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>document</title>
+    <meta charset="UTF-8">
+    <style>
+        canvas {
+            border: 1px solid #000;
+            /*width: 100px;
+                      height: 100px;*/
+            /*作业*/
+            background: url('9.jpg') no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!--如何使⽤用canvas
+• 在html中创建⼀一个canvas元素 -->
+    <!--默认 300 * 150 -->
+    <!--不是内联样式 因为没有 style=“width：~
+ ” width= ~ 是属性 在css3样式中写会覆盖按css3属性的来计算-->
+
+    <canvas width=500 height=500 id="myCanvas"></canvas>
+    <!--
+     如何解决模糊问题 
+根据屏幕分辨率修改canvas的width和height属性
+与canvas样式代码中的 宽和⾼高的⽐比例例
+
+把  width=500 height=500 （500*500）属性大小的图片 放到
+  width: 100px;height: 100px;（100*100）中限制区域去展示 相当于缩小五倍 可以解决模糊问题-->
+
+    <!--矢量-》位图 高分辨率屏幕 一个像素点会用2个以上像素点展示而模糊-->
+
+
+    <script src="canvas.js"></script>
+
+
+
+</body>
+
+</html>

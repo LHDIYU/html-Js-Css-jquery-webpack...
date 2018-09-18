@@ -1,0 +1,24 @@
+{
+  "name": "my-resume",
+  "version": "1.0.0",
+  "description": "my resume",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "webpack": "^1.14.0"
+  },
+  "devDependencies": {
+    "file-loader": "^0.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "my-resume": "web-dev-server --progress --colors --devtool sourcemap"
+  },
+  "keywords": [
+    "tang's",
+    "resume"
+  ],
+  "author": "tanglin",
+  "license": "ISC"
+}

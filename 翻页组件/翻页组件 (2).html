@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta  charset="utf-8">  
+    <title>翻页</title>  
+    <style type="text/css">   
+    * {
+    	margin:0px;
+    	padding:0px;
+    	
+    	list-style-type:none;
+  
+    }  
+  
+     #pages{
+      position: absolute;
+      bottom:40%;
+      left:0;
+      margin: 30px 0 40px;
+      padding: 0 0 0 121px;
+
+      white-space: nowrap;
+
+    }
+    #pages a{
+      float: left;
+      
+
+      width: 36px;
+      height: 66px;
+        line-height: 34px;
+
+        margin-right: 9px;
+        overflow: hidden;
+        text-align: center;
+    }
+  .n{
+    border:1px solid #e1e2e3;
+    height: 34px !important;
+    padding: 0 18px;
+    margin-top: 30px;
+  }
+  #pages span{
+    display: block;
+  }
+
+     #pages .img{
+      cursor: pointer;
+      height: 24px;
+      width: 24px;
+
+      margin-bottom: 6px;
+      margin-left: 6px;
+
+     }
+     #pages .icon{
+      display: inline-block;
+      position: relative;
+      top: -4px;
+      
+      height: 24px;
+      width: 24px;
+      background: rgba(0, 0, 0, 0) url("https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/global/img/icons_0e814c16.png") no-repeat scroll -144px -288px;
+
+     }
+      #pages .this{
+         display: inline-block;
+      position: relative;
+        top:-2px;
+         height: 24px;
+      width: 24px;
+      background: rgba(0, 0, 0, 0) url("https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/global/img/icons_0e814c16.png") no-repeat scroll -96px -288px;
+     }
+   
+    #pages .num{
+      border:1px solid #e1e2e3;
+      cursor: pointer;
+      height: 34px;
+      line-height: 34px;
+      width: 34px;
+    }
+    </style>  
+      
+   
+      
+</head>  
+<body>  
+    <div id="pages"></div> 
+    
+ <script type="text/javascript">    
+ var dbPage = 1;//dbPage     当前页 
+ var totalPages = 20; //totalPages 总页数
+ var oPage = document.getElementById('pages');
+
+    // oPage.onclick = function(e) {
+    //   var event =  e || window.event;
+    //   var target = event.target || event.srcElement;
+    //   pageShow(target.value,totalPages);  
+    // }
+      
+    function pageShow(dbPage,totalPages)   
+    {  
+            var pageHTML = new Array;  
+            //page分割数量  
+            var pageFor = 11;  
+
+            var pageSlipt = parseInt(pageFor / 2);  
+          
+
+            if (dbPage > 1) //如果当前页大于1，则显示上一页  
+            {     
+                var dbPagePre = dbPage-1;  
+
+                pageHTML += "<a class = \"n\" href=\"javascript:pageShow('"+ (dbPagePre) +"','"+totalPages+"');\"><上一页</a>";  
+            }  
+              
+            if (totalPages > pageFor)    //如果总页数大于分割页数  
+            {                     
+                if(dbPage <= pageSlipt+1)  
+                {  
+                    for (i=1;i<=pageFor;i++)   
+                    {  
+                    if (i == dbPage)   
+                    {  
+                        pageHTML += "<a href=\"javascript:pageShow('"+ i +"','"+totalPages+"' );\"><span class=\"img\"><i class=\"this\"></i></span> <span class=\"num\">" +i+"</span> </a>";  
+                    }  
+                    else  
+                    {  
+                        pageHTML += "<a href=\"javascript:pageShow('"+ i +"','"+totalPages+"' );\" ><span class=\"img\"><i class=\"icon\"></i></span> <span class=\"num\">" +i+"</span> </a>";  
+                    }  
+                }  
+            }  
+
+            else if (dbPage > totalPages-pageSlipt)  
+            {  
+                for (i=totalPages-pageFor+1; i<=totalPages; i++)   
+                {  
+                    if (i == dbPage)   
+                    {  
+                        pageHTML += "<a href=\"javascript:pageShow('"+ i +"','"+totalPages+"' );\"><span class=\"img\"><i class=\"this\"></i></span> <span class=\"num\">" +i+"</span> </a>";  
+                    }  
+                    else  
+                    {  
+                        pageHTML += "<a href=\"javascript:pageShow('"+ i +"','"+totalPages+"' );\" ><span class=\"img\"><i class=\"icon\"></i></span> <span class=\"num\">" +i+"</span> </a>";  
+                    }  
+                }  
+            }  
+            else  
+            {  
+                for (i=dbPage-pageSlipt; i<=parseInt(dbPage)+parseInt(pageSlipt); i++)   
+                {  
+                    if (i == dbPage)   
+                    {  
+                        pageHTML +="<a href=\"javascript:pageShow('"+ i +"','"+totalPages+"' );\"><span class=\"img\"><i class=\"this\"></i></span> <span class=\"num\">" +i+"</span> </a>";  
+                    }  
+                    else  
+                    {  
+                        pageHTML += "<a href=\"javascript:pageShow('"+ i +"','"+totalPages+"' );\"><span class=\"img\"><i class=\"icon\"></i></span> <span class=\"num\">" +i+"</span> </a>";  
+                    }  
+                }  
+            }  
+            }
+              
+            else  
+            {  
+                for (i=1; i<=totalPages; i++)   
+                {  
+                    if (i == dbPage)   
+                    {  
+                        pageHTML +="<a href=\"javascript:pageShow('"+ i +"','"+totalPages+"' );\" ><span class=\"img\"><i class=\"this\"></i></span> <span class=\"num\">" +i+"</span> </a>";  
+                    }  
+                    else  
+                    {  
+                        pageHTML +="<a href=\"javascript:pageShow('"+ i +"','"+totalPages+"' );\" ><span class=\"img\"><i class=\"icon\"></i></span> <span class=\"num\">" +i+"</span> </a>";  
+                    }  
+                }  
+            }  
+  
+            if (parseInt(dbPage)<parseInt(totalPages))   //如果当前页小于总页数，则显示下一页  
+            {  
+                var dbPageNext = parseInt(dbPage)+1;  
+                pageHTML += "<a  class = \"n\" href=\"javascript:pageShow('"+ dbPageNext +"','"+totalPages+"');\">下一页></a>";  
+            }  
+              
+        
+           oPage.innerHTML = pageHTML;
+
+        
+    }  
+
+    pageShow(dbPage,totalPages);  
+
+
+    </script>  
+
+</body>  
+</html>  

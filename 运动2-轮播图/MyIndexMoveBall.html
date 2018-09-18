@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+	<title>document</title>
+	<style type="text/css">
+		div {
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			background: orange;
+			border-radius: 50%;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+<script type="text/javascript">
+	// var $Div = document.getElementById('div1');
+	// $Div.onclick = function() {
+	// 	startMove(this);
+	// }
+
+	// var $LiCollection = document.getElementsByTagName('li');
+	// var $Bg = $LiCollection[$LiCollection.length =1];
+	// for(var i = 0;i < $LiCollection.length -1;i ++) {
+	// 	$LiCollection[i].onmouseenter = function() {
+	// 		startMove($Bg,this.offsetLeft);
+	// 	}
+	// }
+	// function startMove(obj,iTarget) {
+	// 	clearInterval(obj.timer);
+	// 	var iSpeed = 0;
+	// 	var a = 2;
+	// 	var u = 0.86;
+	// 	obj.timer = setInterval(function() {
+	// 		a = (iTarget -obj.offsetLeft)/5;
+	// 		iSpeed += a;
+	// 		iSpeed *= u;
+	// 		if(Math.abs(iSpeed)<1 && Math.abs(iTarget - obj.offsetLeft) <1) {
+	// 			clearInterval(obj.timer);
+	// 			obj.style.left = iTarget+'px';
+	// 		}else {
+	// 			obj.style.left = obj.offsetLeft + iSpeed +'px';
+	// 		}
+			
+	// 	},30)
+
+	// }
+
+var $Div = document.getElementById('div1');
+var iSpeedX = 0;
+var iSpeedY = 0;
+$Div.onmousedown = function(e) {
+	clearInterval($Div.timer);
+	var lastX = 0,
+	    lastY = 0;
+	    var event = e || window.event;
+	    var disX = event.clientX - $Div.offsetLeft;
+	    var disY = event.clientY - $Div.offsetTop;
+	    document.onmousemove = function(e) {
+	    	var event = e || window.event;
+	    	var newL = event.clientX - disX;
+	    	var newT = event.clientY - disY;
+	    	
+	    	  iSpeedX = newL - lastX;
+	    	  iSpeedY = newT - lastY;
+$Div.style.left = newL +'px';
+	    	$Div.style.top = newT + 'px';
+	    	  lastX = newL;
+	    	  lastY = newT;
+	    }
+	    document.onmouseup = function() {
+	    document.onmousemove = null;
+	    document.onmouseup = null;
+	    startMove($Div);
+}
+}
+function startMove(obj) {
+	clearInterval(obj.timer);
+	var g = 3;
+	obj.timer = setInterval(function() {
+		iSpeedY += g;
+		console.log(iSpeedY);
+		var newL = obj.offsetLeft+ iSpeedX;
+		var newT = obj.offsetTop + iSpeedY;
+		if(newT >= document.documentElement.clientHeight -  obj.offsetHeight) {
+			iSpeedY *= -1;
+			iSpeedY *= 0.8;
+			iSpeedX *= 0.8;
+			newT = document.documentElement.clientHeight - obj.offsetHeight - 1;
+		} else if(newT <= 0) {
+			iSpeedY *= -1;
+			iSpeedY *= 0.8;
+			iSpeedX *= 0.8;
+			newL = 0;
+		}
+		if(newL >= document.documentElement.clientWidth - obj.offsetWidth) {
+			iSpeedX *= -1;
+			iSpeedX *= 0.8;
+			newL = document.documentElement.clientWidth - obj.offsetWidth;
+		}else if(newL <= 0) {
+			iSpeedX *= -1;
+			iSpeedX *= 0.8;
+			newL = 0;
+		}
+		if(Math.abs(iSpeedX) <= 1) {
+			iSpeedX = 0;
+		}
+		if(Math.abs(iSpeedY) <= 1) {
+			iSpeedY = 0;
+		}
+		if(iSpeedX === 0 && iSpeedY === 0 && Math.abs(document.documentElement.clientHeight-obj.offsetHeight -newT) < 1) {
+			clearInterval(obj.timer);
+			console.log('------');
+		}
+		else {
+			obj.style.left = newL + 'px';
+			obj.style.top = newT + 'px';
+		}
+	},30)
+}
+
+
+</script>
+</html>

@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>document</title>
+    <script type="text/javascript" src='myjquery.js'></script>
+</head>
+<style type="text/css">
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: 12px;
+}
+input {
+    font-size: 12px; 
+     margin-right: 3px;
+    vertical-align: middle;
+     border: medium none;
+}
+a:link {
+    color: #37a;
+    text-decoration: none;
+}
+a {
+    cursor: pointer;
+}
+a img {
+    border-width: 0;
+    vertical-align: middle;
+}
+
+form {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #072;
+    font: 15px/150% Arial,Helvetica,sans-serif;
+    margin: 0 0 12px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+h3 {
+    background-color: #f2fbf2;
+    color: #666666;
+    font: 14px/1.8 Arial,Helvetica,sans-serif;
+    margin-bottom: 1px;
+    margin-left: 4px;
+}
+.global-nav {
+    background-color: #545652;
+    color: #d5d5d5;
+    height: 28px;
+    min-width: 950px;
+}
+
+.global-nav .top-nav-info {
+    float: right;
+    line-height: 28px;
+    margin: 0 12px 0 0;
+}
+
+.global-nav .top-nav-info a {
+    display: inline-block;
+    height: 28px;
+    margin: 0;
+    padding: 0 12px;
+}
+
+.global-nav a:link, .global-nav a:visited, .global-nav a:hover, .global-nav a:active {
+    color: #d5d5d5;
+}
+
+.global-nav .top-nav-doubanapp {
+    float: right;
+    line-height: 28px;
+    margin-right: 5px;
+    position: relative;
+}
+
+.global-nav .top-nav-doubanapp .lnk-doubanapp {
+    display: inline-block;
+    height: 28px;
+    padding: 0 8px;
+}
+
+.global-nav .global-nav-items {
+    font-size: 0;
+}
+
+.global-nav .global-nav-items li {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 28px;
+    vertical-align: baseline;
+}
+
+.global-nav .global-nav-items a {
+    display: inline-block;
+    height: 28px;
+    padding: 0 12px;
+}
+
+#db-nav-sns {
+    background: #edf4ed none repeat scroll 0 0;
+    position: relative;
+}
+.nav {
+    margin-bottom: 40px;
+    min-width: 950px;
+    overflow: hidden;
+    width: 100%;
+}
+#db-nav-sns .nav-wrap {
+    border: medium none;
+}
+
+#db-nav-sns .nav-primary {
+    overflow: hidden;
+    padding-top: 12px;
+    position: relative; 
+    margin: 0 auto;
+   
+    width: 950px;
+
+}
+#db-nav-sns .nav-search {
+    position: absolute;
+    right: 0;
+     overflow: hidden;
+    padding: 10px 0 15px;
+}
+
+/*input1*/
+.nav-search fieldset {
+    border: medium none;
+  }
+
+#db-nav-sns .inp {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #e1e9e1;
+    border-radius: 0;
+    height: 28px;
+    text-align: left;
+    width: 278px;
+}
+#db-nav-sns .inp {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #e1e9e1;
+    border-radius: 0;
+    height: 28px;
+    text-align: left;
+    width: 278px;
+    cursor: text;
+    float: left;
+}
+#db-nav-sns .inp input {
+    height: 28px;
+    margin: 0;
+    width: 242px;
+
+     background: #fff none repeat scroll 0 0;
+   
+    outline: medium none;
+    padding-left: 10px;
+    text-align: left;
+
+    border: medium none;
+}
+
+#db-nav-sns .inp-btn {
+ height: 28px;
+    left: auto;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 30px;
+  }
+  #db-nav-sns .inp-btn input {
+    background: transparent url("https://img3.doubanio.com/f/shire/f71f15922ebd7c0ff0ea0e7a25577529efd8981a/pics/icon/bn_srh_1.png") no-repeat scroll 50% 50%;
+    height: 28px;
+    line-height: 100px;
+    margin: 0;
+    padding: 0;
+    width: 30px;
+     color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 0;
+}
+/*input1*/
+#db-nav-sns .nav-logo {
+    background-position: 0 10px;
+    height: 57px;
+    width: 184px;
+     float: left;
+    margin: 0 13px 0 0;
+     background: rgba(0, 0, 0, 0) url("https://img3.doubanio.com/f/shire/8308f83ca66946299fc80efb1f10ea21f99ec2a5/pics/nav/lg_main_a11_1.png") no-repeat scroll 0 12px;
+}
+#db-nav-sns a:link, #db-nav-sns a:visited {
+    color: #072;
+}
+.nav .nav-logo a {
+    display: block;
+    height: 100%;
+    line-height: 100em;
+    overflow: hidden;
+    width: 100%;
+}
+
+#db-nav-sns .nav-items {
+    float: left;
+    margin-top: 15px;
+}
+
+#db-nav-sns .nav-items li {
+    font-size: 15px;
+    margin-right: 20px;
+     display: inline;
+}
+
+#wrapper {
+    margin: 0 auto;
+    width: 950px;
+}
+
+#content {
+    min-height: 420px;
+}
+
+.clearfix::after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix {
+    display: block;
+}
+
+.grid-16-8 .article {
+    float: left;
+    padding-right: 40px;
+    width: 590px;
+}
+
+.mod-search {
+    background-color: #f7f7f8;
+    margin-bottom: 28px;
+    overflow: hidden;
+    padding: 7px;
+    position: relative;
+}
+.mod-search fieldset {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+
+.mod-search .inp {
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+    cursor: text;
+    height: 30px;
+}
+.mod-search .inp input {
+    background: #fff none repeat scroll 0 0;
+    height: 30px;
+    margin: 0;
+    outline: 0 none;
+    padding-left: 6px;
+    text-align: left;
+    width: 94%;
+    
+}
+.mod-search input {
+   
+    border: 0 none;
+}
+.mod-search .inp-btn {
+    height: 30px;
+    overflow: hidden;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    width: 30px;
+}
+.mod-search .inp-btn input {
+    background: rgba(0, 0, 0, 0) url("https://img3.doubanio.com/f/sns/f71f15922ebd7c0ff0ea0e7a25577529efd8981a/pics/icon/bn_srh_1.png") no-repeat scroll 45% 45%;
+    color: transparent;
+    cursor: pointer;
+    font-size: 0;
+    height: 100%;
+    overflow: hidden;
+    padding: 35px 0 0;
+    width: 100%;
+}
+.search-cate {
+    float: left;
+    font-size: 0;
+    margin-right: 35px;
+    width: 65px;
+    height: auto;
+}
+.search-cate ul{
+    position: static;
+    top: 5px;
+    width: auto;
+}
+
+.search-cate li {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    width: 65px;
+}
+
+.search-cate li a:link, .search-cate li a:visited {
+    color: #111;
+}
+.search-cate li a {
+    display: block;
+    padding: 3px 0;
+    text-align: center;
+}
+
+.search-cate .on:link, .search-cate .on:visited, .search-cate .on:hover, .search-cate .on:active {
+    background: #7fc06e none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff;
+}
+ 
+.search-result {
+    overflow: hidden;
+}
+.search-result h2 {
+    color: #000;
+    margin: 0;
+}
+
+.result-list {
+    margin-top: -8px;
+      margin-bottom: 27px;
+    overflow: hidden;
+    padding-right: 3px;
+}
+
+/*样式*/
+.result::after {
+    clear: both;
+    content: " ";
+    display: block;
+}
+.result {
+    border-top: 1px dashed #ccc;
+    margin: -1px 0 17px;
+    padding-top: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.result .pic {
+    float: right;
+    position: relative;
+    text-align: right;
+    width: 62px;
+}
+.result .pic img {
+    max-width: 48px;
+}
+.result .content {
+    overflow: hidden;
+}
+.result .content .title {
+    color: #5d5d5d;
+    margin-bottom: 3px;
+}
+.result .content h3 {
+    background: transparent none repeat scroll 0 0;
+    height: auto;
+    margin: -4px 0 6px;
+    overflow-wrap: break-word;
+    width: 85%;
+}
+.allstar35{
+    background: rgba(0, 0, 0, 0) url("https://img3.doubanio.com/f/shire/b8f4c3672ef81106701071831e22422a745d3b74/pics/rating_icons/ic_rating_s.png") no-repeat scroll 0 0;
+    display: inline-block;
+    height: 11px;
+    margin: 0 3px 0 0;
+    overflow: hidden;
+    width: 55px;
+}
+.rating_nums {
+    padding-left: 0;
+    color: #e09015;
+    font-size: 12px;
+}
+.result .subject-cast {
+    margin-left: 10px;
+}
+.result .content p {
+    color: #999;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+.result-list-ft {
+    background-color: #f8f8f8;
+}
+.result-list-ft a:link, .result-list-ft a:visited {
+    color: #333;
+}
+.result-list-ft a {
+    display: block;
+    line-height: 32px;
+    text-align: center;
+}
+.back-to-top {
+    margin-top: 22px;
+    height: 40px;
+    overflow: hidden;
+    bottom: 0;
+    display: block;
+    left: 712.5px;
+    position: fixed;
+    width: 100px;
+}
+.back-to-top a {
+     top: 0;
+    left: 0;
+    position: absolute;
+    /*top: 40px;*/
+}
+
+/*样式*/
+.grid-16-8 .aside {
+    float: right;
+    width: 310px;
+}
+.aside .mod {
+    margin: 0 0 40px;
+}
+.aside .mod {
+    margin-bottom: 40px;
+    word-break: break-all;
+}
+.mod::after {
+    clear: both;
+    content: " ";
+    display: block;
+}
+#search-side-entry.mod {
+    margin-top: 40px;
+}
+#search-side-entry .hd {
+    margin-bottom: 15px;
+}
+#search-side-entry .more {
+    float: right;
+    font-size: 12px;
+    margin-top: 2px;
+}
+#search-side-entry .more a:link, #search-side-entry .more a:visited {
+    color: #45618c;
+}
+
+#search-side-entry h2 {
+    border-bottom: 1px solid #f0f0f0;
+    color: #45618c;
+    font-size: 16px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+#search-side-entry ul {
+    margin-left: -3%;
+}
+#search-side-entry li {
+    display: inline-block;
+    margin-left: 3%;
+    overflow: hidden;
+    padding-top: 50%;
+    position: relative;
+    vertical-align: top;
+    width: 46%;
+}
+
+#search-side-entry li a:link, #search-side-entry li a:visited {
+    color: #45618c;
+}
+#search-side-entry li a {
+    display: block;
+    font-size: 12px;
+}
+#search-side-entry li img {
+    height: auto;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 143px;
+}
+
+#search-side-entry .title-wrapper {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#search-side-entry .price-wrapper {
+    text-align: center;
+}
+
+#search-side-entry .price::before {
+    content: "¥";
+    margin-right: 2px;
+}
+#search-side-entry .price {
+    color: #45618c;
+    font-size: 12px;
+}
+
+#search-side-entry del.price::before {
+    content: none;
+    margin-right: 2px;
+}
+#search-side-entry del.price {
+    color: #45618c;
+    text-decoration: line-through;
+}
+
+#dale_subject_search_top_right .a{
+  display: inline-block;
+    height: 250px;
+    margin: 0 0 20px;
+    position: relative;
+    width: 300px;
+}
+#dale_subject_search_top_right .b{
+   background-color: rgba(0, 0, 0, 0.3);
+   width: 24px;
+   height: 12px;
+    bottom: 0;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1;
+    padding: 4px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+
+}
+#dale_subject_search_top_right img{
+    vertical-align: middle;
+    border: 0 none;
+}
+.search_report {
+    
+    margin-right: 10px;
+    margin-top: 15px;
+}
+.search_report a:link, .search_report a:hover, .search_report a:visited, .search_report a:active {
+    color: #bbb;
+}
+#footer {
+    border-top: 1px dashed #ddd;
+    color: #999;
+    margin-top: 40px;
+    overflow: hidden;
+    padding: 6px 0;
+}
+
+.fleft {
+    float: left;
+}
+.fright {
+    float: right;
+}
+
+
+</style>
+
+<body>
+
+  <div id="db-global-nav" class="global-nav">
+  <div class="bd">
+    <div class="top-nav-info">
+      
+      <a href="#" class="nav-login" rel="nofollow">登录</a>
+      <a href="#" class="nav-register" rel="nofollow">注册</a>
+</div>
+
+
+    <div class="top-nav-doubanapp">
+        
+        <a href="#" class="lnk-doubanapp">下载豆瓣客户端</a>
+    </div>
+
+    <div class="global-nav-items">
+      <ul>
+          
+            
+            <li class="on">
+            <a href="#">
+              豆瓣
+            </a>
+            </li>
+          
+            
+            <li class="">
+            <a href="#">
+              读书
+            </a>
+            </li>
+          
+            
+            <li class="">
+            <a href="#" >
+              电影
+            </a>
+            </li>
+          
+            
+            <li class="">
+            <a href="#">
+              音乐
+            </a>
+            </li>
+          
+            
+            <li class="">
+            <a href="#" target="_blank" >
+              同城
+            </a>
+            </li>
+          
+            
+            <li class="">
+            <a href="#">
+              小组
+            </a>
+            </li>
+          
+            
+            <li class="">
+            <a href="#">
+              阅读
+            </a>
+            </li>
+          
+            
+            <li class="">
+            <a href="#">
+              FM
+            </a>
+            </li>
+          
+            
+            <li class="">
+            <a href="#">
+              东西
+            </a>
+            </li>
+          
+            
+            <li class="">
+            <a href="#">
+              市集
+            </a>
+            </li>
+          
+            <li>
+              <a href="#" class="bn-more"><span>更多</span></a>
+            </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div id="db-nav-sns" class="nav">
+  <div class="nav-wrap">
+    <div class="nav-primary">
+
+      <div class="nav-search">
+        <form action="#" method="get">
+          <fieldset>
+      <div class="inp">
+              <input type="text" name="zhidao" class="zhidao" value='喜欢你' onblur="if(this.value==''){this.value='喜欢你';}" 
+  onfocus="if(this.value=='喜欢你')this.value='';">
+            </div>
+            <div class="inp-btn"><input type="submit" value="搜索"></div>
+          </fieldset>
+        </form>
+      </div>
+  
+      <div class="nav-logo">
+        <a href="#">豆瓣社区</a>
+      </div>
+  
+      <div class="nav-items">
+        <ul>
+          <li><a href="#">首页</a></li>
+          <li>
+              <a href="#">浏览发现</a>
+          </li>
+          <li>
+              <a href="#">移动应用</a>
+          </li>
+          <li>
+            <a href="#">游戏</a>
+          </li>
+          <li><a href="#">线上活动</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+    <div id="wrapper">
+        
+
+        
+<div id="content">
+    <div class="grid-16-8 clearfix">
+        
+        
+        <div class="article">
+               
+
+  <div class="mod-search">
+    <form action="#" method="get">
+      <fieldset>
+        <div class="inp"><input type="text" name="baidu" class="baidu" value='喜欢你' onblur="if(this.value==''){this.value='喜欢你';this.className='baidu';}" 
+  onfocus="if(this.value=='喜欢你')this.value='';"></div>
+        <div class="inp-btn"><input type="submit" value="搜索"></div>
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="search-cate">
+    <ul>
+      <li><a href="#">全部</a></li>
+      <li><a href="#">图片</a></li>
+        <li><a href="#">成员</a></li>
+        <li><a href="#">小组</a></li>
+        <li><a href="#">小站</a></li>
+        <li><a href="#">书籍</a></li>
+        <li><a href="#">电影</a></li>
+        <li><a href="#">音乐</a></li>
+        <li><a href="#">游戏</a></li>
+        <li><a href="#">条目</a></li>
+        <li><a href="#">日记</a></li>
+        <li><a href="#">市集</a></li>
+        <li><a href="#">舞台剧</a></li>
+        <li><a href="#">同城活动</a></li>
+        <li><a href="#">移动应用</a></li>
+        <!-- class="on" -->
+    </ul>
+  </div>
+
+
+ <div class="search-result">
+    
+    <h2>
+        相关音乐:
+            
+    </h2>
+
+        <div class="result-list">
+
+        </div>
+              
+  </div>
+
+  
+  <div class="back-to-top">
+    <a href="#">&#8593;回顶部</a> <!-- 就是刷新一下页面 -->
+  </div>
+ 
+</div>
+
+
+   <div class="aside">
+                
+  
+
+  
+
+<div class="mod" id="search-side-entry">
+
+  <div class="hd">
+      <span class="more">
+              <a href="https://market.douban.com/search/?utm_campaign=douban_search_top_right&utm_medium=pc_web&utm_source=douban" target="_blank">
+                  &gt;更多
+              </a>
+      </span>
+      <h2>豆瓣市集的推荐</h2>
+  </div>
+
+  <div class="bd">
+    <ul>
+        
+        <li>
+          <a href="#" >
+            <img src="https://img3.doubanio.com/view/dianpu_product_item/medium/public/p224063.jpg">
+            <a href="#" class="title-wrapper">
+              黑凤梨喜欢你表白抱枕
+            </a>
+          </a>
+          <div class="price-wrapper">
+            <i class="price">79.00</i>&nbsp;
+              <del class="price">89.00</del>
+          </div>
+           
+        </li>
+        
+        <li>
+          <a href="#">
+            <img src="https://img3.doubanio.com/view/dianpu_product_item/medium/public/p468482.jpg">
+            <a href="#" class="title-wrapper">
+              唐小姐的酒馆（红色定制款）
+            </a>
+          </a>
+
+          <div class="price-wrapper">
+            <i class="price">289.00</i>&nbsp;
+              <del class="price">312.00</del>
+          </div>
+        </li>
+
+    </ul>
+  </div>
+</div>
+
+
+  <!-- douban ad begin -->
+  <div id="dale_subject_search_top_right">
+    <div class="a">
+      <div class="b">广告</div>
+      <img src="https://img3.doubanio.com/view/dale-online/dale_ad/public/14e6c76e0b72e86.jpg">
+    </div>
+  </div>
+  <!-- douban ad end -->
+
+  
+
+    <div class="mod">
+      <div class="hd">
+        
+    <h2>
+        豆瓣还没有这张唱片，我来添加
+            &nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;
+    </h2>
+
+      </div>
+      <div class="bd">
+          <p class="pl">
+            <a href="#">&gt;&nbsp;添加唱片</a>
+          </p>
+          <p class="pl">
+            <a href="#">&gt;&nbsp;添加艺术家</a>
+          </p>
+      </div>
+    </div>
+
+
+  <div class="search_report">
+    <a href="#">&gt; 对结果不满意？让我们知道</a>
+  </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+   </div>
+
+</div>
+
+
+        
+<div id="footer">
+    
+<span id="icp" class="fleft gray-link">
+    &copy; 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司
+</span>
+
+<a href="https://www.douban.com/hnypt/variformcyst.py" style="display: none;"></a>
+
+<span class="fright">
+    <a href="#">关于豆瓣</a>
+    · <a href="#">在豆瓣工作</a>
+    · <a href="#">联系我们</a>
+    · <a href="#">免责声明</a>
+    
+    · <a href="#" >帮助中心</a>
+    · <a href="#">移动应用</a>
+    · <a href="#">豆瓣广告</a>
+</span>
+
+</div>
+
+</div>
+
+
+
+
+    <script type="text/javascript">
+
+// var longString = "\
+// ------------------------\
+// ------------------------\
+// ...
+// ------------------------\
+// ";
+
+// +
+// var longString = '------------------------' +
+//                  '------------------------' +
+//                  ...
+//                  '------------------------';
+
+// String.concat
+// ''.concat(
+//   '-----------------------------',
+//   '-----------------------------',
+//   ...
+//   '-----------------------------',
+// );
+
+// Array.join
+// [
+//   '-----------------------------',
+//   '-----------------------------',
+//   ...
+//   '-----------------------------',
+
+// ].join('');
+
+$('.search-cate ul').on('click','li',function(e)
+{
+$('.search-cate ul li a').removeClass();
+$(e.target).addClass('on');
+});
+//
+$('.baidu').on('keydown',function(e){
+
+  if(e.keyCode===13){// enter 键
+//要做的事情
+      $('.result-list').html("");
+  console.log($('.baidu').val());//value值
+  $.ajax({
+    url:'https://api.douban.com/v2/music/search',
+    type:'GET',
+    data:{q:$('.baidu').val()+'',count:20,start:0},
+    dataType:'jsonp',
+    success:show,
+    error: function (e) {
+               console.log("error");
+            }
+    }
+  )
+return false;
+}
+});
+var htm="";
+  function show(data){
+   
+  console.log(JSON.stringify(data.musics));
+    for(var i=0,len = data.count;i<len;i++){
+     // <div class='allmusic'><div class='xinxi'><span>[音乐]</span><a href='"+data.musics[i].mobile_link+"'>"+data.musics[i].title+"</a></div>";
+      htm+="<div class=\"result\">\
+        <div class=\"pic\">\
+      <a class=\"nbg\" href=\"#\"><img src=\""+ data.musics[i].image+"\"></a>\
+    </div>\
+    <div class=\"content\">\
+      <div class=\"title\">\
+        <h3>\
+          <span>[音乐]</span>&nbsp;\
+          <a href=\"#\" >"+data.musics[i].title+"</a>\
+        </h3>\
+        \
+  <div class=\"rating-info\">";
+        if(data.musics[i].rating.average<=10&&data.musics[i].rating.average>=9.6){
+       htm+=" <span class=\"allstar35\" style=\"background-position: 0 0;\"></span>"
+      }
+       else if(data.musics[i].rating.average<=9.5&&data.musics[i].rating.average>=9.1){
+       htm+=" <span class=\"allstar35\" style=\"background-position: 0 -11px;\"></span>"
+      }
+      else if(data.musics[i].rating.average<=9&&data.musics[i].rating.average>=8.6){
+        htm+=" <span class=\"allstar35\" style=\"background-position: 0 -22px;\"></span>"
+      }
+      else if(data.musics[i].rating.average<=8.5&&data.musics[i].rating.average>=8.1){
+        htm+=" <span class=\"allstar35\" style=\"background-position: 0 -33px;\"></span>"
+      }
+      else if(data.musics[i].rating.average<=8&&data.musics[i].rating.average>=7.6){
+        htm+=" <span class=\"allstar35\" style=\"background-position: 0 -44px;\"></span>"
+      }
+      else if(data.musics[i].rating.average<=7.5&&data.musics[i].rating.average>=7.1){
+        htm+=" <span class=\"allstar35\" style=\"background-position: 0 -55px;\"></span>"
+      }
+      else if(data.musics[i].rating.average<=7&&data.musics[i].rating.average>=6.6){
+       htm+=" <span class=\"allstar35\" style=\"background-position: 0 -66px;\"></span>"
+      }
+      else if(data.musics[i].rating.average<=6.5&&data.musics[i].rating.average>=6.1){
+        htm+=" <span class=\"allstar35\" style=\"background-position: 0 -77px;\"></span>"
+      }
+      else if(data.musics[i].rating.average<=6.0&&data.musics[i].rating.average>=5.6){
+        htm+=" <span class=\"allstar35\" style=\"background-position: 0 -88px;\"></span>"
+      }
+      else if(data.musics[i].rating.average<=5.5&&data.musics[i].rating.average>=5.1){
+        htm+=" <span class=\"allstar35\" style=\"background-position: 0 -99px;\"></span>"
+      }
+      else if(data.musics[i].rating.average<=5.0&&data.musics[i].rating.average>=4.6){
+        htm+=" <span class=\"allstar35\" style=\"background-position: 0 -110px;\"></span>"
+      }
+
+
+      else if(data.musics[i].rating.average<=4.5&&data.musics[i].rating.average>=4.1){
+        htm+=" <span class=\"allstar35\" style=\"background-position: 0 -121px;\"></span>"
+      }
+      else if(data.musics[i].rating.average<=3&&data.musics[i].rating.average>=2.6){
+       htm+=" <span class=\"allstar35\" style=\"background-position: 0 -132px;\"></span>"
+      }
+      else if(data.musics[i].rating.average<=2.5&&data.musics[i].rating.average>=2.1){
+        htm+=" <span class=\"allstar35\" style=\"background-position: 0 -143px;\"></span>"
+      }
+      else if(data.musics[i].rating.average<=2.0&&data.musics[i].rating.average>=1.6){
+        htm+=" <span class=\"allstar35\" style=\"background-position: 0 -154px;\"></span>"
+      }
+      else if(data.musics[i].rating.average<=1.5&&data.musics[i].rating.average>=1.1){
+        htm+=" <span class=\"allstar35\" style=\"background-position: 0 -165px;\"></span>"
+      }
+      else if(data.musics[i].rating.average<=1.0&&data.musics[i].rating.average>=0.6){
+        htm+=" <span class=\"allstar35\" style=\"background-position: 0 -176px;\"></span>"
+      }
+       else if(data.musics[i].rating.average<=0.5&&data.musics[i].rating.average>=0.1){
+        htm+=" <span class=\"allstar35\" style=\"background-position: 0 -187px;\"></span>"
+      }
+
+      else if(data.musics[i].rating.average==0){
+        htm+=" <span class=\"allstar35\" style=\"background-position: 0 -198px;\"></span>"
+      }
+         htm+="   <span class=\"rating_nums\">"+data.musics[i].rating.average+"</span>\
+        <span>("+data.musics[i].rating.numRaters+"评价)</span>\
+        <span class=\"subject-cast\">"+data.musics[i].attrs.singer+"/流行/"+data.musics[i].attrs.pubdate+"</span>\
+  </div>\
+\
+      </div>\
+        <p>“喜欢你，那双眼动人...”\
+当每个城市的过万观众同声唱起\
+粤语歌的生命力也将继续延续下去\
+“喜欢你”是G.E.M.从小到大都很喜欢的一首粤语歌，自在今年初我是歌手2上第...</p>\
+    </div>\
+  </div>";
+    }
+  
+   var htm1 = htm;
+    htm1+="<div class=\"result-list-ft\">\
+              <a href=\"#more\" class=\"j a_search_more\">显示更多</a>\
+            </div>";
+
+
+    $('.result-list').html(htm1);
+ var data_start=data.start;
+     data_start+=data.count;
+    $('.result-list-ft').click(function(e){
+    
+      console.log(data_start);
+ $.ajax({
+    url:'https://api.douban.com/v2/music/search',
+    type:'GET',
+    data:{q:$('.baidu').val()+'',count:20,start:data_start},
+    dataType:'jsonp',
+    success:show,
+    error: function (e) {
+               console.log("error");
+            }
+    }
+  )
+});
+    }
+  
+  
+    
+</script>
+
+</body>
+
+</html>
+

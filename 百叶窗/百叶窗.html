@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title>百叶窗</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			
+		}
+		ul,li{
+			list-style-type: none;
+		}
+
+		.jalousie-cell{
+			position: relative;
+			
+			height: 30px;line-height: 30px;
+			width: 400px;
+			overflow: hidden;border-bottom: 1px  dashed  #000;
+		}
+		.jalousie-cell > div{
+			position: absolute;
+			top: 0;
+			
+		}
+		.jalousie-cell p{
+			height: 30px;
+		}
+
+	</style>
+</head>
+<body>
+<ul class="jalousie">
+	<li class="jalousie-cell">
+		<div>
+			
+			<p>成哥帅吗？</p>
+			<p>OF COUSE!!!</p>
+		</div>
+
+	</li>
+
+	<li class="jalousie-cell">
+		<div>
+			
+			<p>成哥帅吗？</p>
+			<p>OF COUSE!!!</p>
+		</div>
+
+	</li>
+	<li class="jalousie-cell">
+		<div>
+			
+			<p>成哥帅吗？</p>
+			<p>OF COUSE!!!</p>
+		</div>
+
+	</li>
+
+	<li class="jalousie-cell">
+		<div>
+			
+			<p>成哥帅吗？</p>
+			<p>OF COUSE!!!</p>
+		</div>
+
+	</li>
+	<li class="jalousie-cell">
+		<div>
+			
+			<p>成哥帅吗？</p>
+			<p>OF COUSE!!!</p>
+		</div>
+
+	</li>
+
+	<li class="jalousie-cell">
+		<div>
+			
+			<p>成哥帅吗？</p>
+			<p>OF COUSE!!!</p>
+		</div>
+
+	</li>
+
+
+</ul>
+<script type="text/javascript">
+	var joulousieInit = (function(){
+         var  jalousie = document.getElementsByTagName('ul')[0],
+          jalousieContentCollection =  jalousie.getElementsByTagName('div'),
+          len = jalousieContentCollection.length,
+          alternateTimer;
+          var count = 0;
+          console.log('a');
+          function alternateMove(eleCollection) {
+          	alternateTimer = setInterval(function(){
+              count % 2 == 0  ?  toMove(eleCollection,{"top":"-30"}):toMove(eleCollection,{"top":"0"});
+              count++;
+              console.log('a');
+          	},4000);
+          }
+
+          function toMove(eleCollection,distance) {
+           var i = 0, singleTimer=0;
+           singleTimer = window.setInterval(function(){
+           	if(i ==len-1){
+                  window.clearInterval(singleTimer);
+           	}
+           	startMove(eleCollection[i],distance);
+             i++;
+
+console.log('b');
+           },100);
+
+          }
+          　
+
+function init() {
+
+alternateMove(jalousieContentCollection);
+}
+
+return init;
+
+
+
+
+
+
+
+
+	}());
+
+
+joulousieInit();
+function getStyle(obj,attr){
+		if(obj.currentStyle){
+			return obj.currentStyle[arrt];
+		}else{
+			return window.getComputedStyle(obj,false)[attr];
+		}
+	}
+	function startMove(oDiv,json){
+		clearInterval(oDiv.timer);
+		var iSpeed;
+		var iCur;
+		oDiv.timer = setInterval(function(){
+			var bStop = true;
+			for(var attr in json){
+				if(attr === 'opacity'){
+					iCur = parseFloat(getStyle(oDiv,attr)) * 100;
+				}else{
+					iCur = parseInt(getStyle(oDiv,attr));
+				}
+				iSpeed = (json[attr] - iCur) / 7;
+				if(iSpeed > 0){
+					iSpeed = Math.ceil(iSpeed);
+				}else{
+					iSpeed = Math.floor(iSpeed);
+				}
+				if(attr === 'opacity'){
+					oDiv.style.opacity = (iCur + iSpeed) / 100;
+				}else{
+					oDiv.style[attr] = iCur + iSpeed + 'px';
+				}
+				if(iCur !== json[attr]){
+					bStop = false;
+				}
+			}
+		},30)
+	}
+
+</script>
+</body>
+</html>

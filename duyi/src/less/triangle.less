@@ -1,0 +1,24 @@
+.triangle(@_,@borderWidth,@color) {
+    display:block;
+	width:0;
+	height:0;
+	border:@borderWidth;
+	border-style:solid;
+	border-color:transparent;
+}
+/*下三角*/
+.triangle(bottom,@borderWidth,@color) {
+	border-bottom-color:@color;
+}
+/*上三角*/
+.triangle(top,@borderWidth,@color) {
+	border-top-color:@color;
+}
+/*左三角*/
+.triangle(left,@borderWidth,@color) {
+	border-left-color:@color;
+}
+/*右三角*/
+.triangle(right,@borderWidth,@color) {
+	border-right-color:@color;
+}

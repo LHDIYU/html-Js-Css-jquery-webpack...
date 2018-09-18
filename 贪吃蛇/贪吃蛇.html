@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta  charset="utf-8">
+        <title>JS贪吃蛇</title>
+        <style>
+ * {
+    padding:0; margin:0;
+}
+li,ul{
+     list-style-type:none;
+}
+a{
+    text-decoration:none;  
+}
+body{
+   
+    color: #333;
+    font: 12px/1.3 "Arial","Microsoft YaHei";
+    overflow-x: hidden;
+    background: #d4d5e0;
+    
+  
+}
+#body0{
+     overflow: hidden;
+    position: relative;
+     margin: 0 auto;
+    width: 1550px;
+    height: 900px;
+}
+#body{ 
+    overflow: hidden;
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 1550px;
+    height: 900px;
+   
+   
+
+
+}
+#body1{
+
+float: left;
+    width: 1550px;
+    height: 900px; 
+    background-color: #333;
+}
+#body1-1{
+    position: relative;
+    width: 1550px;
+    height: 900px;
+}
+#body2{
+   
+   float: left;
+    width: 1550px;
+    height: 900px; 
+    background: #e6df6d;    
+}
+
+
+.btn{
+    width:100px;
+    height:30px;
+    background:#fff;
+    border:1px solid #3c3c3c;
+    border-radius: 50%;
+
+    position:absolute;
+    top: 20%;
+    left: 50%;
+    margin-left: -20px;
+
+}
+.span{
+    position:absolute;
+    left:0;top:0;
+    width:100px;height:30px;line-height:20px;
+
+    color:#3c3c3c;
+    border:medium none;
+    background-color:transparent;
+    text-align:center;
+    vertical-align:middle;
+}
+.btnul1{
+    position: absolute;
+    top: 30px;
+    left: -150px;
+  
+}
+.btnul1 li {
+    display: inline-block;
+    float:none;
+    text-align:center;
+    position:relative;
+}
+.btnul1 li a{
+    display:block;
+    color:#000; 
+
+    width:400px; 
+    height:30px;
+    line-height:30px;
+    border:1px solid #fff;
+      border-radius: 50%;
+    background:#c5dbf2;
+    padding-top:10px;
+  }
+.btnul1 li a:hover {
+    color:#fff;background:#2687eb;
+}
+.btnul1 li ul li a:hover {
+    color:#fff;background:#6b839c;
+}
+.btnul1 li ul li a{
+    background-color:  aquamarine;
+    width: 300px;
+}
+.btnul1 li ul {
+    display:none;
+    position:absolute;
+    top:40px;left:0; 
+    margin-top:1px; 
+   
+}
+
+
+#say{
+    width: 100px;
+    height: 30px;line-height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #fff;
+    background-color: darkorange;
+    border-radius: 50%;
+    margin: 50px auto 10px;
+    color: white;
+}
+
+#help{
+    width: 420px;
+    margin: 10px auto 0;
+    line-height: 17px;
+    color: white;
+
+}
+#marginbox{
+    width: 1100px;
+    height: 605px;
+    margin: 0 auto;
+    background: #fff;
+}
+#paddingbox{
+   
+   
+}
+#snakebox{
+   position: relative;
+}
+
+
+            .box {
+                background-color: yellow;
+                border:1px solid #C4E7FB;
+            }
+ 
+            .snakehead {
+               
+                border:1px solid white;
+            }
+             .snakebody {
+               
+                border:1px solid white;
+            }
+            .snaketail{
+                 border:1px solid white;
+            }
+ 
+            .food {
+                background-color: green;
+                border:1px solid white;
+                border-radius: 50%;
+            }
+ 
+        </style>
+    </head>
+    <body>
+        <div id="body0">
+       <div id="body">
+
+        <div id="body1">
+             <div id="body1-1">
+        <div  class="btn" onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)" >
+
+  <span class="span">Play</span>
+  <ul class="btnul1">
+        <li  class="boxli"  onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)" >
+            <a href="#">难度选择</a>   
+            <ul id="boxul" class="boxul">
+                <li><a href="javascript:void(0);" class="aa">1000</a></li>
+                <li><a href="javascript:void(0);" class="aa">800</a></li>
+                <li><a href="javascript:void(0);" class="aa">600</a></li>
+                <li><a href="javascript:void(0);" class="aa">500</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</div>
+</div>
+
+<div id="body2">
+        <div id="say">贪吃蛇</div>
+
+<div id = "marginbox">
+        <div id="paddingbox">
+        <div id="snakebox"></div>
+    </div>
+    </div>
+
+        <div id="help">
+
+        <span style="float:right">最高分：<strong id="score">0</strong></span>
+        <input type="button" id="btnStart" value="开始游戏" style="margin-right:10px;">
+         <input type="button" id="purse" value="暂停" style="margin-right:10px;">
+        <select class="range" onchange="speed = parseInt(this.value);">
+            <option value="20">20*20</option>    
+            <option value="30">30*30</option> 
+         </select>
+        <input type="button" value="重新开始" id="reStart">
+   
+        </div>
+</div>
+
+
+
+</div>
+</div>
+     
+        <script type="text/javascript">
+  var flag = 0;
+ function displaySubMenu(ele) {
+            var subMenu = ele.getElementsByTagName("ul")[0];
+            subMenu.style.display = "block";
+        }
+        function hideSubMenu(ele) {
+            var subMenu = ele.getElementsByTagName("ul")[0];
+            subMenu.style.display = "none";
+        }
+ 
+ var oA =document.getElementsByClassName("aa");
+
+ var body = document.getElementById("body");
+ var body1 =  document.getElementById("body1");
+ var body2= document.getElementById("body2");
+ var baseWidth = body1.offsetWidth;
+   body.style.width = baseWidth *2 + "px";
+
+for(var i = 0,j = oA.length;i <j;i++){
+    
+    oA[i].onclick = function() {
+        move();
+        flag = i;
+    }
+}
+function move() {
+
+    body.style.left = -baseWidth+"px";
+}
+
+var speed;
+// ????????????????????????
+if(flag == 0) {
+    speed = 1000;
+}
+else if(flag == 1) {
+    speed = 800;
+}
+else if(flag ==2){
+    speed = 600;
+}
+else{
+    speed = 500;
+}
+
+
+
+var range =document.getElementsByClassName("range")[0].value;
+
+
+
+//创建网格,并flag；
+var init = new Array();
+
+
+//创建创建初始蛇
+var aSnaker = new Array();
+var xa = 0,ya = 0,xb = 0,yb = 0;//一开始默认蛇头和食物在同一点，触发事件，随机生成蛇头点，和食物；
+
+var directkey = 39;
+var snakeTimer;
+var score = document.getElementById("score");
+
+// 生成小蛇和食物
+var btnStart = document.getElementById("btnStart");
+btnStart.onclick = function() {
+
+if(aSnaker.length){
+    for(var y = 0; y < range; y++) {
+        for(var x = 0; x < range; x++) {
+            var div =  document.getElementById(aSnaker[y*range+x]);
+          div.className = "";
+        }
+    }
+}
+
+ for(var i = 0;i < range;i++){
+    init[i] = new Array();
+    for(var j = 0;j < range;j++){
+        init[i][j] = 0;
+    }
+
+ }
+
+    if(xa == xb && ya == yb) {
+       xa = Math.floor(Math.random()*(range-2))+2;
+       ya = Math.floor(Math.random()*range);
+         xb=Math.floor(Math.random()*(range-2))+2;
+         yb=Math.floor(Math.random()*range);
+    }
+     init[xa][ya] = 1;//蛇头
+     init[xa][ya-1] = 2;//蛇身
+     init[xa][ya-2] = 3;//蛇尾;
+    init[xb][yb] = 4;//食物
+     for(var i = xa;i >= xa-2;i--){
+        var result = xa*range+i;
+         aSnaker.push(result);
+     }
+
+    for(var i = 0; i < range;i++){
+        for(var j = 0;j < range;j++){
+            var div = document.createElement("div");
+            if(init[i][j] == 1) {
+                div.className = "snakehead";
+                div.style.background = "url(head.png)";
+            }else if(init[i][j] == 2){
+                div.className = "snakebody";
+                div.style.background = "url(body.png)";
+            }else if(init[i][j] == 3){
+                div.className = "snaketail";
+                div.style.background = "url(tail.png)";
+            }
+            else if(init[i][j]==4){
+                 div.className = "food";
+            }
+            if(init[i][j]==0){
+                div.className = "box";
+            }
+            div.style.position = "absolute";
+            div.id = i*range + j;
+            div.style.width = "20px";
+            div.style.height = "20px";
+            div.style.top = 20*i+"px";
+            div.style.left = 20*j+"px";
+            document.getElementById("snakebox").appendChild(div);
+
+        }
+    }
+
+walk();
+}
+
+
+document.onkeydown = function (e) {
+    var e = e || window.event;
+    directkey = Math.abs(e.keyCode-directkey != 2) && e.keyCode>36&&e.keyCode<41 ? e.keyCode:directkey;//非键盘，反向无效
+
+}
+
+function walk() {
+    if(snakeTimer) clearInterval(snakeTimer); 
+    snakeTimer = setInterval(step,speed);
+}
+function step() {
+    var head = aSnaker[0];
+    console.log(head);
+    console.log(aSnaker);
+    var prevhead = aSnaker[0];
+     switch(directkey){
+                    case 37:
+                        head=aSnaker[0]-1;
+                        break;
+                    case 38:
+                        head=aSnaker[0]-range;
+                        break;
+                    case 39:
+                        head=aSnaker[0]+1;
+                        break;
+                    case 40:
+                        head=aSnaker[0]+range;
+                    }
+        if((head < 0 || head > range*range) || (prevhead - head == 1 && prevhead % range == 0) || (head - prevhead == 1 && head % range == 0) || (prevhead != head && jubge(head, aSnaker))){
+
+trace("GAME OVER!");
+clearInterval(snakeTimer);
+return false;
+
+        }
+
+   //加速     
+ if(head == xb*range+yb ) {
+        if(speed>150){
+            speed -= 5;
+        }
+        else {
+            speed = 150;
+        }
+        aSnaker[aSnaker.length]=aSnaker[aSnaker.length-1];
+score.innerHTML = aSnaker.length;
+trace("加速！");
+
+clearInterval(snakeTimer);
+snakeTimer = setInterval(step,speed);
+
+
+ trace("吃到食物");
+  addFood(); 
+      
+        }
+
+             
+ 
+
+
+    //  if(head != xa*range+yb ) {
+    //    var last = aSnaker.pop();
+    //   document.getElementById(last).className = "box";
+
+    // } else{
+
+       
+       
+        var last = aSnaker.pop();
+       document.getElementById(last).className = "box";
+   // }
+    
+    aSnaker.unshift(head);
+     document.getElementById(last).className = "snakehead";
+    
+    for(var i=0, j=aSnaker.length; i<j; i++){
+                  var num = aSnaker[i];
+                    var nextdiv=document.getElementById(num);
+                  
+
+                    if(i == 0) {
+                          nextdiv.className='snakehead';
+                    }
+                    else if(i == j-1) {
+                          nextdiv.className='snaketail';
+                    }
+                    else{
+                          nextdiv.className='snakebody';
+                    }
+                }
+
+        
+}
+
+
+
+
+function jubge(head, snake){
+                for(var i=0, j=snake.length; i<j; i++){
+                    if(head == snake[i]){
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+var say = document.getElementById("say");
+
+function trace(sth){
+
+    say.innerHTML = sth;
+}
+
+
+function addFood() {
+                   var prevfoodx=xb;//保存上一点的食物坐标，确保下一点生成的坐标不在原点上
+                   var prevfoody=yb;//保存上一点的食物坐标，确保下一点生成的坐标不在原点上，这样就保证不会造成foodpoint和默认后来不用的snakepoint的值
+                    while(jubge(xb*range+yb, aSnaker) || (prevfoodx == xb && prevfoody == yb)){
+                        xb=Math.floor(Math.random()*range);
+                        yb=Math.floor(Math.random()*range);
+                    }
+
+                    document.getElementById(xb*range+yb).className="food";
+}
+
+
+var reStart =document.getElementById('reStart');
+reStart.onclick = function() {
+     clearInterval(snakeTimer);
+     var msg = say.innerHTML;
+     if(msg == "GAME OVER!")
+        window.location.reload();
+}
+
+
+
+
+    var oPurse = document.getElementById('purse');
+    oPurse.onclick = function(){
+                if(this.value=="暂停"&&say.innerHTML!="GAME OVER!"){ 
+                    this.value = "恢复";
+                    clearInterval(snakeTimer);
+                }
+                 if(this.value=="恢复"&&say.innerHTML!="GAME OVER!"){
+                    this.value = "暂停";
+                   setInterval(step,speed);
+                }
+            };
+
+         
+        </script>
+    </body>
+</html>

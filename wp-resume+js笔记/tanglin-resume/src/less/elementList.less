@@ -1,0 +1,106 @@
+.elementList{
+	.li-box{
+		height:100%;
+		position:relative;
+		width:100%;
+		li{
+			float:left;
+			height:40%;
+			width:30%;
+			margin:0 1.66% 2.5% 1.66% ;
+			text-align:center;
+			background:#f40;
+			border-radius:25%;
+		}
+	}
+}
+.showBrand{
+	text-align:center;
+	.tagBox{
+		position:absolute;
+		left:0;
+		top:20px;
+		border-radius:100% 25% 100% 0;
+		height:40px;
+		color:#f40;
+		line-height:40px;
+		width:40px;
+		font-weight:bold;
+		background:black;
+		border:1px solid black;
+	}
+	h3{
+		height:40px;
+		width:100%;
+		color:#f40;
+		line-height:40px;
+		position:absolute;
+	}
+	p{
+		line-height:25px;
+		font-size:14px;
+		position:absolute;
+		top:50px;
+		text-indent:2em;
+		font-style:oblique;
+		font-weight:600;
+		letter-spacing:1px;
+		width:80%;
+		margin:0 10%;
+	}
+}
+
+.carouselWrapper{
+	perspective:500px;
+	span{
+		display:block;
+		height:20px;
+		width:20px;
+		font-size:40px;
+		font-weight:900;
+		position:relative;
+		color:red;
+	}
+	.LeftBtn{
+		top:80px;
+		left:0px;
+		float:left;
+	}
+	.carousel{
+		transform-style:preserve-3d;
+		height:180px;
+		width:200px;
+		top:50%;
+		left:50%;
+		margin:-90px 0 0 -100px ;
+		position:absolute;
+		li{
+			transition:all 0.5s;
+			position:absolute;
+			height:90%;
+			width:60%;
+			margin-top:5%;
+			img{
+				height:100%;
+				width:100%;
+			}
+		}
+		.slider1{
+			transform:translatez(80px) ;
+			left:40px;
+		}
+		.slider0{
+			transform:translatez(-50px);
+			left:-20px;
+		}	
+		.slider2{
+			transform:translatez(-50px);
+			left:120px;
+		}
+	}
+	.RightBtn{
+		top:80px;
+		right:0px;
+		float:right;
+	}
+}  

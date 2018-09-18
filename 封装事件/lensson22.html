@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="utf-8">
+    <title>document</title>
+    <style type="text/css">
+
+ /*.wrapper{
+ 	position: absolute;
+ 	top: 0;left: 0;
+ 	width: 1000px;
+ 	height: 1000px;
+ 	border:1px solid #555;
+ }
+  .wrapper div{
+    	display: none;
+    	background-color: #fff;
+    	position: absolute;
+    	width: 300px;
+    	height: 300px;
+    	color: #fff;
+    	border:1px solid #555;
+    }	
+button{
+	display: block;
+	float: left;
+width: 50px;height: 30px;
+border:1px solid #555;
+
+}
+.active{
+	background-color: yellow;
+}*/
+
+
+    </style>
+</head>
+
+<body>
+<!-- <ul>
+	<li>a</li>
+	<li>a</li>
+	<li>a</li>
+	<li>a</li>
+</ul> -->
+<!-- <div class="wrapper">
+    <button class="active">111</button>
+	<button>222</button>
+	<button>333</button>
+	<div>aaa</div>
+	<div>bbb</div>
+	<div>ccc</div>
+	
+</div>
+ -->
+ <div style="width:100px; height:100px;background-color:red;position:absolute;top:100px;left:100px;" lo-go = "123";></div>
+<script type="text/javascript">
+// for(var i = 1; i <= 4; i ++) {
+// 	// oLi[i].addEventListener('click',function(){
+// 	// 	console.log('a');
+// 	// },false);
+// 	(function (j){
+// 	var oLi = document.getElementsByTagName('li')[j-1];
+// 	oLi.addEventListener('click',function(){
+// 		console.log(j);
+// 	},false);
+//    }(i))
+// }
+
+// var Parent = function(name){
+//     this.name = name||'parent' ;
+//     this.time = 123;
+// } ;
+
+
+
+// Parent.prototype.getName = function(){
+//     return this.name ;
+// } ;
+// Parent.prototype.obj = {a : 1} ;
+
+// var Child = function(name){
+//     this.name = name||'child' ;
+//     // Parent.apply(this,arguments);
+// } ;
+// // Child.prototype = new Parent();
+// // Child.time = '1234';
+// // Child.prototype = Parent.prototype;
+// var F = function (){};
+// F.prototype = Parent.prototype;
+// Child.prototype = new F();
+
+
+// var parent = new Parent('myParent') ;
+// var child = new Child('myChild') ;
+// // Child.prototype.getName = function() {
+// // 	this.name = 'abc';
+// // 	return this.name;
+// // };
+// Child.prototype.getAddd='add';
+// Child.prototype.getAdd = function() {
+// 	var address = 'nihao';
+// 	return address;
+// }
+// console.log(parent.getName()) ; //parent
+// console.log(child.getName()) ; //child
+// console.log(parent.getAddd) ; //parent
+// console.log(child.getAddd); //child
+// // console.log(parent.getAdd()) ; //parent
+// console.log(child.getAdd()); //child
+// console.log(child.time);
+	
+// var wr = document.getElementsByClassName("wrapper")[0];
+// var btn = document.getElementsByTagName('button');
+// var divC = document.getElementsByTagName('div');
+// var len = divC.length;
+// for(var i= 0; i < len; i ++) {
+//     (function(x) {
+       
+//     	btn[x].onclick = function () {
+
+//     		for(var j = 0;j <len;j++){
+//            divC[j].style.display = 'none';
+//            btn[j].className = '';
+
+//   }
+//   divC[x].style.display = "block";
+//   this.className ='active';
+
+
+
+//   } 
+//     }(i))
+
+
+
+// }
+
+
+// 绑定事件：ele.onclick =function(event) {
+// this->dom元素本身；
+// console.log();
+// elem['on'+type] = null;
+// this.removeEventListener('click',arguments.callee,false);
+// this.detachEvent('on'+'click',arguments.callee);
+// };
+
+
+// 绑定事件：obj.addEventListener(type,function(){},false);冒泡
+
+// 事件捕获：obj.addEventListener(type,function(){},true);捕获
+
+// 绑定事件：obj.attachEvent('on'+type,function(){});
+
+// 封装绑定事件：addEvent(elem,type,handler);
+// function addEvent(elem,type,handler) {
+
+// 	if(elem.addEventListener) {
+// 		elem.addEventListener(type,handler,false);
+// 	}else if(elem.attachEvent) {
+// 		elem['temp'+type+handler] = handler;
+// 		elem['temp'+type] = function () {
+// 			elem['temp'+ type+handler].call(elem);
+// 		}
+// 		elem.attachEvent('on'+type,elem['temp'+type]);
+// 	}else{
+// 		elem['on'+type] = handler;
+// 	}
+// }
+
+// function handler() {
+
+// }
+
+// 解除事件:
+// this.onclick = false || "" || null;
+// ele.removeEventListener(type,fn,false);
+// ele.detachEvent('on'+type,fn);
+// this->>window;
+
+// 封装：function removeEvent(ele,type,handler) {
+// 	if(ele.removeEventListener) {
+// 		ele.removeEventListener(type,handler,false);
+// 	} else if(ele.detachEvent) {
+// 		ele.detachEvent("on"+type,elem['temp'+type]);
+// 	} else {
+// 		elem['on'+type] = null;
+// 	}
+// }
+
+
+
+// 取消冒泡事件：event.stopPropagation();  event.cancelBubble = true;
+
+封装取消冒泡事件的函数 stopBubble(event);
+wrapper.addEventListener('click',function(e) {
+	console.log();
+    e.cancelBubble = true;
+    e.stopPropagation();
+},false);
+content.attachEvent('on'+'click',function(e){
+
+});
+function stopBubble(e){
+	if(e.stopPropagation) {
+		e.stopPropagation();
+	}else {
+		e.cancelBubble = true;
+	}
+}
+
+
+
+阻止默认事件的函数 cancelHandler(event);
+return false;
+event.preventDefault();
+event.returnvalue =false;
+// 封装；
+// a.onclick = function(e) {
+// 	cancelHandler(e);
+// }
+// document.oncontextmenu = function(e){
+// 	cancelHandler(e);
+// }
+function cancelHandler(e) {
+	if(e.preventDefault) {
+		e.preventDefault();
+	}else {
+		e.returnvalue = false;
+	}
+}
+
+
+
+
+// 事件对象 event||window.event
+// event.target
+// event.srcElement
+// 事件委托的兼容性写法：
+ele.onclick = function(e) {
+	var event = e||window.event;
+	var target = event.targrt||srcElement;
+	 function handler();
+
+}
+var oDiv = document.getElementsByTagName('div')[0];
+
+</script>
+
+</body>
+</html>>

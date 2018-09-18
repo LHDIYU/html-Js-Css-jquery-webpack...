@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title>模式笔记</title>
+	<style type="text/css">
+		
+
+	</style>
+</head>
+<body>
+
+<script type="text/javascript">
+//    说到笔记这个东西，真是很难写，不知从哪下笔，我觉得都重要，但是呢，不能一一重述，那还不如，把书直接写下来了事，显然不大现实，所以我把我认为感兴趣的地方，加以注释一下............
+// 第五章
+//命名空间模式，主要是在具有大量函数，对象和其他变量的情况下用来避免命名冲突或过长的名字前缀，不会污染全局范围。
+//根据公约以全部大写的方式命名全局变量，应用程序或库的名称。域名或公司名来命名
+//但是也有缺点，
+//就是代码冗余繁杂，各种前后缀的命名，属性查询麻烦，任意部分的代码可以修改该全局实例，其余代码，获得更新后的状态，
+//不过沙箱模式会解决这些缺点，不过我也没兴趣。。。
+//
+//通用命名空间函数，解决一些可能已经存在的属性的覆盖问题。例如var MYAPP=MYAPP||{};假如嵌套较多的对象或属性长命名空间模式，
+    
+    MYAPP.namespace(‘MYAPP.modules.module2’);
+//var MYAPP = {
+//Modules：{
+//Module2:{}
+//}
+//}
+var MYAPP = MYAPP || {};
+MAPP.namespace = function(ns_string) {
+var parts = ns_string.split(‘.’),Parent = MYAPP,i;
+If(parts[0] ===”MYAPP”) {
+parts = parts.slice(1);
+}
+for(i = 0;i <parts.length; i ++){
+if(typeof parent[parts[i]] === “undefined”) {
+parents[parts[i]] = {};
+}
+parent = parent[parts[i]];
+}
+return parent;);
+var module2 = MYAPP.namespace(‘MYAPP.modules.module2’);
+Module2 ===MYAPP.modules.module2;
+
+MYAPP.namespace(‘module.modules1’);
+
+MYAPP.namespace(‘once.upon.a.time.there.was.this.long.nested.property’);
+
+//声明依赖关系
+// 在模块顶部或函数声明代码所依赖的模块；，创建一个局部变量指向所需的模块；
+var myFunction = function() {
+	var event = YAHOO.util.Event,
+	dom = YAHOO.util.Dom;
+	//使用事件和Dom变量；
+	//下面的函数；
+}	
+// 缩小后的代码添加依赖声明模式的效果；
+function test2() {
+	var modules = MYAPP.modules;
+	alert(modules.m1);
+	alert(modules.m2);
+	alert(modules.m3);
+}
+// 缩减
+var a = MYAPP.modules;
+alert(a.m1);alert(a.m2);
+alert(a.m3);
+
+// 私有属性和方法
+
+// 公有访问方法属性的写法
+// 对象
+var myobj = {
+	myprop:1,
+	getProp:function() {
+		return this.myprop;
+	}
+
+}
+console.log(myobj.myprop);
+console.log(myobj.getProp());
+// 函数
+function Gadget() {
+	this.name = 'iPod';
+	this.stretch = function () {
+		return 'iPod';
+	}
+}
+var toy = new Gadget();
+console.log(toy.name);
+console.log(toy.stretch());
+
+// 私有成员 私有访问的方法属性 的写法；
+function Gadget(){
+	// 私有成员
+	var name = 'iPod';
+	//公有函数
+	this.getName = function () {
+		return name;
+	}
+}
+var toy = new Gadget();
+//name 是undefned的，它是私有的；
+console.log(toy.name);//输出undefined
+
+//公有方法访问‘name'
+console.log(toy.getName());//输出’iPod‘；
+
+
+// 私有性失效
+function Gadget() {
+	// 私有成员
+
+	var specs = {
+screen_width:320,
+        screen_height:480,
+        color:"white"
+	};
+//公有函数
+    this.getSpecs = function (){
+        return specs;
+    }
+    
+}
+    var toy = new Gadget(),specs = toy.getSpecs();
+    specs.color =' black';
+    specs.price = "free";
+    console.log(toy.getSpecs());
+    
+//    对象字面量以及私有性；使用一个额外的匿名即时函数创建闭包来实现私有性，汉斯犹
+    var myobj;
+    (function () {
+          // 私有成员
+            var name = "my,oh,my";
+            //实现公有部分
+            //没var
+            myobj = {
+                //特权方法
+                getName:function() {
+                    return name;
+                }
+                
+            }
+        }());
+    myobj.getName();
+//    相似方法
+    var myobj = (function() {
+         // 私有成员
+            var name = "my,oh,my";
+            //实现公有部分
+        return {
+            getName:function() {
+                return name;
+            }
+        }
+    })
+    
+
+//原型和私有性 ， 避免私有成员的重复创建；
+    function Gadget(){
+	// 私有成员
+	var name = 'iPod';
+	//公有函数
+	this.getName = function () {
+		return name;
+	}
+}
+ Gadget.prototype = (function Gadget(){
+	// 私有成员
+	var browser = 'iPod';
+	//公有原型成员
+	return {
+        getBrawser:function () {
+            return browser;
+        }
+    }
+}());
+
+  var toy = new Gadget();  
+    
+    console.log(toy.getName);//特权“own”方法
+    console.log(toy.getBrawser());//特权原型方法
+    
+    
+    
+    
+// 将私有方法揭示为公有方法
+    var myarray;
+    (function () {
+        var astr = "[object Array]",
+            toSting = Object.prototype.toString；
+        function isArray(a) {
+            return toSting.call(a)===astr;
+        }
+        function indexOf(haystack,needle) {
+            var i = 0,max = haystack.length;
+            for(;i< max;i++){
+                if(haystack[i] === needle) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        myarray = {
+            isArray:isArray,
+            indexOf:indexOf,
+            inAray:indexOf
+        }
+        
+    }());
+    myarray.isArray([1,2]);//true;
+    myarray.isArray({0:1});//false;
+    myarray.indexOf(['a','b','c'],'c');//2
+    myarray.inAray(['a','b','c'],'c');//2
+    
+//    模块模式（结构化,自包含非耦合，墨盒）
+//    包含命名空间，
+    MYAPP.namespace('MYAPP.utilities.array');
+//    
+//    提供一个私有作用域的即时函数
+    MYAPP.utilities.array = (function(){
+        //即时函数顶部，私有作用域，声明一些私有属性方法，声明模块依赖的位置，放置有助于该模块的 一次性 初次化代码
+        varuobj= MYAPP.utilities.object,
+            ulang = MYAPP.utilities.lang,
+            //私有属性
+            array_string = "[object Array]",
+            ops = Object.prottype.toString;
+        //私有方法
+//        。。。。var变量定义结束
+        //公有API
+        return {
+            //todo....
+            inArray:function(needle,haystack) {
+                for(var i = 0,max = haystack.length;i < max;i ++) {
+                    if(haystack[i]===needle) {
+                        return true;
+                    }
+                }
+            },
+            isArray:function(a) {
+                return ops.call(a) === array_string;
+            }
+            //...更多方法和属性。。。
+        }
+    }());
+    
+    
+//    揭示模块模式 方法保留私有性，暴露那些最后决定设立API的那些方法。
+    
+    
+    MYAPP.utilities.array =(function() {
+        //私有属性
+        var array_string = "[object Array]",
+            ops = Object.prototype.toString,
+            //私有方法
+            inArray = function(haystack,needle) {
+                for(var i = 0,max =haystack.length;i<max;i ++ ){
+                    if(haystack[i] ==needle) {
+                        return i;
+                    }
+                }
+                
+                return -1;
+            },
+            isArrray = function(a){
+                return ops.call(a) === array_string;
+            }
+        //var变量定义结束
+        //揭示公有api
+        
+        return {
+            isArray:isArrray,
+            indexOf:inArray
+        }
+    }());
+    
+    
+//创建构造函数 的模块
+//    构造函数创造对象
+//    包装模块的即时函数最终会返回一个函数而不是对象，
+    
+//    Array:
+    MYAPP.namespace('MYAPP.utilities.Array');
+    MYAPP.utilities.Array = (function(){
+        //依赖
+        var uobj = MYAPP.utilities.object,
+            ulang = MYAPP.utilities.lang,
+            //私有属性和方法
+            Constr;
+        //var 变量定义结束
+        //可选的一次初次化过程
+        //...
+        //公有API --- 构造函数
+          Constr = function(o) {
+              this.elements = this.toArray(o);
+          };
+        //公有API---原型
+        Constr.prototype = {
+            constructor:MYAPP.utilities.Array,
+            version:'2.0';
+            toArray:function(obj) {
+            for(var i = 0,a = [],len = obj.length;i < len;i ++) {
+            a[i] = obj[i];
+        }
+        return a;
+        }
+                             return Constr;
+    }());
+    
+    var arr = new MYAPP.utilities.Array(obj);
+    
+//    将全局变量导入到模块中
+    MYAPP.utilities.module = (function(app,global){
+        //引用全局对象
+//        以及现在被转化为局部便量的
+//        全局应用程序命名空间对象
+    }(MYAPP,this));
+    
+    
+    
+    
+    
+//沙箱模式
+    
+    
+    
+//    全局构造函数
+    
+    new Sandbox(function(box) {
+        //.....
+    })
+    
+    Sandbox(['ajax','event'],function(box){
+        //console.log(box);
+    });
+    
+    Sandbox('ajax','dom',function(){
+            //console.log(box);
+            });
+    
+    
+   Sandbox('*',function(box){
+       
+   });
+    Sandbox(function(box){
+        //console.log(box);
+    });
+    
+    Sandbox('dom','event',function(box){
+        //使用DOM和事件来运行
+        Sandbox('ajax',function(box){
+            //另一个沙箱化（sandbox）的“box”对象
+            //这里的box对象与函数外部的box并不相同
+            //。。。。
+            //用ajax 来处理
+        });
+        //这里没有ajax模块
+        
+        
+        
+        
+    });
+    
+    
+    
+//    增加模块
+    Sandbox.modules = {};
+//    静态属性，包含键-值对的另一个对象，键模块名字，值是对应的每个模块的对应函数
+    Sandbox.modules.dom = function (box) {
+        box.getElement = function() {
+            
+        };
+        box.getStyle = function() {};
+        box.foo = "bar";
+    }
+    
+    
+    Sandbox.modules.event = function(box) {
+        //如果需要，就访问Sandbox原型，如下语句；
+        //box.constructor.prototype.m = 'mmm';
+        box.attachEvent = function() {
+            
+        };
+        box.dettachEvent = function() {
+            
+            }；
+    
+}
+    Sandbox.modules.ajax = function(box) {
+        box.makeRequest = function() {
+            
+        };
+        box.getResponse = function() {
+            
+        };
+    };
+    
+//实现构造函数
+    
+    
+    function Sandbox() {
+        //将参数转化为一个数组
+        var args = Array.prototype.slice.call(arguments),
+//        最后一个参数是回掉函数
+        callback = args.pop();
+        //模块可以作为一个数组传递，或单独的参数传递
+        modules = (args[0] && typeof args[0] === "string") ? args:args[0],i;
+    //确保该函数
+    //作为构造函数被调用
+        if(!(this instanceof Sandbox)) {
+            return new Sandbox(modules,callback);
+        }
+    //需要向’this‘添加的属性；
+    this.a = 1;
+    this.b = 2;
+    //现在向核心’this‘添加模块
+    //不指定模块名称或指定“*”都表示“使用所有模块”
+    if(!modules || modules ==='*') {
+        modules = [];
+        for(i in Sandbox.modules) 
+            {
+                if(Sandbox.modules.hasOwnProperty(i)) {
+                    modules.push(i);
+                }
+            }
+    }
+        
+        //初期化所需的模块
+        for(i = 0; i < modules.length;i++) {
+            Sandbox.modules[modules[i]](this);
+        }
+    //call the callback
+       callback(this);
+        //需要的任何原型属性
+        Sandbox.prototype = {
+            name:"My Application",
+            version:"1.0";
+            getName:function()｛
+            return this.name;
+        }
+        
+        
+        
+    }
+    
+    
+//    都撒啊，，一脸蒙蔽！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+    
+//   公有静态成员
+    //构造函数
+    var Gadget = function () {};
+    //静态方法
+    Gadget.isShiny = function() {
+        return "youbet";
+    }
+    //向原型返回一个普通方法
+    Gadget.prototype.setPrice = function(price) {
+        this.price = price;
+    }
+//调用静态方法
+    Gadget.isShiny();//输出“youbet”
+    //以静态方式或创造一个实例iphone并调用其方法；无法正常运行；；；；
+    
+    var iphone = new Gadget();
+    iphone.setPrice(500);
+    
+    typeof Gadget.setPrice;//输出'undefined'
+    typeof Gadget.isShiny;//输出’undefined‘；   
+    
+    
+//    静态方法与实例一起工作 注意 this 的指向
+    
+    Gadget.prototype.isShiny = Gadget.isShiny;
+    iphone.isShiny();//输出’youbet‘；
+
+    
+    
+//    静态与非静态调用一个方法，模式不同，结果不同，instanceof 确认方法如何被调用
+    //构造函数 
+    var Gadget = function (price) {
+        this.price = price;
+    };
+    //静态方法
+    Gadget.isShiny = function () {
+        //这种方法总是可行的
+        var msg = "you bet";
+        if( this instanceof Gadget) {
+            //this only works if called non-statically
+            msg +=", it cost $"+this.price + "!";
+        }
+        
+        return msg;
+    };
+    //向原型添加一个普通方法
+    Gadget.prototype.isShiny = function() {
+        return Gadget.isShiny.call(this);
+    }
+//    测试静态方法调用
+    Gadget.isShiny();//输出‘youbet
+    
+//    非静态操作
+    var a = new Gadget('499.99');
+    a.isShiny();//输出“you bet，it cost $499.99!”;
+//测试实例，非静态调用
+    
+    
+    
+    //私有静态成员 函数作为闭包包装私有成员 包装函数立即执行返回一个新函数，返回的函数值分给变量Gadget，新的构造函数
+    
+    
+    
+    var Gadget = (function() {
+        //静态属性
+        var counter = 0;
+        //返回
+        //该构造函数新的实现
+        return function() {
+            console.log(counter++);
+        };
+    }());//立即执行
+     var g1 = new Gadget();
+    var g2 = new Gadget();
+    var g3 = new Gadget();
+    
+    
+    //构造函数
+    var Gadget = (function() {
+        //静态变量/属性
+        var counter = 0,NewGadget;
+        //这将成为新的构造函数的实现
+        NewGadget = function () {
+            counter ++;
+        };
+        //特权方法
+        NewGadget.prototype.getlastId = function () {
+            return counter;
+        };
+        
+        //覆盖 该构造函数
+        return NewGadget;
+        
+        
+    }());//立即执行
+    
+var iphone = new Gadget();
+    iphone.getlastId();//1
+    var ipod = new Gadget();
+    ipod.getlastId();//2
+    var ipad = new Gadget();
+    ipad.getlastId();//3
+    
+    
+    
+//    对象常量
+    
+    
+    
+//    Math.PI;
+//    Math.SQRT1_2;Number.MAX_VALUE;
+//    
+    
+//    构造函数
+    var Widget= function() {
+        //实现
+    }；
+    //常数；
+    Widget.MAX_HEIGHT = 320;
+    Widget.MAX_WIDTH = 480;
+    
+    
+    
+var constant = (function() {
+    var constants = {},
+        ownProp = Object.prototype.hasOwnProperty,
+        allowed = {
+            string:1,number:1boolean:1
+        },
+        
+        prefix = (Math.random()+"_").slice(2);//大数字符串
+    return {
+        
+        
+        set:function(name,value) {
+            if(this.isDefined(name)) {
+return false;}
+            if(!ownProp.call(allowed,typeof value)){
+return false;}
+            
+            constants[prefix+name] = value;
+            return true;
+            
+            
+}
+        isDefined:function(name) {
+        return ownProp.call(constants,prefix+name);
+    },
+        get:function(name) {
+            if(this.isDefined(name)) {
+                return constants[prefix+name];
+            }
+        }
+    }
+               
+               
+        
+        
+        
+        
+        
+        
+        
+        
+}());
+    //检查是否已经定义
+    constant.isDefined('maxwidth');//false
+    //定义
+    constant.set("maxwidth",480);//true
+    //再次检查
+    constant.isDefined("maxwidth");
+    //true
+    
+    //试图重新定义
+    constant.set("maxwidth",320);//false
+    
+    //该值是否保持不变
+    constant.get("maxwidth");//480
+    
+    
+//                                          链模式
+    //总返回this
+    
+    
+    //难以调试 链中某个方法失效时，无法知道那个方法失效；jQuery库使用该模式
+    
+    
+    
+    
+//    myobj.method1("hello").method2().method3("world").method4();
+    
+    var obj = {
+        value:1,
+        increment:function() {
+            this.value += 1;
+            return this;
+        },
+        add:function(v){
+            this.value += v;
+            return this;
+        }
+        shout:function() {
+        alert(this.value);
+    }
+    };
+    //链方法调用
+    obj.increment().add(3).shout();//5
+        
+//    Dom,API
+//    document.getElementsByTagName('head')[0].appendChild(newnode);
+        
+        
+//        method()方法
+    var Person = function (name) {
+        this.name = name;
+    }.
+    method('getName',function(){
+return this.name;
+    }).
+    method('setName',function(name){
+        this.name = name;
+        return this;
+    });
+    
+    
+    var a = new Person('Adam');
+    a.getName();
+    a.setName('Eve').getName();//输出‘Eve;,然后失效 because。。。。。
+    
+    //method()方法实现,实现时检查该方法是否已经被实现，没有继续，并将其作为implementation参数传递给 构造函数的原型，this指向构造函数；
+    
+    
+    if(typeof Function.prototype.method !== "function") {
+        Function.prototype.method = function(name,implementation) {
+            this.prototype[name] = implementation;return this; 
+        }
+    }
+        
+                                       
+    
+//    
+//                                          第六章
+//                                                   代码复用模式
+//        
+//  《《《《《《《《《《《《《《《《《《略。。。a
+//    借用方法
+//    call(),apply()
+//    区别 ，一个接受传递给将被调用方法的参数 数组  ，另一个仅逐个接受参数。a
+    //call()例子
+    notmyobj.doStuff.call(myobj,param1,p2,p3);
+    //apply()例子
+    notmyobj.doStuff.call(myobj,[parem1,p2,p3]);
+    
+    
+//    例子：借用数组的方法
+    function f() {
+        var args = [].slice.call(arguments,1,3);
+    }
+    //例子
+    
+//    ？？？？？？？？？？？？？nice
+    f(1,2,3,4,5,6);//返回【2，3】
+    
+    //借用和绑定
+     var one = {
+         name:"object";
+         say:function(greet) {
+         return greet+","+this.name;
+     };
+    //测试
+    }
+    one.say('hi');//结果为“hi，object”
+    
+    var two = {
+        name:"another object"
+    };
+    one.say.apply(two,['hello']);//结果为“hello,another object”
+    
+    //给变量赋值 ‘this’ 将指向全局变量
+    
+    var say = one.say;
+    say('hoho');//结果为“hoho，undefined”
+    //作为回调函数传递
+    var yetanother = {
+        name:"Yet another abject",
+        method:function(callback) {
+            return callback('Hola');
+        }
+    };
+    yetanother.method(one.say);//结果为“Holla.undefind”
+    
+    
+//    我只想说作用域。。。。。
+    
+//    修复 blind函数接受一个对象和一个方法吗，将俩者绑定起来，并返回另一个函数，闭包访问o和m，blind()返回后，内部函数，任然可以访问o,m,并且总是指向原始对象和方法。
+    
+    function blind(o,m) {
+        return function() {
+            return m.apply(o,[].slice.call(arguments));
+        };
+        
+}
+//    twosay()以全局函数方式而创建，this指向全局对象，twosay()方法绑定到对象two上
+    var twosay = blind(two,one.say)；
+    twosay('yo');//结果为“yo,another object”;
+    
+    
+//    Function.prototype.blind()
+    
+  //  var newFunc = obj.someFunc.blind(myobj,1,2,3);
+//    someFunc 和 myobj绑定在一起
+    
+//    实现Function.prototype.blind()
+      var newFunc = obj.someFunc.blind(myobj,1,2,3);
+    if(typeof Function.prototype.blind === "undefined") {
+        Function.prototype.blind = function(thisArg) {
+            var fn = this,slice = Array.prototype.slice,
+                args = slice.call(arguments,1);
+            return function() {
+                
+                return fn.apply(thisArg,args.concat(slice.call(arguments)));
+                
+            }
+        }
+    }
+    
+    var twosay2 = one.say.bind(two);
+    twosay2("Bonjiour");//结果为“bonjiour,annather object”
+    var twosay3 = one.say.blind(two,"Enchante");
+    twosay3();//结果为“enchanted，another object”；
+    
+    
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+</script>
+
+</body>
+</html>

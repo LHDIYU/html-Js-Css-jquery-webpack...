@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0px;
+			margin: 0px;
+			list-style: none;
+			color: black;
+		}
+		.wrapper{
+			width: 800px;
+			height: 40px;
+			margin: 0 auto;
+			margin-top: 500px;
+		} 
+		.wrapper ul{
+			width: 800px;
+			height: 40px;
+		}
+		.wrapper ul li{
+			text-align: center;
+			float: left;
+			height: 40px;
+			line-height: 40px;
+			border: 1px solid #ccc;
+			margin-right: 10px;
+			font-size: 20px;
+		}
+		.wrapper ul .number, ul .last, ul .first{
+			width: 40px;
+		}
+		.wrapper ul .next, ul .previous{
+			width: 60px;
+		}
+		.wrapper ul li:hover{
+			border: 1px solid #f40;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class='wrapper'>
+		<ul></ul>
+	</div>
+	<script>
+		var ul = document.getElementsByTagName('ul')[0];
+		var liC = ul.getElementsByTagName('li');
+		ul.onclick = function(e) {
+			var event =  e || window.event;
+			var target = event.target || event.srcElement;
+			judge(target);
+		}
+
+		function init(index) {
+			if(index) {
+				var lic = ul.querySelectorAll('li');
+				for(var i = 0; i < lic.length; i++) {
+					ul.removeChild(lic[i]);	
+				}
+			}
+			for(var i = 0; i < 11; i++) {
+				var li = document.createElement('li');
+				if(i < 9) {
+					if(i === 0) {
+						li.setAttribute('id','first');
+					}
+					li.className = 'number';
+					li.innerHTML = i + 1;
+				}else if(i === 9) {
+					li.className = 'last';
+					li.innerHTML = '尾页';
+				}else if(i === 10) {
+					li.className = 'next';
+					li.innerHTML = '下一页';
+				}
+				ul.appendChild(li);
+			}
+			liC[liC.length - 2].onclick = function() {
+				over6(25);
+			}
+			liC[liC.length - 1].onclick = function() {
+				less5(2);
+			}
+			if(index === 1) {	
+				liC[0].style.border = '1px solid blue';
+			}	
+		}
+
+		function judge(target) {
+			var curr = target.className;
+			var inner = target.innerHTML;
+			var index;
+			index = curr === 'number' ? parseInt(inner) : '';
+			if(index) {
+				if(index === 1) {
+					init(index);
+				}else if(index >= 2 && index <=5) {
+					less5(index);
+				}else if(index >= 6) {
+					over6(index);
+				}
+			}
+		}
+
+		function less5(index) {
+			var lic = ul.querySelectorAll('li');
+			if(lic.length !== 1) {
+				for(var i = 0; i < lic.length; i++) {
+					ul.removeChild(lic[i]);	
+				}	
+				var li = document.createElement('li');
+				li.className = 'previous';
+				li.innerHTML = '上一页';
+				ul.appendChild(li);
+				init();
+				for(var i = 0; i < liC.length; i++) {
+					if(liC[i].innerHTML === index + '') {
+						liC[i].style.border = '1px solid blue';
+					}
+				}
+			}else {
+				for(var i = 1; i < lic.length; i++) {
+					ul.removeChild(lic[i]);	
+				}	
+				var li = document.createElement('li');
+				li.className = 'previous';
+				li.innerHTML = '上一页';
+				ul.appendChild(li);
+				init();
+			}
+			liC[liC.length - 2].onclick = function() {
+				over6(25);
+			}
+			liC[liC.length - 1].onclick = function() {
+				if(index !== 5) {
+					less5(++index);
+				}else {
+					over6(++index);
+				}
+			}
+			liC[0].onclick = function() {
+				if(index === 2) {
+					init(1);
+				}else{
+					less5(--index);
+				}
+			}
+		}
+
+		function over6(index) {
+			var currIndex = index;
+			var lic = ul.querySelectorAll('li');
+			for(var i = 0; i < lic.length; i++) {
+				ul.removeChild(lic[i]);
+			}
+			var li = document.createElement('li');
+			li.className = 'first';
+			li.innerHTML = '首页';
+			ul.appendChild(li);
+			less5();
+			if(index <= 20) {
+				for(var i = 2; i < 11; i++) {
+					liC[i].innerHTML = currIndex - 4;
+					currIndex ++;
+					if(liC[i].innerHTML === index + '') {
+						liC[i].style.border = '1px solid blue';
+					}
+				}
+				liC[liC.length - 2].onclick = function() {
+					over6(25);
+				}
+			}else if(index >= 21) {
+				ul.removeChild(liC[liC.length - 2]);
+				if(index === 25) {
+					ul.removeChild(liC[liC.length - 1]);
+				}
+				var temp = 17;
+				for(var i = 2; i < 11; i++) {
+					liC[i].innerHTML = temp;
+					temp ++;
+					if(liC[i].innerHTML === index + '') {
+						liC[i].style.border = '1px solid blue';
+					}
+				}
+			}
+			liC[0].onclick = function() {
+				init(1);
+			}
+			liC[1].onclick = function() {
+				if(index === 6) {
+					less5(5);
+				}else {
+					over6(--index);
+				}
+			}
+			if(index !== 25) {
+				liC[liC.length - 1].onclick = function() {
+					over6(++index);
+				}
+			}
+		}
+		init();
+	</script>
+</body>
+</html>

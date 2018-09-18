@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+    <title>document</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin:0;
+            list-style: none;
+        }
+        .wrapper{
+            position: absolute;
+            width: 800px;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .wrapper ul > li {
+            float: left;
+            width: 150px;
+            height: 75px;
+            border:2px solid #fff;
+            margin:0 3px;
+            perspective: 1200px;
+
+        }
+            .wra{
+           position: absolute;
+            width: 150px;
+            height: 75px;
+            transform-style: preserve-3d;
+            transition: all 250ms ease-in;
+           }
+           .wra div{
+            width: 150px;
+            height: 75px;
+            position: absolute;
+            opacity: 0.5;
+            text-align: center;
+            line-height: 60px;
+            font-size: 50px;
+
+            backface-visibility: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 0 green;
+
+           font-family:'huangti';
+           text-shadow: 1px 2px 4px rgba(0,0,0,.8)
+
+           }
+
+              @font-face {
+            font-family: 'huangti';
+            src: url('./Ginga.ttf');
+        }
+
+       
+
+           .wra div:nth-child(1){
+                background-color: aqua;
+                transform: translateZ(100px);
+
+           }
+            .wra div:nth-child(2) {
+                 opacity: 0.8;
+                  background: linear-gradient(45deg, aqua 0%, darkgreen 30%,darkgreen 50%,darkgreen 70%, aqua 100%);
+                 transform: rotateX(90deg) translateZ(100px);
+            }
+             .wra:hover{
+                transform: rotateX(-90deg);
+             }
+
+
+             .wra + ul{         
+                position: absolute;
+                width: 140px;
+                top: 80px;
+                left: 5px;
+             }
+             .wra + ul li{
+                border: 0 none;
+                width: 140px;
+                position: relative;
+                margin:5px 0;
+             }
+             .wra + ul li div{
+                  font-family:'huangti';
+           text-shadow: 1px 2px 4px rgba(0,0,0,.8)
+
+                
+                 border-radius: 8px;
+
+                position: absolute;
+                width: 140px;
+                height: 70px;
+                transform-style: preserve-3d;
+                 transition: all 250ms ease-in;
+
+                 opacity: 0.5;
+                 text-align: center;
+                 line-height: 65px;
+                 font-size: 50px;
+                 backface-visibility: hidden;
+                 transform: rotateX(90deg);
+
+             }
+             .wra:hover + ul li div{
+                 border-radius: 8px;
+                  box-shadow: 0 5px 0 green;
+                background-color: aqua;
+                transform: rotateX(0deg) translateZ(100px);
+             }
+
+               .p + ul{         
+                position: absolute;
+                width: 140px;
+                top: 80px;
+                left: 5px;
+             }
+             .p + ul li{
+                border: 0 none;
+                width: 140px;
+                position: relative;
+                margin:5px 0;
+             }
+             .p + ul li div{
+                  font-family:'huangti';
+           text-shadow: 1px 2px 4px rgba(0,0,0,.8)
+
+                
+                 border-radius: 8px;
+
+                position: absolute;
+                width: 140px;
+                height: 70px;
+                transform-style: preserve-3d;
+                 transition: all 250ms ease-in;
+
+                 opacity:0;
+                 text-align: center;
+                 line-height: 65px;
+                 font-size: 50px;
+                 
+                  border-radius: 8px;
+                     transform: skewx(-45deg)  translateX(100px);
+
+             }
+             .p:hover + ul li div{
+                background-color: aqua;
+                  box-shadow: 0 5px 0 green;
+                  opacity: 0.5;
+               
+                transform: skewx(0deg) translateX(0px);
+             }
+
+
+            
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+  <ul>
+      <li>
+          <div class="wra">
+              <div>The</div>
+              <div>I</div>
+          </div>
+
+
+          <ul >
+              <li><div>Stay</div></li>
+              <li><div>hugry,</div></li>
+              <li><div>stay</div></li>
+              <li><div>foolish!</div></li>
+
+
+          </ul>
+
+
+
+
+
+
+      </li>
+
+
+
+
+      <li> <div class="wra p">
+              <div>Statue</div>
+              <div>Have</div>
+            </div>
+       <ul>
+              <li><div>lai</div></li>
+              <li><div>da</div></li>
+              <li><div>wo!</div></li>
+              
+
+
+          </ul>
+
+
+     </li> 
+
+        
+
+
+      <li> <div class="wra">
+              <div>of</div>
+              <div>A</div></li> 
+      <li> <div class="wra">
+              <div>Liberty!</div>
+              <div>Deffrent</div></li> 
+      <li> <div class="wra">
+              <div>Equal Right</div>
+              <div>Dream</div></li> 
+  </ul>
+    
+
+
+
+</div>
+
+
+
+</body>
+</html>

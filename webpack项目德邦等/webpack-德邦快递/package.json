@@ -1,0 +1,15 @@
+{
+  "name": "lh",
+  "version": "1.0.0",
+  "description": "webpack-5",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lh":"webpack-dev-server --progress --colors --devtool sourcemap"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "extract-text-webpack-plugin": "^1.0.1"
+  }
+}

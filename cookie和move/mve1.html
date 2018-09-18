@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+	<title>document</title>
+	<style type="text/css">
+		div{
+			position: absolute;
+			top: 100px;
+			width: 200px;
+			height: 200px;
+		}
+		.div1{
+			left: 50px;
+			background-color: orange;
+		}
+		/*.div2{
+			left: 200px;
+			background-color: red;
+		}*/
+	</style>
+</head>
+<body>
+<div class="div1"></div>
+<!-- <div class="div2"></div> -->
+
+
+
+
+  <script type="text/javascript">
+      var oDiv = document.getElementsByTagName('div')[0];
+  
+        function setCookie(key,value,day) {
+            var oDate = new Date();
+            oDate.setDate(oDate.getDate()+day);
+            document.cookie = key+'='+value+';expires='+oDate;
+            return this;
+            
+        }
+       
+        function getCookie(key,callBack) {
+
+            var cookieStr = document.cookie;
+            var arr = cookieStr.split('; ');
+//                       console.log(cookieArr);
+//             cookieArr.forEach(function(item){
+//                var arr = item.split('=');
+//                 if(arr[0]===key){
+// //                    alert(arr[1]);
+// //                    return arr[1];
+// //                    callback(arr[1]);
+//                     //callBack?callBack(arr[1]):'';
+//                     return arr[1];
+//                     console.log(arr[1]);
+//                 }
+//             });
+            //return this;
+            for(var i = 0; i < arr.length;i++){
+                var arr2 = arr[i].split('=');
+                console.log(arr2);
+                if(arr2[0] === key) {
+                    return arr2[1];
+                }
+            }
+        }
+     function removeCookie(key) {
+            this.setCookie(key,'1',-1);
+           // return this;
+        }
+    var x = getCookie('x');
+    var y = getCookie('y');
+if(x) {
+    oDiv.style.left = x + 'px';
+    oDiv.style.top = y + 'px';
+}
+
+oDiv.onmousedown = function(e) {
+    var event = event || e;
+    var disX = event.clientX - this.offsetLeft;
+    var disY = event.clientY - this.offsetTop;
+    document.onmousemove = function (e) {
+        var event = event || e;
+        var newL = event.clientX -disX;
+        var newT = event.clientY -disY;
+
+        oDiv.style.left = newL + 'px';
+        oDiv.style.top = newT + 'px';
+    }
+    document.onmouseup = function() {
+        document.onmousemove = null;
+        document.onmouseup = null;
+        
+        setCookie('x',oDiv.offsetLeft,1);
+        setCookie('y',oDiv.offsetTop,1);
+    }
+}
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </script>
+    
+    
+    
+</body>
+</html>

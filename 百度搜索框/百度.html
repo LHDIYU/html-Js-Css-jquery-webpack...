@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title>Document</title>
+</head>
+<body>
+<input type="text" id="phone">
+<button id="btn" style="width:40px;height:20px">btn</button>
+
+<script src = 'ajax.js'></script>
+
+<script type="text/javascript">
+
+function baidu(phoneId,btnId) {
+	var oInp = document.getElementsByTagName(phoneId)[0];
+	var oBtn = document.getElementById(btnId);
+    var numberStr = null;
+	oBtn.onclick = function() {
+		numberStr = oInp.value;
+		if(numberStr.length !== 11) {
+			alert('号码不和规范');
+		} else if(numberStr.length === 11){
+Ajax('GET','./number.txt' ,true,judge,'');
+		}
+	}
+function judge(allNumber) {
+	allNumber = JSON.parse(allNumber);
+	console.log(allNumber);
+	console.log(numberStr);
+	if(allNumber[numberStr]) {
+  alert('已经注册啦');
+	} else {
+		alert('可以注册啦');
+	}
+}
+}
+baidu('input','btn');
+</script>
+
+</body>
+</html>
